@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" -->
+<!-- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" -->
+<!-- xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee -->
+<!-- http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"> -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	  <distributable/> 
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:beans.xml</param-value>
+  </context-param>
+  
+  <session-config>
+	<session-timeout>30</session-timeout>
+  </session-config>
+  	<!-- <error-page>  
+  		<error-code>500</error-code>  
+  		<location>/error.jsp</location>  
+ 	</error-page> 
+ 	<listener>  
+    <listener-class>com.meididi.web.listener.log4jlistener</listener-class>  
+</listener> 
+ -->
+  <listener>
+    <listener-class>com.meididi.web.listener.InitListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.meididi.web.listener.ApplicationListener</listener-class>
+  </listener>
+  <filter>
+    <filter-name>Spring OpenEntityManagerInViewFilter</filter-name>
+    <filter-class>
+			org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>Spring OpenEntityManagerInViewFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+   <filter>
+    <filter-name>EcodingFilter</filter-name>
+    <filter-class>com.meididi.web.filter.EcodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EcodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>PermissionFilter</filter-name>
+    <filter-class>com.meididi.web.filter.PermissionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PermissionFilter</filter-name>
+    <url-pattern>/console/*</url-pattern>
+    <url-pattern>/web/adv/*</url-pattern>
+    <url-pattern>/mall/*</url-pattern>
+    
+    		<dispatcher>REQUEST</dispatcher>
+		 	<dispatcher>FORWARD</dispatcher>
+		  	<dispatcher>ERROR</dispatcher> 
+			<dispatcher>INCLUDE</dispatcher>
+			
+  </filter-mapping>
+  <filter>
+    <filter-name>PermissionHosFilter</filter-name>
+    <filter-class>com.meididi.web.filter.PermissionHosFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PermissionHosFilter</filter-name>
+    <url-pattern>/hospital/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>PermissionApiFilter</filter-name>
+    <filter-class>com.meididi.web.filter.PermissionApiFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>PermissionApiFilter</filter-name>
+    <url-pattern>/api/user/*</url-pattern>
+    <url-pattern>/api/consult/*</url-pattern>
+  </filter-mapping>
+  <filter>
+    <filter-name>UEditor</filter-name>
+    <filter-class>com.meididi.web.filter.UEditorFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>UEditor</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  
+  
+ 
+
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+   
+  </welcome-file-list>
+  	<!-- http请求 默认转成https
+  	<security-constraint> 
+		<web-resource-collection>
+			<web-resource-name>must https</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	 -->
+	
+</web-app>

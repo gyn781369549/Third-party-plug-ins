@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="CommodityOrders" namespace="/api/mallOrdersAction" extends="default">
+		<action name="index" class="mallOrdersAction" method="index"></action>
+		<action name="list" class="mallOrdersAction" method="list"></action>	
+		<action name="add" class="mallOrdersAction" method="add"></action>	
+		<action name="update" class="mallOrdersAction" method="update"></action>		
+		<action name="delete" class="mallOrdersAction" method="delete"></action>
+		<action name="weChatUnifiedOrder" class="mallOrdersAction" method="weChatUnifiedOrder"></action>
+		
+		
+		<!-- 支付宝回调
+		<action name="checkPayMall" class="mallOrdersAction" method="checkPayMall"></action> -->
+		<!-- 微信回调 
+		<action name="checkWeChatMall" class="mallOrdersAction" method="checkWeChatMall"></action>-->
+	</package>
+</struts>

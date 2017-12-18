@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/dianyan.css"/>
+		<link rel="stylesheet" href="css/jquery-weui.css">
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<title>我的订单</title>
+	</head>
+	<style>
+		.articles{display: none;position: fixed;left: 0;right: 0;}
+		.cancle_order{margin-right: 5px}
+		.w{width: 33.33333%;}
+		.lue{height: 27px;
+			line-height: 26px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;}
+		.old-price{width: 100%;padding-right: 5%;font-size: 12px;box-sizing: border-box;text-align: right;}
+		.new-price{width: 100%;padding-right: 5%;font-size: 12px;box-sizing: border-box;text-align: right;color: #E84725;background: #fff;}
+		.new-prices span{margin-right: 10px;}
+		.new-price span{margin-right: 10px;}
+		.anniu_div{width: 100%;height: 35px;text-align: right;margin: 10px 0;}
+		#div_sc0,#div_sc1,#div_sc2,#div_sc3,#div_sc4,#div_sc5{-webkit-overflow-scrolling: touch;}
+		.new-prices{width: 100%;font-size: 13px;box-sizing: border-box;text-align: right;color: #E84725;background: #fff;padding-right: 10px;}
+		.anniu_divs{width: 100%;height: 35px;text-align: right;margin: 10px 0;}
+		.bq_list_head{position: fixed;left: 0;top: 0;}
+	</style>
+	<body class="bg">
+	<!--	<header>
+			<div class="title">
+				<h4><a onclick ="javascript:history.go(-1);">返回</a>我的订单<span class="sousuo"></span></h4>
+			</div>
+		</header>-->
+		<div class="bq_list_head" id="bq_list_head">
+				<ul>
+					<li class="on " style="width: 20%;" >已取消</li>
+					<li style="width: 20%;">未确认</li>
+					<li  style="width: 20%;">待付款</li>
+					<li style="width: 20%">已付款</li>
+					<li  style="width: 20%">已完成</li>
+
+				</ul>
+			</div>
+<!--		<div class="order_list" >
+			<div class="media">
+			  <div class="media-left">
+			    <a href="#">
+			      <img class="media-object" src="img/o15.png" alt="图片"  width="100px">
+			    </a>
+			  </div>
+			  <div class="media-body media-middle">
+			    <h4 class="media-heading">专业隆鼻</h4>
+			    <p>项目简介：膨体加隆鼻+鼻尖成型术</p>
+			    <p>￥2555.00</p>
+			  </div>
+			</div>
+			<div class="media-bott">
+			  		<div class="media-bott-left">
+			  			<h4>总价&nbsp;<big>￥3444.00</big></h4>
+			  		</div>
+			  		<div class="media-bott-right">
+			  			<button class="cancle_order">取消订单</button>
+			  			<button class="go_buy" onclick="sendToAndroid()">去支付</button>
+			  		</div>
+			  </div>
+		</div>
+
+
+		<div class="order_list" style="background: url(img/o_25.png) no-repeat right top #fff;">
+			<div class="media">
+			  <div class="media-left">
+			    <a href="#">
+			      <img class="media-object" src="img/o15.png" alt="图片"  width="100px">
+			    </a>
+			  </div>
+			  <div class="media-body media-middle">
+			    <h4 class="media-heading">专业隆鼻</h4>
+			    <p>项目简介：膨体加隆鼻+鼻尖成型术</p>
+			    <p>￥2555.00</p>
+			  </div>
+			</div>
+			<div class="media-bott">
+			  		<div class="media-bott-left">
+			  			<h4>总价&nbsp;<big>￥3444.00</big></h4>
+			  		</div>
+			  </div>
+		</div>-->
+	<article class="articles" style="display: block;width: 100%;">
+		<div id="div_sc0" style="width: 100%;overflow: auto;">
+			<div style="overflow: auto;float:left;"  id="div0" >  <!--  -1已取消 -->
+
+			</div>
+		</div>
+
+	</article>
+
+	<article class="articles">
+		<div id="div_sc1" style="width: 100%;overflow: auto;">
+			<div style="overflow: auto;" id="div1" >
+
+			</div>
+		</div>
+	</article>
+
+	<article class="articles">
+		<div id="div_sc3" style="width: 100%;overflow: auto;">
+
+			<div style="height: auto;overflow: auto;" id="div3">  <!--代付款-->
+
+			</div>
+		</div>
+	</article>
+	<article class="articles">
+		<div id="div_sc5" style="width: 100%;overflow: auto;">
+
+			<div style="height: auto;overflow: auto;" id="div5" >  <!--代付款-->
+
+			</div>
+		</div>
+	</article>
+	<article class="articles">
+		<div id="div_sc4" style="width: 100%;overflow: auto;">
+
+			<div style="height: auto;overflow: auto;" id="div4" >  <!--代付款-->
+			
+			</div>
+		</div>
+	</article>
+
+
+	</body>
+	<script src="js/jquery-weui.js"></script>
+
+	<script type="text/javascript">
+		var s = "";
+		var ms = "";
+		var daifukuan = "";
+		var old_price;
+		var new_price;
+		var choose_type = -1;
+		var choose_page = 1;
+		var div0height = 0;
+		var leng = 0;
+		var loading = false;
+		var page_i = sessionStorage.getItem("page_i");
+		var pingjia = "";
+		var  token = ""
+		var alltoken = ""
+		var Request = new Object();
+		Request = GetRequest();
+		$(function (){
+			ajaxs(choose_type,choose_page);
+			if(Request["checkMoney"] == 0){
+				$("#bq_list_head ul li").attr("class","");
+				$("#bq_list_head ul li").eq(2).attr("class","on");
+				$("#div3").html("");
+				ajaxs(1,1);
+				$(".articles").hide();
+				$(".articles").eq(2).show();
+				sessionStorage.setItem("page_i"," ");
+			}else if(Request["checkMoney"] == 1){
+				$("#bq_list_head ul li").attr("class","");
+				$("#bq_list_head ul li").eq(3).attr("class","on");
+				$("#div5").html("");
+				ajaxs(2,1);
+				$(".articles").hide();
+				$(".articles").eq(3).show();
+				sessionStorage.setItem("page_i"," ");
+			}else if(Request["checkMoney"] == 3 ){
+				$("#bq_list_head ul li").attr("class", "");
+				$("#bq_list_head ul li").eq(4).attr("class", "on");
+				$("#div4").html(" ");
+				ajaxs(4,1);
+				$(".articles").hide();
+				$(".articles").eq(4).show();
+				sessionStorage.setItem("page_i"," ");
+			}
+			else{
+				pageI();
+			}
+
+
+		})
+		function sendToAndroid(id){
+			console.log("执行客户端方法");
+			console.log(id);
+				var u = navigator.userAgent, app = navigator.appVersion;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+				var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+				if(isAndroid){
+					window.injs.runAndPay(id);//调用android的函数
+				}else if(isIOS){
+					location.href ="wdmdd://doc_order_pay?"+id;
+				}
+		}
+
+		function pageI() {  //根据page_i去判断显示第几个
+			if (sessionStorage.getItem("page_i") == undefined || sessionStorage.getItem("page_i") == 0) {
+				$("#bq_list_head ul li").attr("class", "");
+				$("#bq_list_head ul li").eq(0).attr("class", "on");
+				choose_type = -1;
+				choose_page = 1;
+				$("#div0").html(' ');
+				$(".articles").hide();
+				$(".articles").eq(0).show();
+				ajaxs(choose_type, choose_page);
+
+			}
+			if (sessionStorage.getItem("page_i") == 1) {
+				$("#bq_list_head ul li").attr("class", "");
+				$("#bq_list_head ul li").eq(1).attr("class", "on");
+				choose_type = 0;
+				choose_page = 1;
+				$("#div1").html("");
+				$(".articles").hide();
+				$(".articles").eq(1).show();
+				ajaxs(choose_type, choose_page);
+
+			}
+			if (sessionStorage.getItem("page_i") == 2) {
+				$("#bq_list_head ul li").attr("class", "");
+				$("#bq_list_head ul li").eq(2).attr("class", "on");
+				choose_type = 1;
+				choose_page = 1;
+				$("#div3").html("");
+				$(".articles").hide();
+				$(".articles").eq(2).show();
+				ajaxs(choose_type, choose_page);
+
+			}
+			if (sessionStorage.getItem("page_i") == 3) {
+				$("#bq_list_head ul li").attr("class", "");
+				$("#bq_list_head ul li").eq(3).attr("class", "on");
+				choose_type = 2;
+				choose_page = 1;
+				$("#div5").html("");
+				$(".articles").hide();
+				$(".articles").eq(3).show();
+				ajaxs(choose_type, choose_page);
+			}
+			if (sessionStorage.getItem("page_i") == 4) {
+				$("#bq_list_head ul li").attr("class", "");
+				$("#bq_list_head ul li").eq(4).attr("class", "on");
+				choose_type = 4;
+				choose_page = 1;
+				$("#div4").html(" ");
+				$(".articles").hide();
+				$(".articles").eq(4).show();
+				ajaxs(choose_type,choose_page);
+			}
+		}
+
+
+
+
+		$(".bq_list_head ul li").click(function(){
+			var i = $(this).index();
+			sessionStorage.setItem("page_i",i);
+			if(i == 0){
+				choose_type = -1;
+				choose_page = 1;
+				$("#div0").html(" ");
+				ajaxs(choose_type,choose_page);
+			}else if(i == 2){
+				choose_type = 1;
+				choose_page = 1;
+				$("#div3").html(" ");
+				ajaxs(choose_type,choose_page);
+			}else if(i == 1){
+				choose_type = 0;
+				choose_page = 1;
+				$("#div1").html(" ");
+				ajaxs(choose_type,choose_page);
+			}else if(i == 4){
+				choose_type = 4;
+				choose_page = 1;
+				$("#div4").html(" ");
+				ajaxs(choose_type,choose_page);
+			}else if(i ==3){
+				choose_type = 2;
+				choose_page = 1;
+				$("#div5").html(" ");
+				ajaxs(choose_type,choose_page);
+			}
+			$(this).addClass("on");
+			$(this).siblings().removeClass("on");
+			$(".articles").hide();
+			$(".articles").eq(i).show();
+		})
+			function ajaxs(type,page) {
+
+				var Request = new Object();
+				Request = GetRequest();
+				var u = navigator.userAgent, app = navigator.appVersion;
+				var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+				var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+				if (isAndroid) {
+					token = Request["token"];
+					sessionStorage.setItem("token",token);
+				} else if (isIOS) {
+					token = Request["sid"]; //token
+					sessionStorage.setItem("token",token);
+				}
+					$.ajax({
+						url: baseUrl + "ProjectOrder/ProjectOrderList",
+						async: "true",
+						data: {
+						sid: token,
+//							sid:"113,6C245CCA92AE5C135E7415BDDF4AE232",
+							type: type,
+							page:page
+						},
+						dataType: "json",
+						success: function (data) {
+							console.log(data);
+							var d = data;
+							if (d.code == 0) {
+								var pro = d.result;
+								console.log(pro);
+								$.each(pro, function (i, value) {
+									console.log(value.orderStatus);
+									if (value.orderStatus == 0 ) { //未确认
+										$("#div1").append('<div class="divssss"></div>');
+										$.each(value.projectList, function (m, values) {
+											new_price = values.projectPrice;
+											$('.divssss:last').append('<div class="order_list" style="margin-bottom: 0;border-bottom: solid 1px #ddd;padding: 10px 0;" >' +
+													'<div class="media">' +
+													'<div class="media-left" style="padding-left:10px;">' +
+													'<img class="media-object" src=' + values.projectLogo + ' alt="图片"  width="100px" height="100px">' +
+													'</div>' +
+													'<div class="media-body media-middle">' +
+													'<h4 class="media-heading">' + values.projectTitle + '</h4>' +
+													'<p class="lue">' + values.projectMeta + '</p>' +
+													'<p>' + '价格' + new_price + '</p>' +
+													'</div>' +
+													'</div>' +
+													'<div class="media-bott">' +
+													'<div class="media-bott-left" style="width: auto;">' +
+													'</div>' +
+													'<div class="media-bott-right" style="width: auto;float: right;margin-left: 5px;">' +
+													'</div>' +
+													'</div>' +
+													'</div>')
+										})
+//										'<a class="indexa"   href=' + "doc_order_detail.html?orderNum=" + value.orderNum + '>' +'</a>'
+										$('.divssss:last').append('<div class="new-prices">' + '<span style="line-height: 30px;height: 30px;">'+"订金:"+'</span>'+'<span>' + value.payPrice + '</span>'+'<span>'+"尾款:"+'</span>'+'<span>'+value.endPrice+'</span>'+'<span>'+"总价："+'</span>'+'<span>'+value.consultPrice+'<span>'+'</div>' +
+												'<div class="anniu_div">' +
+												'<button class="go_buy" style="width: auto;" onclick="querenOrder('+value.orderNum+',this)">' + '确认订单' + '</button>' + '</div>')
+									} else if (value.orderStatus == -1) {
+										$("#div0").append('<div class="div00">'+ ""+'</div>');
+										$.each(value.projectList, function (i, values) {
+											new_price = values.projectPrice;
+											$('.div00:last').append('<a  class="indexa"   href=' + "doc_order_detail.html?orderNum=" + value.orderNum + '>' +
+												'<div class="order_list" style="margin-bottom: 0;border-bottom: solid 1px #ddd;padding: 10px 0;" >' +
+													'<div class="media">' +
+													'<div class="media-left" style="padding-left:10px;">' +
+													'<img class="media-object" src=' + values.projectLogo + ' alt="图片" width="100px" height="100px">' +
+													'</div>' +
+													'<div class="media-body media-middle">' +
+													'<h4 class="media-heading">' + values.projectTitle + '</h4>' +
+													'<p class="lue">' + values.projectMeta + '</p>' +
+													'<p>' + '价格' + new_price + '</p>' +
+													'</div>' +
+													'</div>' +
+													'<div class="media-bott">' +
+													'<div class="media-bott-left" style="width: auto;">' +
+													'</div>' +
+													'<div class="media-bott-right" style="width: auto;float: right;margin-left: 5px;">' +
+													'</div>' +
+													'</div>' +
+													'</div>'+
+													'</a>'
+											)
+										})
+										$('.div00:last').append('<div class="new-prices">' + '<span style="line-height: 30px;height: 30px;">'+"订金:"+'</span>'+'<span>' + value.payPrice + '</span>'+'<span>'+"尾款:"+'</span>'+'<span>'+value.endPrice+'</span>'+'<span>'+"总价："+'</span>'+'<span>'+value.consultPrice+'<span>'+'</div>' +
+												'<div class="anniu_div">' +
+												'<button class="cancle_order" >' + '已取消' + '</button>' + '</div>')
+										$(".lue").css("width", $(window).width() - 100 - 20 + "px");
+									} else if(value.orderStatus == 1){
+										$("#div3").append('<div class="div33"></div>');
+										$.each(value.projectList, function (m, values) {
+											console.log(values.projectPrice);
+											daifukuan = i;
+											new_price = value.projectPrice;
+											$('.div33:last').append('<a  href=' + "doc_order_detail.html?orderNum=" + value.orderNum + '>' +
+													'<div class="order_list" style="margin-bottom: 0;border-bottom: solid 1px #ddd;padding: 10px 0;" >' +
+													'<div class="media">' +
+													'<div class="media-left" style="padding-left: 10px;">' +
+													'<img class="media-object" src=' + values.projectLogo + ' alt="图片" width="100px" height="100px">' +
+													'</div>' +
+													'<div class="media-body media-middle">' +
+													'<h4 class="media-heading">' + values.projectTitle + '</h4>' +
+													'<p class="lue">' + values.projectMeta + '</p>' +
+													'<p>' + '价格' + values.projectPrice + '</p>' +
+													'</div>' +
+													'</div>' +
+													'</div>' +
+													'</a>')
+										})
+										$('.div33:last').append('<div class="new-prices">' + '<span style="line-height: 30px;height: 30px;">'+"订金:"+'</span>'+'<span>' + value.payPrice + '</span>'+'<span>'+"尾款:"+'</span>'+'<span>'+value.endPrice+'</span>'+'<span>'+"总价："+'</span>'+'<span>'+value.consultPrice+'<span>'+'</div>' +
+											'<div class="anniu_divs">' +
+												'<button class="cancle_order" style="width: auto;" onclick="cancelorder(' + value.orderNum + ',this)">' + '取消订单' + '</button>' +
+												'<button class="go_buy" style="width:auto;" onclick="' + "sendToAndroid('" + value.orderNum + "')" + '")">' + '去支付' + '</button>' + '</div>')
+										}
+									else if(value.orderStatus == 4||value.orderStatus == 5){
+										$("#div4").append('<div class="div44"></div>');
+										$.each(value.projectList, function (m, values) {
+												$('.div44:last').append('<a  href=' + "doc_order_detail.html?orderNum=" + value.orderNum + '>' +
+														'<div class="order_list" style="margin-bottom: 0;border-bottom: solid 1px #ddd;padding: 10px 0;" >' +
+													'<div class="media">' +
+													'<div class="media-left" style="padding-left:10px ;">' +
+													'<img class="media-object" src=' + values.projectLogo + ' alt="图片" width="100px" height="100px">' +
+													'</div>' +
+													'<div class="media-body media-middle">' +
+													'<h4 class="media-heading">' + values.projectTitle + '</h4>' +
+													'<p class="lue">' + values.projectMeta + '</p>' +
+													'<p>' + '价格' + values.projectPrice + '</p>' +
+													'</div>' +
+													'</div>' +
+													'<div class="media-bott">' +
+													'<div class="media-bott-left" style="width: auto;">' +
+													'</div>' +
+													'<div class="media-bott-right" style="width: auto;float: right;margin-left: 5px;">' +
+													'</div>' +
+													'</div>' +
+													'</div>'+
+												'</a>')
+
+											})
+												if(value.orderStatus == 4){
+													pingjia = "未评价";
+													console.log("未评价="+pingjia);
+												}else if(value.orderStatus == 5){
+													pingjia = "已评价";
+													console.log("已评价="+pingjia);
+												}
+										$('.div44:last').append('<div class="new-price">'+'<span style="line-height: 30px;height: 30px;">'+"订金:"+'</span>' + value.payPrice + '<span>'+"尾款:"+'</span>'+value.endPrice+'<span>'+"总价："+'</span>'+value.consultPrice+'</div>' +
+												'<div class="anniu_div">' +
+												'<button class="cancle_order" >' + '已付款' + '</button>'+
+												'<button class="cancle_order" id="pingjias" onclick="evalute('+value.orderNum+')">' + pingjia + '</button>' +
+												 '</div>')
+										}
+									else if (value.orderStatus == 2 ||value.orderStatus == 3 ) {
+											$("#div5").append('<div class="div22"></div>');
+											$.each(value.projectList, function (i, values) {
+												new_price = values.projectPrice;
+												$('.div22:last').append('<a  href=' + "doc_order_detail.html?orderNum=" + value.orderNum + '>' +
+														'<div class="order_list" style="margin-bottom: 0;border-bottom: solid 1px #ddd;padding: 10px 0;" >' +
+														'<div class="media">' +
+														'<div class="media-left" style="padding-left:10px;">' +
+														'<img class="media-object" src=' + values.projectLogo + ' alt="图片" width="100px" height="100px">' +
+														'</div>' +
+														'<div class="media-body media-middle">' +
+														'<h4 class="media-heading">' + values.projectTitle + '</h4>' +
+														'<p class="lue">' + values.projectMeta + '</p>' +
+														'<p>' + '价格' + new_price + '</p>' +
+														'</div>' +
+														'</div>' +
+														'<div class="media-bott">' +
+														'<div class="media-bott-left" style="width: auto;">' +
+														'</div>' +
+														'<div class="media-bott-right" style="width: auto;float: right;margin-left: 5px;">' +
+														'</div>' +
+														'</div>' +
+														'</div>' +
+														'</a>')
+											})
+											$('.div22:last').append('<div class="new-prices">' + '<span style="line-height: 30px;height: 30px;">' + "订金:" + '</span>' + '<span>' + value.payPrice + '</span>' + '<span>' + "尾款:" + '</span>' + '<span>' + value.endPrice + '</span>' + '<span>' + "总价：" + '</span>' + '<span>' + value.consultPrice + '<span>' + '</div>' +
+													'<div class="anniu_div">' +
+													'</div>')
+											$(".lue").css("width", $(window).width() - 100 - 20 + "px");
+										}
+
+								})
+								$(".lue").css("width", $(window).width() - 100 - 20 + "px");
+							}
+						}
+					})
+
+			}
+
+
+		
+
+		//			取消订单
+		function cancelorder(orderNum, id) {
+			console.log($(id).parent().parent());
+			var token = "";
+			var Request = new Object();
+			Request = GetRequest();
+			var u = navigator.userAgent, app = navigator.appVersion;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+			var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			if (isAndroid) {
+				token = Request["token"]
+			} else if (isIOS) {
+				token = Request["sid"]; //token
+			}
+			$.ajax({
+				url: baseUrl + "ProjectOrder/CannelOrder",
+				async: "true",
+				dataType: "json",
+				data: {
+					sid: token,
+//					sid:"113,F4AAACEE13A39432A23603BB7CFB2B20",
+					orderNum: orderNum
+				},
+				success: function (data) {
+					console.log(data);
+					if (data.code == 0) {
+						$(id).parent().parent().remove();
+						$("#bq_list_head ul li").attr("class","");
+						$("#bq_list_head ul li").eq(0).attr("class","on");
+						choose_type = -1;
+						choose_page = 1;
+						$("#div0").html( ' ');
+						ajaxs(choose_type,choose_page);
+						$(".articles").hide();
+						$(".articles").eq(0).show();
+
+					}
+				}
+			})
+		}
+		function querenOrder (ordernum,id){
+			var Request = new Object();
+			Request = GetRequest();
+			var u = navigator.userAgent, app = navigator.appVersion;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+			var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			if (isAndroid) {
+				token = Request["token"]
+			} else if (isIOS) {
+				token = Request["sid"]; //token
+			}
+				$.ajax({
+					url:baseUrl+"ProjectOrder/ConfirmOrder",
+					type:"post",
+					data:{
+						sid:token,
+//						sid:"113,8B7D8044B051EBBCDF6E390A21D055E1",
+						orderNum:ordernum
+					},
+					dataType:"json",
+					success:function (data){
+						console.log(data);
+						if(data.code == 0){
+							$(id).parent().parent().remove();
+							$("#bq_list_head ul li").attr("class","");
+							$("#bq_list_head ul li").eq(2).attr("class","on");
+							$("#div3").html(" ");
+							ajaxs(1,1);
+							$(".articles").hide();
+							$(".articles").eq(2).show();
+
+						}else{
+							console.log("确认失败");
+						}
+					},
+					error:function (error){
+						console.log(error);
+					}
+				})
+		}
+		function evalute (orderNum){
+			window.location.href ="evaluate.html?orderNum="+orderNum;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		$("#div_sc0").css("height",$(window).height()-$('.bq_list_head').height() +"px");
+		$("#div_sc1").css("height",$(window).height()-$('.bq_list_head').height() +"px");
+		$("#div_sc2").css("height",$(window).height()-$('.bq_list_head').height() +"px");
+		$("#div_sc3").css("height",$(window).height()-$('.bq_list_head').height() +"px");
+		$("#div_sc4").css("height",$(window).height()-$('.bq_list_head').height() +"px");
+		$("#div_sc5").css("height",$(window).height()-$('.bq_list_head').height() +"px");
+		
+		$(".articles").css("top",$('.bq_list_head').height()+20+"px");
+		$("#div_sc0").scroll(function (){
+
+			console.log("this"+$("#div_sc0").scrollTop());
+			console.log("div0height"+$("#div0").height());
+			console.log("div_sc0"+$("#div_sc0").height());
+			if($("#div0").height() - $("#div_sc0").scrollTop()==$("#div_sc0").height()){
+				console.log("到头了")
+				choose_page++;
+				ajaxs(choose_type,choose_page);
+			}
+		})
+		$("#div_sc1").scroll(function (){
+			console.log($("#div_sc1").height());
+			if($("#div1").height() - $("#div_sc1").scrollTop()==$("#div_sc1").height()){
+				console.log("到头了")
+				choose_page++;
+				
+				ajaxs(choose_type,choose_page);
+			}
+		})
+
+		$("#div_sc2").scroll(function (){
+			console.log($("#div_sc1").height());
+			if($("#div2").height() - $("#div_sc2").scrollTop()==$("#div_sc2").height()){
+				console.log("到头了")
+				choose_page++;
+
+				ajaxs(choose_type,choose_page);
+			}
+		})
+
+		$("#div_sc3").scroll(function (){
+			console.log($("#div_sc1").height());
+			if($("#div3").height() - $("#div_sc3").scrollTop()==$("#div_sc3").height()){
+				console.log("到头了")
+				choose_page++;
+				ajaxs(choose_type,choose_page);
+			}
+		})
+		$("#div_sc4").scroll(function (){
+
+			if($("#div4").height() - $("#div_sc4").scrollTop()==$("#div_sc4").height()){
+				console.log("到头了")
+				choose_page++;
+				ajaxs(choose_type,choose_page);
+			}
+		})
+		$("#div_sc5").scroll(function (){
+
+			if($("#div5").height() - $("#div_sc5").scrollTop()==$("#div_sc5").height()){
+				console.log("到头了")
+				choose_page++;
+				ajaxs(choose_type,choose_page);
+			}
+		})
+
+
+
+		/**
+		 *
+		 * 已完成特有的函数,考虑到已付款尾款为0的时候
+		 * **/
+		function checkEnd (){
+			$.ajax({
+				url: baseUrl + "ProjectOrder/ProjectOrderList",
+				async: "true",
+				data: {
+					sid: token,
+//							sid:"153,458AD32EBEF7FBBD958216FC82924F9A",
+					type: "2",
+					page:"1"
+				},
+				dataType: "json",
+				success: function (data) {
+					console.log("datas");
+					console.log(data);
+					$.each(data.result,function (i,value){
+						if((value.orderStatus == 2 ||value.orderStatus == 3 )&& value.endPrice == 0){
+							$("#div4").append('<div class="div44"></div>');
+							$.each(value.projectList, function (m, values) {
+								$('.div44:last').append('<a  href=' + "doc_order_detail.html?orderNum=" + value.orderNum + '>' +
+										'<div class="order_list" style="margin-bottom: 0;border-bottom: solid 1px #ddd;padding: 10px 0;" >' +
+										'<div class="media">' +
+										'<div class="media-left" style="padding-left:10px ;">' +
+										'<img class="media-object" src=' + values.projectLogo + ' alt="图片" width="100px" height="100px">' +
+										'</div>' +
+										'<div class="media-body media-middle">' +
+										'<h4 class="media-heading">' + values.projectTitle + '</h4>' +
+										'<p class="lue">' + values.projectMeta + '</p>' +
+										'<p>' + '价格' + values.projectPrice + '</p>' +
+										'</div>' +
+										'</div>' +
+										'<div class="media-bott">' +
+										'<div class="media-bott-left" style="width: auto;">' +
+										'</div>' +
+										'<div class="media-bott-right" style="width: auto;float: right;margin-left: 5px;">' +
+										'</div>' +
+										'</div>' +
+										'</div>'+
+										'</a>');
+
+							})
+							$('.div44:last').append('<div class="new-price">'+'<span style="line-height: 30px;height: 30px;">'+"订金:"+'</span>' + value.payPrice + '<span>'+"尾款:"+'</span>'+value.endPrice+'<span>'+"总价："+'</span>'+value.consultPrice+'</div>' +
+									'<div class="anniu_div">' +
+									'<button class="cancle_order" >' + '已付款' + '</button>'+
+									'<button class="cancle_order" id="pingjias" onclick="evalute('+value.orderNum+')">' + pingjia + '</button>' +
+									'</div>')
+						}
+					})
+
+
+
+				}
+			})
+
+		}
+
+
+	</script>
+
+
+
+
+</html>

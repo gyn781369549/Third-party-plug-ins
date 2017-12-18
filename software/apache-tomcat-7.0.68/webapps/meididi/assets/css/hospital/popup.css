@@ -1,0 +1,94 @@
+﻿/*common*/
+.popup_bg{background:rgba(0,0,0,.6);width:100%;height:100%;position:fixed;z-index:9999;}
+.popup_box{min-width:420px;min-height:322px;position:fixed;border-radius:2px;z-index:10000;left:50%;top:15%;margin:-161px 0 0 -210px;background:#f1f1f1;}
+.popup_box2{min-width:500px;min-height:450px;position:fixed;border-radius:2px;z-index:10000;left:50%;top:15%;margin:-300px 0 0 -210px;background:#f1f1f1;}
+.popup_box3{min-width:600px;min-height:400px;position:fixed;border-radius:2px;z-index:10000;left:50%;top:15%;margin:-580px 0 0 -300px;background:#f1f1f1;}
+.popup_t{background:#ff8d84;height:60px;line-height:60px;text-align:center;color:#fff;font-size:18px;display:block}
+.popup_cont{overflow:hidden;}
+.popup_btn{text-align:center;margin:15px 0}
+/*
+错误提示
+*/
+.uploading_cont p{font-size:16px;color:#6f4e47;}
+.popup_btn input[type="button"],.popup_btn input[type="submit"],.popup_btn input[type="reset"]{width:164px;height:40px;line-height:40px;font-size:14px;font-weight:700;color:#fff;margin-top:60px;border:0;border-radius:2px}
+/*上传logo*/
+.upload_logo_pic{margin:40px 36px 0;overflow:hidden}
+.logo_cont{float:left;width:116px;border-radius:2px;margin-bottom:0;}
+.logo_cont img{background:#fff;width:116px;height:116px;margin-bottom:20px;}
+.logo_cont a{width:116px;height:22px;background:rgba(121,210,190,.6);line-height:22px;color:#fff;text-align:center;border-radius:2px;display:block}
+.logo_cont a:hover{background:rgba(121,210,190,.4);}
+.logo_hints{margin-top:40px}
+.upload_logo_pic blockquote{margin:0 0 0 146px;color:#6f4e47;line-height:24px;padding:0;border: 0}
+.popup_btn_p{margin:25px 0 0;overflow:hidden;display:block}
+.popup_btn .popup_btn_p input[type="button"],.popup_btn .popup_btn_p input[type="submit"]{margin:0}
+/*
+推送预览
+*/
+.push_preview_box{width:440px;height:700px;margin:-350px 0 0 -220px;}
+.push_preview{margin:30px auto 0;overflow:hidden;text-align:center}
+.push_preview h1{font-size:18px;font-weight:700;color:#ff8d84;margin:0;line-height:28px}
+.push_preview h2{font-size:16px;line-height:28px;margin:0;color:#6f4e47}
+.push_tel_box{background:url(../../images/iphone_6.jpg) no-repeat;width:67mm;height:138.1mm;margin:auto;padding:63px 0;}
+.push_tel{width:210px;height:369px;margin:auto}
+/*
+登录
+*/
+.index_logoin_box{padding:0 60px;overflow:hidden;width:410px;}
+.index_logoin_box > form{margin:0}
+.login_hint{color:#ff8d84;font-size:12px;margin-top:30px}
+.index_logoin_box input[type="text"],.index_logoin_box input[type="password"]{width:286px;height:40px;border:0;box-shadow:none;transition:none;border-radius:2px;color:#c0a6a0;}
+.index_logoin_box input[type="text"]:hover,.index_logoin_box input[type="text"]:focus,.index_logoin_box input[type="password"]:hover,.index_logoin_box input[type="password"]:focus{border:0;box-shadow:none;color:#6f4e47}
+.login_captcha{overflow:hidden;}
+.login_captcha input{margin:0!important}
+.login_captcha img{max-width:90px;max-height:40px;text-decoration:middle;display:inline-block;}
+.login_captcha em{cursor:pointer;display:inline-block;color:#1f0f0e;margin-left:5px;font-style:normal}
+/*
+创建
+*/
+.create_box{margin:50px 20px 60px;text-align:center}
+.create_box h1{font-size:20px;color:#ff8d84;margin:0 0 10px 0;line-height:20px;}
+.create_box h2{font-size:18px;font-weight:normal;line-height:20px;color:#805146}
+/*
+沟通记录
+*/
+.linkup_log{padding:0 25px;}
+.admin_infor{overflow:hidden;margin:20px 0;font-size:14px;}
+.admin_infor span{display:inline-block;width:112px;color:#1f0f0e}
+.admin_t{display:inline-block;width:49.5%;margin:0}
+.admin_t span{color:#6f4e47;}
+.linkup_log_cont{width:590px;height:300px;background:#fff;margin:0 0 20px}
+.linkup_log_cont cite{display:block;background:#c0a6a0;height:33px;text-align:center;line-height:33px;color:#fff}
+.linkup_log_cont ul{padding:0 18px;height:260px;overflow-x:hidden;overflow-y:auto;}
+.linkup_log_cont li{margin-top:10px;overflow:hidden;line-height:24px}
+.linkup_log_cont li:nth-child(odd){text-align:right}
+.linkup_log_date{font-size:14px;font-weight:bold}
+.linkup_log_user{margin:0;line-height:24px;font-size:14px}
+.linkup_log_user name{color:#ff8d84}
+.linkup_log_cont li:nth-child(even) name,.linkup_log_cont li:nth-child(even) time{color:#79d2be}
+.linkup_log_time{font-size:12px;font-weight:normal;color:#ff8d84;margin-left:5px}
+.issue_t{margin:0}
+.push_t{text-decoration:underline;margin:0}
+/*
+联系我们
+*/
+.contact_us{overflow:hidden;}
+.sh_plan_inquire{background:#e3dfdf;overflow:hidden;}
+.form-search{margin:0;width:310px;margin:0 auto 20px}
+.form-search label{display:block!important;cursor:default;margin:10px 0 3px}
+input.input_plan_search{width:230px;height:40px!important;line-height:40px!important;border:0!important;box-shadow:none!important;border-radius:2px;color:#c0a6a0!important}
+input.input_plan_search:hover,input.input_plan_search:focus{border-color:none!important;box-shadow:none!important;color:#6f4e47!important}
+.btn_search{width:66px!important;height:40px;line-height:40px;background:rgba(121,210,190,.7);border:0;border-radius:2px;color:#fff;margin-left:10px}
+.contact_box{width:310px;margin:30px auto 0;overflow:hidden}
+.contact_box p{font-size:16px}
+.search_box{margin:20px auto 10px;width:310px;overflow:hidden}
+.search_box span{background:url(/images/hospital/ico_popup.png) no-repeat;width:52px;height:52px;display:inline-block;float:left;text-indent:-9999px;}
+.search_box span.ico_audit{background-position:0 0;}
+.search_box span.ico_audit_pass{background-position:0 -52px}
+.search_box span.ico_audit_notpass{background-position:0 -104px}
+.search_box p{padding-left:65px;font-size:18px}
+.mail_alink{display:inline-block;margin-left:6px;width:66px;height:20px;font-size:12px;color:#fff;background:#ff8d84;border-radius:2px;line-height:20px;text-align:center}
+/*
+上传头像
+*/
+.head_box .logo_cont img{background:none;border-radius:55px}
+/*.layui-layer{background: #f1f1f1 !important;min-width: 420px !important;};*/

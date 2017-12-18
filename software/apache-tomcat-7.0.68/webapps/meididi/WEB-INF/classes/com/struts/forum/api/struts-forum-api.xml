@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="forum" namespace="/api/forum" extends="default">
+		
+		<action name="index" class="forumAction" method="index"></action>
+		
+		<action name="list" class="forumAction" method="list"></action>	
+		
+		<action name="update" class="forumAction" method="update"></action>	
+		
+		
+		<action name="getIdForum" class="forumAction" method="getIdForum"></action>	
+	
+		<action name="addForum" class="forumAction" method="addForum"></action>
+	
+		<action name="addForumReview" class="forumAction" method="addForumReview"></action>	
+	
+		<action name="addForumGoods" class="forumAction" method="addForumGoods"></action>	
+		
+		<action name="whetherGoods" class="forumAction" method="whetherGoods"></action>	
+		
+		<action name="addPageviews" class="forumAction" method="addPageviews"></action>	
+		
+		<action name="indexLook" class="forumAction" method="indexLook">
+			<result name="success">/WEB-INF/page/console/tg_inf_list.jsp</result>
+		</action>
+		<action name="cdictCount" class="forumAction" method="cdictCount"></action>		
+		
+
+	</package>
+</struts>

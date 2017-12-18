@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/dianyan.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<title>订单确认</title>
+		<style type="text/css">
+			.media{
+				border-bottom: 1px solid #e2e2e2;
+			}
+		</style>
+	</head>
+	<body style="background: #f4f4f4;">
+		<!--<header>
+			<div class="title">
+				<h4><a onclick ="javascript:history.go(-1);">返回</a>订单确认</h4>
+			</div>
+		</header>-->
+		<!--<form>-->
+				<!--<div class="container" style="background: #fff;padding-top: 10px;">-->
+					<!--<div class="media">-->
+					  <!--<div class="media-left media-middle">-->
+					    <!--<a href="doc_detail.html">-->
+					      <!--<img class="media-object" src="img/p2.png" alt="图片" width="70px">-->
+					    <!--</a>-->
+					  <!--</div>-->
+					  <!--<div class="media-body media-middle">-->
+					    <!--<h4 class="media-heading"><small>来自咨询师&nbsp;&nbsp;</small>张静雅</h4>-->
+					    <!--<span class="dwei">北京美联臣整形医院整形顾问</span>-->
+					  <!--</div>-->
+					<!--</div>-->
+					<!---->
+					<!--<div class="media">-->
+					  <!--<div class="media-left media-middle">-->
+					    <!--<a href="doc_detail.html">-->
+					      <!--<img class="media-object" src="img/p01.png" alt="图片" width="70px">-->
+					    <!--</a>-->
+					  <!--</div>-->
+					  <!--<div class="media-body media-middle">-->
+					    <!--<h4 class="media-heading">北京美联臣整形医院</h4>-->
+					    <!--<span class="dwei">项目简介：膨体加隆鼻+鼻尖成型术</span>-->
+					    <!--<p style="padding-top:10px;color: #ccb98b;">￥<big>2444.00/</big>次</p>-->
+					  <!--</div>-->
+					<!--</div>-->
+					<!---->
+					<!--<div class="pay_info">-->
+						<!--<div class="pay_info_left">备注信息</div>-->
+						<!--<div class="pay_info_right"><p>经协商承诺赠送以下产品</p>-->
+							<!--<p>项目1：瘦脸针2个</p>-->
+							<!--<p>项目2：皮肤紧致液</p>	-->
+						<!--</div>-->
+					<!--</div>-->
+					<!---->
+					<!--<div class="pay_info">-->
+						<!--<div class="pay_info_left">预约时间</div>-->
+						<!--<div class="pay_info_right"><p>2016-10-09 08:00</p></div>-->
+					<!--</div>-->
+					<!---->
+					<!--<div class="pay_info">-->
+						<!--<div class="pay_info_left">医院地址</div>-->
+						<!--<div class="pay_info_right"><p>北京市海淀区复兴路27号</p></div>-->
+					<!--</div>-->
+					<!---->
+					<!--<div class="pay_info">-->
+						<!--<div class="pay_info_right" style="float: right;"><p><big style="color: #f49a8f;">协商金额：￥2444.00</big></p>-->
+							<!--<p style="color: #e6deca;">预付款：￥500.00</p>-->
+							<!--<p style="color: #e6deca;">尾款：￥1944.00</p>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!---->
+				<!--<div class="order_bill">-->
+					<!--<h5>付款方式</h5>-->
+					<!--<div class="order_pay" >-->
+						<!--<li style="background-image: url(img/q_18.png);border: none;">支付宝支付<span style="background-image: url(img/q_14.png);"></span></li>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!---->
+				<!--<div class="pro_btn">-->
+					<!--<button type="button" class="btn btn-success" onclick="sendToAndroid()">去支付</button>-->
+				<!--</div>-->
+		<!--</form>-->
+
+		<div class="container" style="margin-top: 10px;">
+			<div class="do_content" id="do_content">
+				<!--	<div class="media">
+                      <div class="media-left media-middle">
+                          <img class="media-object" src="img/p.png" alt="图片" width="70px">
+                      </div>
+                      <div class="media-body media-middle">
+                        <h4 class="media-heading" style="color: #5E5E5E;">假体隆鼻</h4>
+                        <span class="do_desc">鼻子位于脸中间鼻子位于脸中间鼻子位于脸中间鼻子位于脸...</span>
+                          <span class="do_price">￥10000.00</span>
+                      </div>
+                    </div>-->
+			</div>
+			<div class="hos_info">
+				<h4>医院信息</h4>
+				<p id="hospitalName">北京美滴诊所</p>
+				<p id="orderTime"> </p>
+				<p id="crTime"></p>
+			</div>
+
+			<div class="do_price">
+				<!--<span class="yh_price">优惠后金额<font>￥20.00</font></span>-->
+				<span class="dj_price" id="pay_price"></span>
+				<span class="dj_price" id="end_price"></span>
+
+				<span class="dj_price" id="all_price"></span>
+
+				<!--<span class="wk_price">尾款金额：<font>￥10.00</font></span>-->
+			</div>
+			<div class="do_btn" id="do_btn">
+				<button class="btn btn-order" id="pay_p" style="margin-bottom: 20px;" onclick = "trueOrder()"></button>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		//页面加载三秒
+
+		var Request = new Object();
+		Request = GetRequest();
+		var u = navigator.userAgent, app = navigator.appVersion;
+		var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+		var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+		var token = "";
+		var orderNum = ""; //订单编号
+		if(isAndroid){
+			token  = Request["token"]; //订单编号
+			orderNum = Request["orderNum"];
+		}
+		if(isIOS){
+			token  = Request["sid"];
+			orderNum = Request["orderNum"];
+		}
+//		//写法1
+//		if(Request["token"] == undefined){
+//			sid = Request["sid"];
+//		}else{
+//			sid = Request["token"];
+//		}
+//		//其他写法
+//		sid = (Request["sid"] == undefined ? Request["token"] : Request["sid"]);
+
+		$(function (){
+
+			orderIntro ();//加载订单详情
+		})
+		function orderIntro (){
+
+			$.ajax({
+				url:baseUrl+"ProjectOrder/ViewOrder",
+				type:"post",
+				data:{
+					sid:token,
+					orderNum:orderNum,
+//					sid:"153,4C00918D85C4891DAE7FAF1BBE9807B4",
+					/*orderNum:"20160804645169"*/
+				},
+				dataType:"json",
+				success:function (data) {
+					console.log(data);
+					if (data.code == 0) {
+						//alert("data.result.orderStatus"+data.result.orderStatus);
+						if (data.result.orderStatus == 1) {
+							$(".do_content").html("");
+
+							$.each(data.result.projectList, function (i, value) {
+
+								$('.do_content').append('<div class="media">' +
+										'<div class="media-left media-middle">' +
+										'<img class="media-object" src=' + value.projectLogo + ' alt="图片" width="70px">' +
+										'</div>' +
+										'<div class="media-body media-middle">' +
+										'<h4 class="media-heading" style="color: #5E5E5E;">' + value.projectTitle + '</h4>' +
+										'<div class="do_desc" style="height: 30px;line-height: 30px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">' + value.projectMeta + '</div>' +
+										'<span class="do_price" >' + value.projectPrice + '</span>' +
+										'</div>' +
+										'</div>')
+							})
+
+							$(".do_desc").css("width", $(window).width() - 70 - 30 - 30 + "px");
+							$(".hospitalName").html(data.result.hospitalName);
+							$("#pay_price").html("定金:" + data.result.payPrice);
+							$("#end_price").html("尾款" + data.result.endPrice);
+							$("#all_price").html("总价:" + data.result.consultPrice);
+							$("#hospitalName").html(data.result.hospitalName);
+							$("#pay_p").html("去支付");
+							$("#pay_p").attr("onclick", "sendToAndroid()");
+
+							if (data.result.createTime) {
+								var creatTime = new Date(data.result.createTime);
+								var newcreatTime = creatTime.toLocaleDateString() + " " + creatTime.toLocaleTimeString();
+								$("#crTime").html("创建时间:" + newcreatTime);
+
+								console.log(newcreatTime);
+
+							} else {
+								$("#crTime").html("创建时间:暂无");
+							}
+							if (data.result.yuyueTime == "") {
+								$("#orderTime").html("预约时间:暂无")
+							} else {
+								var ordertime = new Date(data.result.yuyueTime);
+								var newordertime = ordertime.toLocaleDateString() + " " + ordertime.toLocaleTimeString();
+
+								$("#orderTime").html("预约时间:" + newordertime);
+							}
+						} else if (data.result.orderStatus == 0) {
+							console.log("111");
+							$(".do_content").html("");
+							$.each(data.result.projectList, function (i, value) {
+								$('.do_content').append('<div class="media">' +
+										'<div class="media-left media-middle">' +
+										'<img class="media-object" src=' + value.projectLogo + ' alt="图片" width="70px">' +
+										'</div>' +
+										'<div class="media-body media-middle">' +
+										'<h4 class="media-heading" style="color: #5E5E5E;">' + value.projectTitle + '</h4>' +
+										'<div class="do_desc" style="height: 30px;line-height: 30px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">' + value.projectMeta + '</div>' +
+										'<span class="do_price" >' + value.projectPrice + '</span>' +
+										'</div>' +
+										'</div>')
+							})
+							if (data.result.createTime) {
+								var creatTime = new Date(data.result.createTime);
+								var newcreatTime = creatTime.toLocaleDateString() + " " + creatTime.toLocaleTimeString();
+								$("#crTime").html("创建时间:" + newcreatTime);
+								console.log(newcreatTime);
+							} else {
+								$("#crTime").html("创建时间:暂无");
+							}
+							if (data.result.yuyueTime) {
+								var oTime = new Date(data.result.yuyueTime);
+								var newordertime = oTime.toLocaleDateString() + " " + oTime.toLocaleTimeString();
+								$("#orderTime").html("预约时间:" + newordertime);
+							} else {
+								$("#orderTime").html("预约时间:暂无")
+							}
+							$(".do_desc").css("width", $(window).width() - 70 - 30 - 30 + "px");
+							$(".hospitalName").html(data.result.hospitalName);
+							$("#alls").html(data.result.consultPrice);
+							$("#pay_price").html("定金:" + data.result.payPrice);
+							$("#end_price").html("尾款" + data.result.endPrice);
+							$("#all_price").html("优惠价:" + data.result.consultPrice);
+							$("#hospitalName").html(data.result.hospitalName);
+							$("#pay_p").html("确认订单");
+							$("#pay_p").attr("onclick", "trueOrder()");
+						} else if (data.result.orderStatus == 2 || 3) {
+							$(".do_content").html("");
+							if (data.result.endPrice == 0) {
+								$("#pay_p").hide();
+								changeEndPriceStatus();
+							} else {
+								$("#pay_p").html("支付尾款");
+								$("#pay_p").attr("onclick", "sendToAndroid()");
+							}
+							$.each(data.result.projectList, function (i, value) {
+								$('.do_content').append('<div class="media">' +
+										'<div class="media-left media-middle">' +
+										'<img class="media-object" src=' + value.projectLogo + ' alt="图片" width="70px">' +
+										'</div>' +
+										'<div class="media-body media-middle">' +
+										'<h4 class="media-heading" style="color: #5E5E5E;">' + value.projectTitle + '</h4>' +
+										'<div class="do_desc" style="height: 30px;line-height: 30px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">' + value.projectMeta + '</div>' +
+										'<span class="do_price" >' + value.projectPrice + '</span>' +
+										'</div>' +
+										'</div>')
+							})
+
+							if (data.result.createTime) {
+								var creatTime = new Date(data.result.createTime);
+								var newcreatTime = creatTime.toLocaleDateString() + " " + creatTime.toLocaleTimeString();
+								$("#crTime").html("创建时间:" + newcreatTime);
+
+								console.log(newcreatTime);
+
+							} else {
+								var ordertime = new Date(data.result.yuyueTime);
+								var newordertime = ordertime.toLocaleDateString() + " " + ordertime.toLocaleTimeString();
+								$("#crTime").html("创建时间:暂无");
+							}
+							if (data.result.yuyueTime == "") {
+								$("#orderTime").html("预约时间:暂无")
+							} else {
+								$("#orderTime").html("预约时间:" + newordertime);
+							}
+							$(".do_desc").css("width", $(window).width() - 70 - 30 - 30 + "px");
+							$(".hospitalName").html(data.result.hospitalName);
+							$("#alls").html(data.result.consultPrice);
+							$("#pay_price").html("定金:" + data.result.payPrice);
+							$("#end_price").html("尾款" + data.result.endPrice);
+							$("#all_price").html("优惠价:" + data.result.consultPrice);
+							$("#hospitalName").html(data.result.hospitalName);
+
+						} else {
+							$("body").html("");
+							$("body").append('<div style="width: 100%;text-align: center;margin-top: 40%;">' + '暂无信息' + '</div>');
+						}
+
+					}
+				},
+				error:function (error){
+					console.log(error);
+				}
+			})
+		}
+		function trueOrder (){
+			$.ajax({
+				url:baseUrl+"ProjectOrder/ConfirmOrder",
+				type:"post",
+				data:{
+					sid:token,
+					orderNum:orderNum
+//					sid:"113,D503DC1E2416A501FC37AB49C2A3AB9D",
+//					orderNum:"20160625851312"
+				},
+				dataType:"json",
+				success:function (data){
+					console.log(data);
+					if(data.code == 0){
+						$("#pay_p").html("去支付");
+						$("#pay_p").attr("onclick","sendToAndroid()");
+					}else{
+						$("#pay_p").html("确认订单");
+						$("#pay_p").attr("onclick","trueOrder()");
+					}
+				},
+				error:function (error){
+
+				}
+			})
+
+		}
+		function sendToAndroid(){
+			var u = navigator.userAgent, app = navigator.appVersion;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+			var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			if(isAndroid){
+				window.injs.runAndPay(orderNum);//调用android的函数
+//					window.injs.runAndZixun(id);//调用android的函数
+
+			}else if(isIOS){
+//					window.location.href ="wdmdd://doc_order_detail_pay?"+orderNum;
+				window.location.href ="wdmdd://doc_order_pay?"+orderNum;
+			}
+
+		}
+		function changeEndPriceStatus (){
+			$.ajax({
+				url:baseUrl+"ProjectOrder/endSure",
+				type : "post",
+				async:true,
+				data:{
+					sid:sessionStorage.getItem("token"),
+//						sid:"113,8B7D8044B051EBBCDF6E390A21D055E1",
+					orderNum:orderNum
+				},
+				success:function (data){
+					console.log(data);
+				},
+				error:function (error){
+					console.log(error);
+				}
+
+
+			})
+		}
+
+
+	</script>
+
+</html>

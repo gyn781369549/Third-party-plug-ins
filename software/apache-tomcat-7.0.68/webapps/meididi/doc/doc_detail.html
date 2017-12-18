@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/dianyan.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
+		<script type="text/javascript" src="js/public.js" ></script>
+		<script src="" type="text/javascript" charset="utf-8"></script>
+		
+		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<title>医院详情</title>
+		<style type="text/css">
+		.title{
+			height: 220px;
+			text-align: center;
+		}
+		
+		.media{
+			border-bottom: 1px solid #e2e2e2;
+			padding-bottom: 10px;
+		}
+			.add_img{width: 90%;}
+			.name{position: absolute;text-align: center;left: 0;right: 0;bottom: 40px;color: #fff;font-size: 18px;}
+			.pingjia{position: absolute;text-align: center;left: 0;right: 0;bottom: 30px;}
+			.dwei{position: absolute;bottom:15px;left: 0;right: 0;text-align: center;color: #fff;width: 90%;margin: 0 auto;
+			overflow: hidden;white-space: nowrap; text-overflow: ellipsis;}
+			.fl-div{width: 15%;text-align: right;float:left;}
+			.fr-div{width: 85%;overflow: hidden;text-align: left;white-space: nowrap;
+				text-overflow: ellipsis;height: 30px;line-height: 30px;color: #fff;}
+			.all-div{width: 90%;position: absolute;bottom: 10px;height: 30px;margin: 0 5%;}
+
+		</style>
+	</head>
+	<body style="display: none;">
+		<header>
+				<div class="title">
+					<img src=" " class="img-circle text-center" id="img" width="80px;" style="margin-top: 40px;">
+					<p id="name" class="name" style="margin-bottom: 15px;"></p>
+					<p class="pingjia" style="width: 100%;"></p>
+					<!--<p class="dwei" style="background-size:19px;background-position:32px top; padding-left: 0; "></p>-->
+					<div  class="all-div">
+
+						<div class="fl-div">
+							<img src="img/position2xt.png" alt="" style="vertical-align: middle;width: 13px;height: 15px;margin-top: 6px;">
+						</div>
+						<div class="fr-div">
+
+						</div>
+					</div>
+				</div>
+		</header>
+		
+		<div class="doc_info">
+			<div class="bcgcon">
+				<h4 style="color: #8fd1ba;border-bottom: solid 1px #ddd;padding-bottom: 10px;">所属医院背景</h4>
+				<p id="hosbg" style="color: #B3B3B3;"><an style="font-size: 22px;width:10px ;">"</an></p>
+				<div class="add_img">
+
+				</div>
+			</div>
+			
+		</div>
+			<div class="ser_content">
+				<h4 style="border-bottom:1px solid #e2e2e2;">整形项目</h4>
+				<li><!--<label>爱美丽</label><label>美联臣</label><label>玻尿酸</label><label>玻尿酸</label>
+					<label>玻尿酸</label>
+					<label>玻尿酸</label>
+					<label>玻尿酸</label>-->
+				</li>
+			</div>
+		<div class="foo" id="con">
+			<h4>咨询师团队<small>查看全部</small></h4>
+			<ul>
+				<!--<a href="consult_detail.html"><li><img src="img/mu.png"  width="60px"/><span>David</span></li></a>
+				<a href="#"><li><img src="img/mu.png"  width="60px" class="img-circle"  /><span>David</span></li></a>
+				<a href="#"><li><img src="img/mu.png"  width="60px" class="img-circle"  /><span>David</span></li></a>
+				<a href="#"><li><img src="img/mu.png"  width="60px" class="img-circle"  /><span>David</span></li></a>
+				<a href="#"><li><img src="img/mu.png"  width="60px" class="img-circle"  /><span>David</span></li></a>-->
+			</ul>
+		</div>
+		<div class="foo" id="doc">
+			<h4>医师团队<small>查看全部</small></h4>
+			<ul>
+				<!--<a href="doctor_list.html"><li><img src="img/mu.png"  width="60px" class="img-circle" /><span>David</span></li></a>
+				<a href="#"><li><img src="img/mu.png"  width="60px" class="img-circle"  /><span>David</span></li></a>
+				<a href="#"><li><img src="img/mu.png"  width="60px" class="img-circle"  /><span>David</span></li></a>
+				<a href="#"><li><img src="img/mu.png"  width="60px" class="img-circle"  /><span>David</span></li></a>
+				<a href="#"><li><img src="img/mu.png"  width="60px" class="img-circle"  /><span>David</span></li></a>
+				<a href="#"><li style="background-image: url(img/headimg.png);">David</li></a>
+				<a href="#"><li style="background-image: url(img/headimg.png);">David</li></a>
+				<a href="#"><li style="background-image: url(img/headimg.png);">David</li></a>-->
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var otimer_num = 1;
+			var oTimer = null;
+			oTimer = setInterval(function (){
+				if(otimer_num == 3){
+				$("body").show();
+					clearInterval(oTimer);
+				}
+				otimer_num++;
+			},100)
+
+
+
+		// 找不到图片显示默认图
+			function notfind(id){
+				$(id).attr("src","http://101.201.40.170/meididi/assets/images/icon.png");
+			}
+			var Request = new Object();
+			Request = GetRequest();
+			var hos = Request["hospid"];
+			var accId;
+			var mm = "";
+			$.ajax({
+	             type : "get",
+	             async:true,
+	             data:{id:hos},
+	             url : baseUrl+"Hospital/HospitalInfo",
+	             success : function(data){
+						var obj = JSON.parse(data);
+					 	console.log(obj);
+						  $(".pingjia").html(" ");
+	                	if(obj.code==0){
+		                	var json =obj.result.hospital;
+							console.log(json);
+							var redstar = "";
+							var blackstar = "";
+							for(var i = 0;i < json.star;i++){
+								redstar+="<img src= 'img/start-r.png' style='width:17px;height:17px;'/>";
+							}
+							for(var  i =0;i < 5- json.star;i++){
+								blackstar+="<img src= 'img/start-b.png' style='width:17px;height:17px;'/>";
+							}
+							console.log(json.imgs);
+						var imgarr = (json.imgs).split(",");
+							for(var i = 0;i < imgarr.length;i++){
+								if(imgarr[i]){
+									$(".add_img").append('<img style="width: 100%;margin: 1px 5%;" src='+uploadUrl+imgarr[i]+'>');
+								}
+
+							}
+							mm = json.id;
+							console.log("m="+mm);
+							$(".pingjia").html(redstar+blackstar);
+		                	$("#name").text(json.name);
+		                	$(".fr-div").text(json.address);
+		                	$("#hosbg").html("<i class='icon-quote-left'></i>"+json.information+"<i class='icon-quote-right'></i>");
+		                	$("#img").attr("src",uploadUrl+json.logo)
+							var _lab =obj.result.tips;
+							var _html="";
+		                	$.each(_lab,function(i,value) {
+								_html +="<label>"+value+"</label>";
+							});
+							$(".ser_content li").html(_html) ;
+							//咨询师
+							var _conHtml="";
+							var hosId;
+							var _conlist=obj.result.consultants;
+							for(var ele in _conlist){
+								accId=_conlist[0].hosId;
+								console.log(accId);
+								if(ele<5){
+									_conHtml +="<a href='consult_detail.html?ryId=c"+_conlist[ele].id+"'><li><img onerror='notfind(this)' src='"+uploadUrl+_conlist[ele].photo+"' width='60px' class='img-circle'  /><span>"+_conlist[ele].name+"</span></li></a>"
+							
+								}
+							}
+							
+							$("#con ul").html(_conHtml);
+							
+							
+							//医院
+							var _hosHtml="";
+							var _hoslist=obj.result.teams;
+							for(var ele in _hoslist){
+								if(ele<5){
+									_hosHtml +="<a href='doctor_detail.html?docid="+_hoslist[ele].id+"'><li><img  onerror='notfind(this)' src='"+uploadUrl+_hoslist[ele].photo+"' width='60px' class='img-circle'  /><span>"+_hoslist[ele].name+"</span></li></a>"
+								}
+							}
+							$("#doc ul").html(_hosHtml);
+							
+	                	}
+	             }
+	         });
+	         $("#con h4 small").click(function(){
+	         	console.log("id==="+accId);
+	         	window.location.href="consult_list.html?hosId="+accId;
+	         })
+	         
+	          $("#doc h4 small").click(function(){
+	          	console.log("id==="+hos);
+	         	window.location.href="doctor_list.html?hosId="+mm;
+	         })
+
+//			$(".pingjia").css("width","90%");
+
+	</script>
+		
+	</body>
+</html>

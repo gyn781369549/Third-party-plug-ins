@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/dianyan.css" />
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<title>搜索</title>
+		<style>
+			body{
+				background: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="ser_header">
+			<div class="form-group  has-feedback">
+			  <input type="text" class="form-control" id="inputSuccess2" aria-describedby="inputSuccess2Status" placeholder="输入关键字检索" name="txt">
+			  <span class="glyphicon glyphicon-search form-control-feedback" aria-hidden="true"></span>
+			  <span id="inputSuccess2Status" class="sr-only">(success)</span>
+			</div>
+		</div>
+		
+		<div class="ser_content">
+			<li>热门搜索</li>
+			<li><label>爱美丽</label><label>美联臣</label><label>玻尿酸</label></li>
+			<li>最近搜索</li>
+			<li>武警医院整形</li>
+			<li>美联臣</li>
+			<li>高级咨询师</li>
+			<li>抽脂</li>
+		</div>
+		
+		<div class="ser_clear">
+			<img src="img/ser_07.png" alt="清空历史" />
+		</div>
+	</body>
+	
+	<script>
+		$(document).ready(function(){
+			var uid=getCookie("uid") ; //用户id
+			var SubmitOrHidden = function(evt){
+		    evt = window.event || evt;
+		    if(evt.keyCode==13){
+		      	$.ajax({
+	             type : "get",
+	             async:true,
+	             url : baseUrl+"productOriginSearch",
+	             data:{txt:$("#inputSuccess2").val()},
+	             dataType : "jsonp",
+	             jsonp: "callbackparam",
+		         jsonpCallback:"jsonpCallback",
+	             success:function(data){
+	             	var dataval =data.obj;
+			   		if(data.result==1){
+			   		}
+			   	}
+			   });
+		    }
+		}
+	    window.document.onkeydown=SubmitOrHidden;//当有键按下时执行函数 获取键盘 回车键事件 
+		})
+	</script>
+</html>

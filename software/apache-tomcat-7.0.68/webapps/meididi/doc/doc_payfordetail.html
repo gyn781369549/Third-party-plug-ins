@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/dianyan.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
+		<script src="js/g_alert.js" type="text/javascript" charset="utf-8"></script>
+		<title>订单确认</title>
+		<style type="text/css">
+			.media{
+				border-bottom: 1px solid #e2e2e2;
+			}
+			
+			.alterdiv{
+				width: 280px;
+				padding: 10px;
+			}
+			
+			.alterdiv_up{
+				
+			}
+			
+			.alterdiv_up .alterdiv_up_left,.alterdiv_up .alterdiv_up_right{
+				width: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<!--<header>
+			<div class="title">
+				<h4><a onclick ="javascript:history.go(-1);">返回</a>订单确认</h4>
+			</div>
+		</header>-->
+		<form>
+				<div class="container" style="background: #fff;padding-top: 10px;">
+					<div class="media" style="background: url(img/o_23.png) no-repeat right top #fff;">
+					  <div class="media-left media-middle">
+					    <a href="doc_detail.html">
+					      <img class="media-object" src="img/p01.png" alt="图片" width="70px">
+					    </a>
+					  </div>
+					  <div class="media-body media-middle">
+					    <h4 class="media-heading">北京美联臣整形医院</h4>
+					    <span class="dwei">项目简介：膨体加隆鼻+鼻尖成型术</span>
+					    <p style="padding-top:10px;color: #ccb98b;">￥<big>2444.00/</big>次</p>
+					  </div>
+					</div>
+					
+					<div class="pay_info">
+						<div class="pay_info_left">备注信息</div>
+						<div class="pay_info_right"><p>经协商承诺赠送以下产品</p>
+							<p>项目1：瘦脸针2个</p>
+							<p>项目2：皮肤紧致液</p>	
+						</div>
+					</div>
+					
+					<div class="pay_info">
+						<div class="pay_info_left">预约时间</div>
+						<div class="pay_info_right"><p>2016-10-09 08:00</p></div>
+					</div>
+					
+					<div class="pay_info">
+						<div class="pay_info_left">医院地址</div>
+						<div class="pay_info_right"><p>北京市海淀区复兴路27号</p></div>
+					</div>
+					
+					<div class="pay_info">
+						<div class="pay_info_right" style="float: right;"><p><big style="color: #f49a8f;">协商金额：￥2444.00</big></p>
+							<p style="color: #e6deca;">预付款：￥500.00</p>
+							<p style="color: #e6deca;">尾款：￥1944.00</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="pro_btn">
+					<a ><button type="button" class="btn btn-success" style="color: #f49a8f;background:#fff;border:1px solid #f49a8f ;">申请退款</button></a>
+				</div>
+		</form>
+		<div class="alterdiv">
+			<div class="alterdiv_up">
+				<div class="alterdiv_up_left"></div>
+				<div class="alterdiv_up_right"></div>
+			</div>
+			<div class="alertdiv_bottom"></div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(".btn-success").click(function(){
+			g_alert("success","描述您的退款申请原因");
+		})
+	</script>
+</html>

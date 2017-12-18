@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta charset="UTF-8">
+    <title>美滴滴</title>
+
+   <!-- <script src="js/flexible_css.debug.js"></script>
+    <script src="js/flexible.debug.js"></script>-->
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/public.js"></script>
+
+    <script src="js/zepto.min.js"></script>
+    <script src="js/swipeSlide.min.js"></script>
+    <style>
+        .div1{width: 1rem;height: 1rem;border: solid 1px red;}
+        .slide{
+            position: relative;
+         /*   max-width: 640px;*/
+            width: 100%;
+            overflow: hidden;
+            height:5rem;
+        }
+        .slide:after{
+            content: '';
+            display: block;
+            width: 100%;
+            padding-top: 50%;
+        }
+        .slide ul{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .slide li{
+            list-style: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* 解决js阻塞页面显示首屏 */
+        .slide li:first-child{
+            z-index: 1;
+        }
+        .slide li img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .slide .dot{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            z-index: 5;
+            font-size: 0;
+        }
+        .slide .dot span{
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            margin-left: 5px;
+            border: 1px solid #fff;
+            border-radius: 50%;
+        }
+        .slide .dot .cur{
+            background-color: #fff;
+        }
+        /* 测试横竖屏 */
+        #slide1{
+            width: 320px;
+        }
+        .cont-hea{width: 100%;padding: .22rem 1rem .36rem .3rem;border-bottom: solid 1px #ddd;box-sizing: border-box;color: #333;}
+        .doc-price{margin: .3rem 0 0 0;}
+        .old-proce{color: #999;text-decoration:line-through;}
+        .new-price{color: #8acdcd;}
+        .bbm{border-bottom: solid 1px #ddd;}
+        .c66{color: #666;}
+        .c99{color: #999;}
+        .ptm4{padding: .2rem;box-sizing: border-box;}
+        .clear{overflow: hidden;}
+        .pro-intro{float: left;margin-left: 1.2rem;}
+        .pro-le{float: left;width: 20%;line-height: .3rem;}
+        .pro-intro{float: right;margin-left: 20%;margin-top: -.3rem;}
+        .doc-list{height: 1.4rem;padding-left:.55rem;box-sizing: border-box; }
+
+        .doc-list-le{width: 25%;height: 1.4rem;line-height: 1.4rem;float: left;text-align: center;}
+        .doc-list-le-img{width: 1.1rem;height: 1.1rem;border-radius: 100px;vertical-align: middle;}
+        .doc-list-ri{float: left;height: 1.4rem;width: 75%;position: relative;}
+        .doc-list-ri-hea{margin-top: .1rem;line-height: .4rem;}
+        .lever-img{width: .85rem;height: .3rem;vertical-align: middle;}
+        .hospital-name{margin:.1rem 0;}
+        .zx-img{width: .27rem;vertical-align: middle;margin-right: .1rem;}
+        .zx-btn{border-radius: .02rem;  line-height: .4rem;width: 1rem;padding: 0 .2rem;position: absolute;right: .2rem;top: .5rem;color: #8acdcd;border: solid 1px #8acdcd;}
+        .vd{vertical-align: middle;}
+        .dowload{height:1.2rem;color:#fff;overflow: hidden; position: fixed;background: #333;left: 0;bottom: 0;right: 0;padding: .2rem 0;}
+        .logo-img{width: .9rem;}
+        .dow-le{width: 50%;float: left;text-align: center;}
+        .dow-ri{width: 50%;float: left;text-align: center;line-height: 1.2rem;}
+        .d-ios{padding: .1rem .2rem;border: solid 1px #fff;}
+        .meng{position: fixed;left: 0;right: 0;bottom: 0;top: 0;opacity: 0.6;display: none;}
+        .h8{height: .8rem;line-height: .8rem;}
+    </style>
+</head>
+<body>
+
+<div style="display: none">
+    <img src="img/logo.png">
+</div>
+<div style="position: fixed;z-index:11111;left: 0;right: 0;bottom: 0;top: 0;display: block;" id="load-img">
+    <img src="http://img3.a0bi.com/upload/ttq/20140711/1405066128222.gif" style="width: 20%;margin: 50% 40% 0 ;">
+</div>
+<img src="img/meng.png" class="meng"  id="meng" onclick="menghide()">
+
+<div class="slide" id="slide3">
+    <ul id="slide3_ul">
+    <!--    <li>
+            <a>
+                <img src="img/banner1.jpg" alt="banner1">
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="img/banner2.jpg" alt="banner1">
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="img/banner3.jpg" alt="banner1">
+            </a>
+        </li>
+        <li>
+            <a>
+                <img src="img/banner4.jpg" alt="banner1">
+            </a>
+        </li>-->
+    </ul>
+    <div class="dot" id="slide3_dot">
+     <!--   <span></span>
+        <span></span>
+        <span></span>
+        <span></span>-->
+    </div>
+</div>
+<div class="cont-hea">
+    <div class="doc-name">
+        <span class="doc-name-intro f32" id="pro_title">
+        </span>
+    </div>
+    <div class="doc-price">
+        <span class="new-price ">
+        <span class="f40">￥</span><span class="f50" id="new_price">399</span>
+        </span>
+        <span class="old-proce f28" id="old_price">￥1299</span>
+    </div>
+</div>
+<div class="cont-main">
+    <div class="bbm  h8 f26 pl25">
+        <span class="c99 f32 ">
+            项目名称
+        </span>
+        <span class="c66" id="pro_name">
+            瘦脸针
+        </span>
+    </div>
+    <div class="bbm h8  f35 pl25">
+        <span class="c99 f32">
+            活动时间
+        </span>
+        <span class="f26" id="time">
+            2016.10.01-2016.12.30
+        </span>
+    </div>
+    <div class="bbm ptm4  f35 pl25 " style="overflow: hidden;padding-left: .25rem;">
+        <div class="pro-le c99 f32">
+            项目详情
+        </div>
+        <div class="pro-intro c66" id="pro_intro">
+
+        </div>
+    </div>
+    <div class="doc-list">
+        <div class="doc-list-le">
+            <img src="img/logo_@2x.jpg" class="doc-list-le-img" id="doc_photo">
+        </div>
+        <div class="doc-list-ri">
+            <div class="doc-list-ri-hea">
+                <span class="c99 f28 vm" id="cname">张静雅</span>
+                <img src="img/LV.4_@2x.png" class="lever-img" id="lev_img">
+            </div>
+            <div class="hospital-name" id="hos_name">
+                北京xxxxxxxx整形顾问
+            </div>
+            <div class="star" id="star_div">
+
+            </div>
+            <div class="zx-btn" onclick="sendToAndroid()">
+                <img src="img/consult1_@2x.jpg"  class="zx-img">
+                <span class="vd" >咨询</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<div class="dowload" style="display: none;">
+    <div class="dow-le">
+        <img src="img/logo_@2x.png" class="logo-img">
+        <div>下载美滴滴</div>
+
+    </div>
+    <div class="dow-ri">
+        <span class="d-ios" onclick="dow()">ios下载</span>
+    </div>
+</div>
+</body>
+<script>
+    var ryId;
+    var Request = new Object();
+        Request = GetRequest();
+    var ids = Request["id"];
+    var fromType = Request["fromType"];
+
+    if(fromType == "ios"){
+        $(".dowload").show();
+    }
+    $(function (){
+        $('#slide3').swipeSlide({
+            continuousScroll:true,
+            speed : 3000,
+            transitionType : 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
+            firstCallback : function(i,sum,me){
+                me.find('.dot').children().first().addClass('cur');
+            },
+            callback : function(i,sum,me){
+                me.find('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+            }
+        });
+        ajaxHd();
+    })
+    function ajaxHd (){ //加载活动
+        $.ajax({
+            url:baseUrl+"project/getActivityInfo",
+            type:"post",
+            data:{id:ids},
+            dataType:"json",
+            success:function (data){
+                if(data.code == 0){
+                    console.log(data);
+                    var d = data.result;
+                    ryId = "c"+d.consultantId;
+                    $("#slide3_ul").html("");
+                    for(var i = 0;i < d.titleImages.length;i++){
+                        $("#slide3_ul").append('<li>'+
+                                '<a>'+
+                                '<img src='+d.titleImages[i]+' alt="banner1">'+
+                                '</a>'+
+                                '</li>')
+                        $("#slide3_dot").append('<span></span>');
+                    }
+                    $('#slide3').swipeSlide({
+                        continuousScroll:true,
+                        speed : 3000,
+                        transitionType : 'cubic-bezier(0.22, 0.69, 0.72, 0.88)',
+                        firstCallback : function(i,sum,me){
+                            me.find('.dot').children().first().addClass('cur');
+                        },
+                        callback : function(i,sum,me){
+                            me.find('.dot').children().eq(i).addClass('cur').siblings().removeClass('cur');
+                        }
+                    });
+                    var level = d.Level;
+                    if(level == 1){
+                        $("#lev_img").attr("src","img/LV.1_@2x.png");
+                    }else if(level == 2){
+                        $("#lev_img").attr("src","img/LV.2_@2x.png");
+
+                    }else if(level == 3){
+                        $("#lev_img").attr("src","img/LV.3_@2x.png");
+                    }else if(level == 4){
+                        $("#lev_img").attr("src","img/LV.4_@2x.png");
+                    }else if(level == 5){
+                        $("#lev_img").attr("src","img/LV.5_@2x.png");
+                    }else if(level == 6){
+                        $("#lev_img").attr("src","img/LV.6_@2x.png");
+                    }else if(level == 7){
+                        $("#lev_img").attr("src","img/LV.7_@2x.png");
+                    }
+                    $("#pro_title").text(d.activityTitle);
+                    console.log(d.activityTitle);
+                    $("#new_price").text(d.newMoney);
+                    $("#old_price").text(d.oldMoney);
+                    $("#time").text(d.activityTime);
+                    $("#pro_name").text(d.projectName);
+                    $("#pro_intro").text(d.projectInformation);
+
+                    $("#doc_photo").attr("src",d.consultantPhoto);
+                    $("#hos_name").text(d.hosName);
+                    $("#cname").text(d.consultantName);
+                    $("#star_div").html("");
+                    for(var i = 0;i < d.star;i++){ //添加星星等级
+                        $("#star_div").append('<img src="img/start-r.png" style="width: .27rem;">');
+                    }
+                    for(var i = 0;i<5 - d.star;i++){
+                        $("#star_div").append('<img src="img/start-b.png" style="width: .27rem;">');
+                    }
+                    $("#load-img").hide();
+                }
+
+            },
+            error:function (error){
+                console.log(error);
+            }
+        })
+    }
+    function sendToAndroid(){ //调用手机端方法
+        console.log("调用了手机端方法");
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if(isAndroid){
+            window.injs.runAndZixun(ryId);//调用android的函数
+        }else if(isIOS){
+            location.href ="wdmdd://consult_detail_zixun?"+ryId;
+        }
+    }
+
+    function  dow(){
+        if(isWeiXin()){
+            $("#meng").css("display","block");
+        }else{
+            $("#meng").css("display","none");
+            window.location.href = "itms://itunes.apple.com/cn/app/id1052695318";
+        }
+    }
+
+    function menghide (){
+        if($("#meng").css("display") == "block"){
+            $("#meng").hide();
+        }
+    }
+
+    function isWeiXin(){ //微信浏览器内核
+        var ua = window.navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
+</script>
+</html>

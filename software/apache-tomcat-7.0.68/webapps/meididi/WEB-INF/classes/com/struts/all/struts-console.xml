@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="main" namespace="/" extends="default">
+		<action name="admin" class="adminAction" method="login">
+			<result name="login" >/WEB-INF/page/login.jsp</result>
+			<result name="index" >/WEB-INF/page/console/index.jsp</result>
+		</action>
+		<action name="adminLogin" class="adminAction" method="login">
+			<result name="login" >/WEB-INF/page/login.jsp</result>
+			<result name="index" type="redirectAction">admin</result>
+		</action>
+		
+	</package>
+
+	<package name="console" namespace="/console" extends="json-default">
+		
+		<action name="index" class="adminAction" method="index">
+			<result name="index">/WEB-INF/page/console/index.jsp</result>
+		</action>
+		
+		<action name="admin_*" class="adminAction" method="{1}">
+			<result name="photo"></result>
+			<result name="reset"></result>
+			<result name="out">/WEB-INF/page/login.jsp</result>
+		</action>
+		
+		
+		<!-- 医院管理 -->
+		<action name="hospitalAccount_*" class="hospitalAccountAction" method="{1}">
+			<result name="list">/WEB-INF/page/console/hospital_account_list.jsp</result>
+			<result name="input">/WEB-INF/page/console/hospital_account_input.jsp</result>
+			<result name="toList" type="redirectAction">hospitalAccount_list</result>
+			
+		</action>
+		<!--医院信息管理-->
+		<action name="hospitalInf_*" class="hospitalInfAction" method="{1}">
+			<result name="list">/WEB-INF/page/console/hospital_inf_list.jsp</result>
+			<result name="input" >/WEB-INF/page/console/hospital_inf_input.jsp</result>
+			<result name="show" >/WEB-INF/page/console/hospital_inf_show.jsp</result>
+			<result name="map" >/WEB-INF/page/getMap.jsp</result>
+			<result name="images" >/WEB-INF/page/console/hospital_images.jsp</result>
+			
+		</action>
+		<!--医院name select-->
+		<action name="indexLike" class="hospitalInfAction" method="indexLike">
+			
+			
+		</action>
+		<!-- 咨询师管理 -->
+		<action name="consultant_*" class="consultantAction" method="{1}">
+			<result name="list">/WEB-INF/page/console/consultant_list.jsp</result>
+			<result name="reg">/WEB-INF/page/console/consultant_reg_list.jsp</result>
+			<result name="input" >/WEB-INF/page/console/consultant_input.jsp</result>
+		</action>
+		<!-- 用户管理 -->
+		<action name="user_*" class="userAction" method="{1}">
+			<result name="list">/WEB-INF/page/console/user_list.jsp</result>
+			<!-- <result name="input">/WEB-INF/page/console/hospital_account_input.jsp</result>
+			<result name="toList" type="redirectAction">hospitalAccount_list</result> -->
+			
+		</action>
+		<!-- 项目管理 -->
+		<action name="project_*" class="projectAction" method="{1}">
+			<result name="list">/WEB-INF/page/console/project_list.jsp</result>
+			<result name="show">/WEB-INF/page/console/project_show.jsp</result>
+		</action>
+		<!-- 标签管理 -->
+		<action name="tips_*" class="tipsAction" method="{1}">
+			<result name="list">/WEB-INF/page/console/tips_list.jsp</result>
+			<result name="input" type="redirectAction">tips_list</result>
+		</action>
+		
+		<!-- 订单管理 -->
+		<action name="order_*" class="orderAction" method="{1}">
+			<result name="list">/WEB-INF/page/console/order_list.jsp</result>
+			<result name="input">/WEB-INF/page/console/order_input.jsp</result>
+			<result name="show">/WEB-INF/page/console/order_show.jsp</result>
+		</action>
+		<!-- 订单管理 -->
+		<action name="overList" class="orderAction" method="overList">
+			<result name="list">/WEB-INF/page/console/over_list.jsp</result>
+		</action>
+		<action name="overShow" class="orderAction" method="input">
+			<result name="input">/WEB-INF/page/console/over_input.jsp</result>
+		</action>
+		<action name="overCheck" class="orderAction" method="overCheck">
+		</action>
+		
+		<action name="apply_*" class="applyAction" method="{1}">
+			<result name="list">/WEB-INF/page/console/apply_list.jsp</result>
+		</action>
+		
+		<action name="refund_*" class="refundAction" method="{1}">
+			<result name="list">/WEB-INF/page/console/refund_list.jsp</result>
+			<result name="input">/WEB-INF/page/console/refund_input.jsp</result>
+		</action>
+	</package>
+	
+
+</struts>

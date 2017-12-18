@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	
+	<package name="chat" namespace="/consult" extends="default">
+	    
+		<action name="login" class="chatAction" method="login">
+			<result name="login">/WEB-INF/page/consult/login.jsp</result>
+		</action>
+		<action name="doLogin" class="chatAction" method="doLogin">
+		</action>
+		<action name="index" class="chatAction" method="index">
+			<result name="index">/WEB-INF/page/consult/index.jsp</result>
+		</action>
+		<action name="out" class="chatAction" method="out">
+			<result name="out">/WEB-INF/page/consult/login.jsp</result>
+		</action>
+		<action name="consult_*" class="chatAction" method="{1}">
+			
+		</action>
+		<action name="phonecode" class="chatAction" method="phonecode">
+			
+		</action>
+	</package>
+</struts>

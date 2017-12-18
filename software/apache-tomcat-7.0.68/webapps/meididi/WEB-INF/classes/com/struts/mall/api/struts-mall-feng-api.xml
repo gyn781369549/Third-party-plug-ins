@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="mallFengActionApi" namespace="/api/mallFengAction" extends="default">
+		<action name="index" class="mallFengAction" method="index"></action>
+		<action name="list" class="mallFengAction" method="list"></action>	
+		<action name="add" class="mallFengAction" method="add"></action>	
+		<action name="update" class="mallFengAction" method="update"></action>
+		<action name="delete" class="mallFengAction" method="delete"></action>
+		<action name="searchHot" class="mallFengAction" method="searchHot"></action>	
+		<action name="activityType" class="mallFengAction" method="activityType"></action>	
+		
+		
+		
+		
+		
+	</package>
+</struts>

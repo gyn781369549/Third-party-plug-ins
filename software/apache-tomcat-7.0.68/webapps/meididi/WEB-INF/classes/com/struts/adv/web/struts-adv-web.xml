@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="advWeb" namespace="/web/adv" extends="default">
+		<action name="index" class="advAction" method="index"></action>
+		<action name="list" class="advAction" method="list"></action>	
+		<action name="add" class="advAction" method="add"></action>	
+		<action name="update" class="advAction" method="update"></action>
+		<action name="delete" class="advAction" method="delete"></action>
+		
+		<action name="ht_List" class="advAction" method="ht_List">
+			<result name="preview">/WEB-INF/page/console/adv_inf_list.jsp</result>
+			<result name="previewid">/manage/upload/kindeditor/jsp/adv/update_Adv.jsp</result>
+		</action>	
+		
+	</package>
+</struts>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="CommoditySellRecord" namespace="/api/mallSellRecordAction" extends="default">
+		<action name="index" class="mallSellRecordAction" method="index"></action>
+		<action name="list" class="mallSellRecordAction" method="list"></action>	
+		<action name="add" class="mallSellRecordAction" method="add"></action>	
+		<action name="update" class="mallSellRecordAction" method="update"></action>
+		<action name="delete" class="mallSellRecordAction" method="delete"></action>
+		<action name="listView" class="mallSellRecordAction" method="listView">
+			<result name="success">/WEB-INF/page/mall/orders/commodityorders_inf_list.jsp</result>
+			<result name="input">/WEB-INF/page/mall/orders/commodityorders_inf_details.jsp</result>
+		</action>	
+		
+		
+		
+	</package>
+</struts>

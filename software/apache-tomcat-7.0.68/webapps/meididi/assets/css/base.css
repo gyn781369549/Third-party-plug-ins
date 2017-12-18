@@ -1,0 +1,418 @@
+@charset "utf-8";
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+body{font-size:13px!important}
+html{-ms-touch-action:none;overflow-x:hidden;}
+header article section footer nav aside{display:block;}
+body,p,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;border:0;}
+ul, ol{margin:0;padding:0;list-style:none;}
+ul,li{list-style:none;}
+h1, h2, h3, h4, h5, h6{margin-top:0;font-size:100%;line-height: 1.7;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:block;}
+p,i{font-weight:normal;font-style:normal;font-weight:normal;margin:0;padding:0;}
+/* img{-ms-interpolation-mode:bicubic;}windows平台缩放图片时，可能出现图像失真现象。使用IE的专有命令
+img{max-width:100%!important;vertical-align: middle !important;} */
+.tc{text-align:center!important}
+.tt{vertical-align:top;}
+.fl{float:left!important}
+.fr{float:right!important}
+.f18{font-size:18px!important}
+.f16{font-size:16px!important}
+.f14{font-size:14px!important}
+.lh22{line-height:22px!important}
+.c_beige{color:#c1e8df!important}
+.c_green{color:#79d2be!important}
+.c_error{color:#ff8d84!important}
+.c_dark_green{color:#4ab89f}
+.c_claret{color:#a40000}
+.c_peach{color:#ff6975}
+.c_brown{color:#6f4e47}
+.c_pink{color:#ff8d84}
+.c_orange{color:#f39700}
+.c_atrous{color:#3c3c3c}
+.input_green{background:#79d2be!important;border:solid 1px #6ec4b1!important}
+.input_pink{background:#ff8d84!important;border:solid 1px #f47a71!important}
+.input_grey{border:solid 1px #aaa!important;background:#bfbfbf!important;}
+.w107{width:107px!important}
+.w134{width:134px!important}
+.w148{width:148px!important}
+.w240{width:240px!important}
+.w418{width:418px!important}
+.w650{width:630px!important}
+.m0{margin:0!important}
+.ml5{margin-left:5px!important}
+.ml10{margin-left:10px!important}
+.ml20{margin-left:20px!important}
+.ml40{margin-left:40px}
+.ml60{margin-left:60px!important}
+.ml95{margin-left:95px!important}
+.mr20{margin-right:20px!important}
+.mr30{margin-right:30px!important}
+.mt0{margin-top:0!important}
+.pl20{padding-left:20px!important}
+.pt20{padding-top:20px!important}
+.pt30{padding-top:30px!important}
+.pr{position:relative;}
+.t10{top:10px}
+.t-10{top:-10px}
+body, input, button, select, textarea, h1, h2, h3, h4, h5, h6{font-family:/*'Helvetica Neue', 'STHeiti', */'微软雅黑', 'Microsoft YaHei', Helvetica,Arial,sans-serif;}
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+a:focus{outline:none!important;}
+body{color:#3c3c3c!important}
+/*******************login********************/
+.login_bg{background:url(../images/meidd_login_bg.jpg) no-repeat scroll 50% 0;background-size:cover;width:100%;}
+.meidd_login_logo{float:left;display:inline;margin:32px 0 0 60px;text-align:center;}
+.login_logo{}
+.login_text{width:124px;overflow:hidden;margin-top:12px}
+.login_text span{display:block;line-height:20px;font-size:16px;color:#fff;}
+.login_text em{margin:0 5px;font-style:normal}
+
+.meidd_login_box{width:384px;/*height:482px;*/overflow:hidden;border:solid 1px #747474;border-radius:1px;background:rgba(255,255,255,.7);float:right;display:inline;margin:160px 115px 0 0}
+.login_t{height:68px;line-height:68px;color:#ff8d84;padding-left:20px;font-size:18px;font-weight:400;background:#3f3f3c;margin:0}
+.meidd_login_box form{width:286px;margin:40px auto;overflow:hidden}
+.meidd_login_box fieldset{margin:0;padding:0;border:none;}
+.login_frm{overflow:hidden;position:relative;margin:0}
+.login_frm input[type="text"],.login_frm input[type="password"],.login_frm input[type="submit"],.password_cont input[type="password"],.cause_textarea textarea{border:solid 1px #d3d3d3;border-radius:2px;margin:0;height:38px;width:100%;color:#79d2be;padding-left:10px}
+.login_hint{height:40px;line-height:40px;padding-left:12px;color:#bfbfbf;}
+.login_frm input[type="text"]:focus,.login_frm input[type="password"]:focus,.login_frm input[type="submit"]:focus,.password_cont input[type="password"]:focus,.cause_textarea textarea:focus{color:#4c4c4c;border-color:#79d2be;box-shadow:none}
+.login_verify{display:block;}
+.login_verify img{width:90px;height:40px;}
+.login_verify a{color:#3c3c3c}
+.btn_login input[type="submit"]{border-color:#6ec4b1;background:#79d2be;color:#fff}
+.btn_login input[type="submit"]:hover{background:#2ab999;}
+/*********************common*******************/
+.icon_vereist{color:#79d2be;font-size:18px;margin-right:10px;vertical-align:middle;padding-top:3px}
+/*
+mutual
+*/
+.meidd_bg{width:1200px;min-height:768px;overflow:hidden;margin:auto;}
+.meidd_cont{position:relative;width:1200px;background:#f1f1f1;padding-bottom:30px}
+/*
+面包屑
+*/
+.meidd_crumbs{background:#79d2be;height:60px;line-height:60px;box-shadow:0 -1px 5px rgb(204, 204, 204);display:block;padding-left:30px;color:#fff;font-size:14px;width:962px;float:left;}
+.meidd_crumbs strong{font-weight:400;font-size:18px;}
+.meidd_crumbs em{margin:0 5px}
+/*
+page
+*/
+.meidd_page_box{float:right;width:auto;overflow:hidden;margin-right:20px}
+.meidd_page_box ul{margin:0}
+.meidd_page_box li{float:left;color:#c1c1c1;margin-right:10px;}
+.meidd_page_box a{color:#c1c1c1;}
+.meidd_page_box a:hover,.meidd_page_box a:focus,.meidd_page_box li.on a{color:#ff8d84}
+.next{margin-right:0!important}
+/*
+from
+*/
+input[type="button"],input[type='submit']{diaply:inline-block;height:32px;line-height:32px;text-align:center;color:#fff;font-size:13px;background:#79d2be;border-radius:2px;border:solid 1px #6ec4b1;padding:0 8px;}
+/*
+header
+*/
+.meidd_header{overflow:hidden;width:1200px;}
+.left_box{background:rgba(0,0,0,.8);height:60px;float:left;width:238px}
+/*
+footer
+*/
+.meidd_footer{width:1200px;background:#ff8d84;height:40px;/*position:fixed;bottom:0;*/box-shadow: 0 1px 5px rgb(204,204,204);-moz-box-shadow: 0 1px 5px rgb(204,204,204);-webkit-box-shadow: 0 1px 5px rgb(204,204,204);text-align:center;font-size:12px;color:#3c3c3c;line-height:40px}
+/*
+left
+*/
+.left_cont{width:252px;position:relative;float:none;}
+.meidd_left_box{width:238px;min-height:668px;overflow:hidden;float:left;display:inline;background:rgba(0,0,0,.9);}
+.left_logo{width:160px;margin:8px auto 0;}
+/*.left_logo img{width:44px;height:44px;display:inline;float:left;}*/
+.left_logo p{margin:0 0 0 50px;color:#fff;font-size:16px;padding-top:2px}
+.left_logo em{margin:0 5px}
+.administrator_infor{width:170px;margin:15px auto 0;}
+.administrator_pic{width:86px;height:86px;margin:auto}
+.administrator_pic img{width:82px;height:82px;border:solid 2px #79d2be;border-radius:41px;}
+.administrator_txt{text-align:center;color:#fff;font-size:12px}
+.administrator_txt span{display:block}
+.btn_administrator{width:170px;margin:12px auto 0;overflow:hidden}
+.btn_administrator input{float:left;display:inline}
+.btn_administrator input[type="button"]{width:64px;height:20px;text-align:center;line-height:20px;font-size:12px;color:#fff;border-radius:2px;border:none;}
+.input_green{background:#79d2be}
+.input_pink{background:#ff8d84}
+.administrator_menu{margin-top:20px}
+.menus_box{overflow:hidden;}
+.menus_t{background:rgba(255,255,255,.1);height:28px;line-height:28px;margin:0;color:#bfbfbf;font-size:14px;padding-left:30px}
+.menus{overflow:hidden;margin:0}
+.menus li{height:30px;line-height:30px;cursor:pointer; }
+.menus li:hover,.menus li:focus,.menus li.over{background:rgba(121,210,190,.5)}
+.menus li a{color:#fff;display:block;padding-left:85px;text-decoration:none;}
+.btnLeft{background:url(../images/btn_meidd_out.png) no-repeat;width:14px;height:178px;position:absolute;top:245px;right:0;}
+/*
+right
+*/
+.meidd_right_box{position:relative;width:932px;min-height:710px}
+#meiddRight{margin-left:268px;}
+#meiddRight{width:auto;float:none;}
+.inquire_box{padding:16px 0 0 0;overflow:hidden;background-color: #f1f1f1;}
+.inquire_box2{padding:16px 0 0 0;background-color: #f1f1f1;}
+.keyword_box{width:260px;height:32px;border:solid 1px #b6b6b6;border-radius:2px;display:inline-block;margin:0 20px 10px 0}
+.ico_search{background:url(../images/ico_meidd.png) no-repeat;width:16px;height:16px;display:inline-block;position:relative;top:5px;left:10px}
+.keyword_box input[type="text"]{background:none;border:none;box-shadow:none;height:28px;line-height:28px;border-radius:0;padding:0;font-size:13px;color:#b6b6b6;margin:0;position:relative;left:26px}
+.keyword_box input[type="text"]:hover,.keyword_box input[type="text"]:focus{border:none;box-shadow:none}
+.meidd_select,.time_box input[type="text"]{display:inline-block;width:92px;height:32px;border:solid 1px #b6b6b6;border-radius:2px;margin-right: 10px;padding:0;font-size:13px;color:#3c3c3c}
+.meidd_select{margin-bottom:0;width:100px !important;}
+.btn_inquire{diaply:inline-block;width:120px!important;height:32px;line-height:32px;text-align:center;color:#fff;font-size:13px;background:#79d2be;border-radius:2px;border:solid 1px #6ec4b1;margin:0 0 0 10px}
+.btn_inquire:hover,.btn_inquire:focus{background-color:#fff;border-color:#b6b6b6;color:#3c3c3c}
+.inquire_list{/* margin:35px 30px 0 0; */padding-bottom:15px;overflow:hidden;background:#fff}
+/*
+医院账号列表
+*/
+.inquire_list .table{margin-bottom:40px;}
+.inquire_list th,.inquire_list td{border-bottom:solid 1px #f1f1f1}
+.inquire_list th{background:#fbfbfb;color:#707070;font-weight:400!important}
+.operation_box{overflow:hidden;position: relative;}
+.operation_link{display:inline-block;margin:0;width:70px}
+.operation_link a{display:block;width:100%;font-size:12px;color:#b0b0b0;cursor:pointer;}
+.operation_link a em{background:url(../images/ico_meidd.png) no-repeat;display:inline-block;width:13px;height:12px;vertical-align:middle;margin-right:3px}
+.operation_link a:hover,.operation_link a:focus{color:#79d2be}
+.operation_link a:hover em.look_details_ico,.operation_link a:focus em.look_details_ico{background-position:0 -313px!important}
+.look_details_ico{background-position:0 -16px!important}
+.code_reset_ico{background-position:2px -28px!important}
+.enroll_enroll_ico{background-position:0 -40px!important}
+.wrap{display:inline-block}
+.chk_4{display:none;}
+.chk_4 + label {padding:5px 0 5px 10px;border-radius:10px;display:inline-block;position:relative;background:#f1f1f1;width:60px;height:22px;}
+.chk_1 + label{width:70px;}
+.chk_4 + label:before{content:' ';position:absolute;background:#fff;top:2px;z-index:0;left:2px;width:18px;color: #FFF;height:18px;border-radius:9px;}
+.chk_4 + label:after{content:'无效';font-size:12px;position:absolute;left:6px;color:#707070;top:2px;border-radius:100px;}
+.chk_1 + label:after{content:'未完成';}
+.chk_4 + label:after{left:25px;}
+.chk_4:checked + label:after{content:'有效';left:10px;color:#3c3c3c}
+.chk_1:checked + label:after{content:'已完成'}
+.chk_4:checked + label:before{content:' ';position:absolute;z-index:0;left:40px;background:#79d2be}
+.chk_1:checked + label::before{left:49px;}
+#checkbox_d2 + label:after, #checkbox_d2 + label:before,#checkbox_d3 + label:after, #checkbox_d3 + label:before,#checkbox_d4 + label:after, #checkbox_d4 + label:before,#checkbox_d5 + label:after, #checkbox_d5 + label:before{-webkit-transition:all 0.1s ease-in;transition:all 0.1s ease-in;}
+.inquire_list .table tbody tr{border-left:solid 2px #fff;}
+.inquire_list .table tbody tr:hover,.inquire_list .table tbody tr:focus{border-left-color:#ff8d84}
+/*
+医院账号信息
+*/
+.account_infor{min-height:450px;height:auto;margin:0 30px 0 0}
+.account_infor tr:hover,.account_infor tr:focus,.account_infor td,.account_infor tr{border:none!important}
+.account_infor th{width:100%;padding-left:22px!important;}
+.account_infor td{padding:3px 8px!important}
+.account_infor td:first-child{color:#707070;padding-left:22px!important}
+.account_pic{overflow:hidden;margin:20px 0 0 -10px}
+.account_pic li{float:left;display:inline;width:210px;margin:0 10px;position:relative;text-align:center;}
+.account_pic li img{width:208px;height:148px;border:solid 1px #cacaca;}
+.account_bigpic{background:url(../images/ico_meidd.png) no-repeat 0 -53px;display:block;width:40px;height:40px;text-indent:-9999px;position:absolute;left:85px;top:55px;cursor:pointer}
+.btn_account_down{margin-top:10px;display:inline-block;width:64px;height:20px;border:solid 1px #6ec4b1;border-radius:2px;background:#fff;line-height:20px;color:#79d2be;font-size:12px}
+.btn_return{margin:20px 0 0 30px;}
+.btn_return input[type="submit"],.btn_return input[type="button"]{width:204px;height:38px;color:#fff;border-radius:2px}
+/*
+业务列表
+*/
+.poc{background:none}
+.poc_list_box{overflow:hidden;margin:0}
+.poc_list_box li{float:left;width:240px;overflow:hidden;display:inline;margin:0 20px 20px 0;background:#fff;color:#707070;}
+.poc_list_box li:hover{background:#a9e6d8;color:#fff}
+.poc_list_box li:hover em{color:#fff}
+.poc_list_box li:hover h6{background:#79d2be;border-bottom-color:#fff;}
+.poc_list_box li:hover h6 a{color:#fff}
+.poc_list_box h6{height:auto;line-height:34px;background:#fbfbfb;border-bottom:solid 1px #f1f1f1;padding-left:23px;font-size:16px;margin:0;font-weight:400}
+.poc_list_box h6 a{color:#79d2be;}
+.poc_cont{padding:20px 0 0 23px;overflow:hidden;min-height:65px;}
+.poc_cont em{color:#3c3c3c;padding-left:20px;display:inline-block}
+.poc > .meidd_page_box{margin-right:140px}
+/*
+医院咨询师列表
+*/
+.poc_name{background:#c3c3c3;color:#fff;font-size:16px;height:34px;line-height:34px;padding-left:8px;margin:0}
+.look_details{background:url(../images/ico_meidd.png) no-repeat 5px -309px;display:inline-block;width:78px;height:20px;line-height:20px;text-align:center;color:#79d2be;font-size:12px;border:solid 1px #79d2be;border-radius:2px;padding-left:15px}
+.look_details:hover,.look_details:focus{border-color:#b0b0b0;color:#b0b0b0;background-position:5px -422px}
+.poc_name span{margin-right:18px;}
+.poc_name span:last-child{margin-right:0}
+.poc_right_form{float:right;margin:0 40px 0 0;top:-2px!important}
+.poc_right_form > .meidd_select{height:24px;border:solid 1px #fff;margin:-2px 20px 0 0}
+.poc_right_form > .btn_inquire{width:94px!important;height:24px;;line-height:24px;margin:0 10px 0 0}
+.exclusive_ueer{position:relative;}
+.user_infor,.uesr_all{margin:0;}
+.user_infor{display:block;width:74%;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow:hidden;float:left}
+.user_infor a{display:inline-block;color:#3c3c3c;margin-right:10px;}
+.user_infor a:hover{color:#79d2be;text-decoration:none;}
+.look_more{background:url(../images/ico_meidd.png) no-repeat 0 -336px;display:inline-block;font-size:12px;color:#79d2be;cursor:pointer;padding-left:15px;font-style:normal}
+.uesr_all{display:none;position:absolute;border:solid 1px #f1f1f1;background:#fff;top:-9px;left:-5px;z-index:1}
+.uesr_all a{color:#3c3c3c;display:inline-block;line-height:20px;padding:8px 5px;border-bottom:dotted 1px #f3f3f3}
+/*
+客户端申请
+*/
+.summary_box{overflow:hidden;}
+.summary{line-height:18px;}
+.summary_all{border:solid 1px #b6b6b6;height:60px;overflow-x:hidden;overflow-y:auto;border-radius:2px;display:none}
+.btn_down{background:url(../images/ico_meidd.png) no-repeat 0 -363px;width:10px;height:6px;cursor:pointer;display:block;margin:auto;display:none}
+.summary_man{display:block;}
+.summary_man em{display:block;color:#3c3c3c;font-style:normal}
+.summary_a{display:inline-block;width:60px;height:24px;line-height:24px;text-align:center;color:#fff;font-size:12px;border-radius:2px;margin-top:10px}
+/*
+基础信息
+*/
+.tabBox{padding-top:30px;overflow:hidden;margin-right:30px}
+.tabNav{height:34px;margin:0;background-color:rgba(112,112,112,.4)}
+.tabNav li{float:left;display:inline;background-color:rgba(112,112,112,.4);height:34px;font-size:16px;color:#fff;width:120px;text-align:center;line-height:34px;cursor:pointer}
+.tabNav li a{color:#fff}
+.tabNav li a:hover{text-decoration:none}
+.tabNav li.now{background:#79d2be;cursor:default}
+.tabCont{overflow:hidden;background:#fff}
+.head_pic{margin:20px 20px 0;float:left;}
+.head_pic img{width:116px;height:116px;margin:auto;border-radius:2px;display:block;margin-bottom:20px}
+.load_head,.uploadify-button{border-radius:2px;width:116px !important;height:22px !important;line-height:22px !important;text-align:center;color:#fff;background:rgba(121,210,190,.7);display:block;margin-bottom:10px}
+.load_head:hover,.load_head:focus,.uploadify-button:hover,.uploadify-button:focus,{color:#fff!important;background:rgba(121,210,190,.4)}
+.basis_cont{margin:8px 0 0 156px;}
+.basis_cont ul{margin:0}
+.basis_cont li{line-height:40px;margin-bottom:10px;overflow:hidden;}
+.basis_name{display:inline-block;width:90px;margin-right:5px;float:left}
+.basis_name em{display:inline-block;width:20px;color:#79d2be}
+.basis_cont li p{display:inline-block;margin:0;float:left}
+.basis_cont input[type="text"]{height:40px;color:#79d2be;border-color:#d3d3d3;margin:0;float:left;}
+.basis_cont input[type="text"]:hover,.basis_cont input[type="text"]:focus,.basis_cont textarea:hover,.basis_cont textarea:focus{box-shadow:none;border-color:#79d2be;color:#4c4c4c;}
+.basis_cont li p strong{width:148px;display:inline-block;font-weight:normal;float:left}
+.basis_cont select{border-color:#d3d3d3}
+.basis_cont textarea{height:182px;overflow-x:hidden;overfolw-y:auto;border-color:#d3d3d3;color:#79d2be}
+.basis_cont li p mark{background:none;display:block}
+.uploading_img_dl{overflow:hidden;position:relative;left:-74px;margin-bottom:10px}
+.uploading_img_dl dd{float:left;width:120px;display:inline;margin:0 10px 0 0}
+.uploading_img_dl dd img{width:120px;height:90px;}
+.img_loading{width:120px;height:22px;line-height:22px;text-align:center;color:#fff;background:rgba(121,210,190,.7);margin-top:10px;display:inline-block}
+.btn_tab{margin-top:60px;margin-bottom: 10px;}
+/*
+标签信息
+*/
+.label_infor{padding:20px 20px 20px 0;overflow:hidden}
+.label_box{margin:0;min-height:180px}
+.label_box li{margin-bottom: 10px;float:left;display:inline;margin-left:20px;padding:0 8px;min-width:96px;height:34px;line-height:34px;background:#79d2be;border-radius:2px;text-align:center;position:relative;}
+.ico_label_del{width:18px;height:18px;background:#ff8d84;border-radius:9px;text-align:center;color:#fff;line-height:18px;color:#fff;display:inline-block;position:absolute;right:2px;top:-9px;cursor:pointer;display:none}
+.label_box li a{color:#fff;font-size:14px;}
+.label_box li:hover em{display:block}
+.label_box li.label_add{background:none;border:dashed 1px #3c3c3c;}
+.label_box li.label_add a{color:#3c3c3c}
+.label_all{padding:0 20px 0 0;overflow:hidden;}
+.label_all h6{;font-size:13px;margin:0 0 10px 20px;font-weight:normal}
+.label_all h6 span{font-size:11px;}
+.label_list{width:700px;min-height:108px;overflow:hidden}
+.label_list li{margin-bottom:20px;background:none;border:solid 1px #b6b6b6}
+.label_list li a{color:#3c3c3c}
+.label_list li.now{background:#79d2be;border-color:#6ec4b1}
+.label_list li.now a{color:#fff}
+.label_cut{margin:0 0 0 20px;font-size:14px;line-height:40px;width:680px;}
+.label_cut a{color:#79d2be;display:inline-block}
+/*
+医疗团队
+*/
+.dmat_box{overflow:hidden;padding:0 20px;}
+.dmat_team_intro{padding:20px 0 0;}
+.dmat_team_intro:first-child{border-bottom:solid 1px rgba(0,0,0,.1);}
+.dmat_team_intro h1{margin:0;font-size:14px;line-height:16px;font-weight:normal;}
+.intro_box{overflow:hidden;padding:20px 0 10px;text-indent:25px}
+.dmat_team_intro form{margin:0}
+.edit{width:100%;height:223px;overflow-x:hidden;overflow-y:auto;line-height:26px;color:#bfbfbf;border-color:#d3d3d3;margin:20px 0 0;}
+.edit:hover,.edit:focus{border-color:#79d2be;box-shadow:none;transition:none;color:#3c3c3c}
+.elite_infor{overflow:hidden;margin:0}
+.elite_infor li{width:46%;float:left;display:inline;margin-bottom:20px}
+.elite_infor li:nth-child(odd){margin-right:20px}
+.elite_pic_intro{margin:20px 0;overflow:hidden}
+.elite_pic{margin:0;width:124px;float:left}
+.elite_pic img{width:124px;height:124px;display:inline-block;border-radius:62px;margin-bottom:20px}
+.elite_load_img{display:block;margin-bottom:20px;color:#6f4e47;text-align:center}
+.elite_load_img .load_head{width:124px}
+.elite_zishu{margin:0 0 0 144px;}
+.elite_jianjie,.elite_name input[type="text"],.found_right_cont input[type="text"],.btn_elite_del input[type="button"]{border-color:#d3d3d3;color:#bfbfbf}
+.elite_jianjie:hover,.elite_jianjie:focus,.elite_name input[type="text"]:hover,.elite_name input[type="text"]:focus,.found_right_cont input[type="text"]:hover,.found_right_cont input[type="text"]:focus,.btn_elite_del input[type="button"]:hover,.btn_elite_del input[type="button"]:focus{border-color:#79d2be;box-shadow:none;transition:none;color:#3c3c3c}
+.elite_jianjie{width:100%;height:172px;overflow-x:hidden;overflow-y:auto;display:inline;color:#3c3c3c}
+.elite_name{margin-bottom:20px;}
+.elite_name input[type="text"]{height:34px;width:100%;margin:0}
+.btn_elite_del{margin:0;text-align:center;}
+.btn_elite_del input[type="button"]{width:164px;height:40px;border-radius:2px;color:#fff;border-color:#6ec4b1}
+.btn_elite_del input[type="button"]:hover,.btn_elite_del input[type="button"]:focus{color:#fff;}
+.ico_elite_add{border:dashed 1px #b6b6b6;height:226px;text-align:center;line-height:226px;}
+.ico_elite_add a{display:block;position:relative;color:#3c3c3c}
+.ico_elite_add a img{width:120px;height:120px}
+.ico_elite_add a span{position:absolute;left:166px;bottom:-85px}
+/*医院账号管理-业务日志15-11-20*/
+.poc_name img{position:relative;top:-3px}
+/*时间区域15-11-20*/
+.time_box{display:inline-block;margin:0;position:relative}
+.time_box input[type="text"]{box-shadow:none;transition:none;padding:4px 6px;margin:0 10px 0 0;height: 32px}
+.time_box input[type="text"]:hover,.time_box input[type="text"]:focus{box-shadow:none;transition:none;border-color:#79d2b3}
+.test-style,.time-text{display:inline-block;vertical-align:middle}
+.time-text{margin-right:10px}
+/*项目管理15-11-23*/
+.project_infor{min-height:140px;margin-bottom:10px;position: relative;}
+.project_infor .table{margin:0}
+.project_pic{overflow:hidden}
+.project_pic img,.project_img img{border:solid 1px #cacaca;overflow:hidden;font-size:0;line-height:0}
+.project_pic img{width:108px;height:108px;}
+.space_mark{margin:0 5px}
+.project_intro{width:700px}
+.project_intro p{margin:0}
+.project_img img{width:224px;height:120px;margin:0 5px 10px 0}
+.repForm{margin:0;overflow:hidden;width:700px}
+.repForm span{float:left;display:inline;cursor:pointer;margin:5px 5px 5px 0;line-height:16px;width:135px;background:url(../images/ico_meidd.png) no-repeat 0 -386px;padding-left:24px}
+.repForm span.checked{background:url(../images/ico_meidd.png) no-repeat 0 -406px;}
+.start_box,.indent_infor,.moneDiv{overflow:hidden}
+/*订单管理15-11-23*/
+.indent_infor{width:700px}
+.picMain{background:#fbfbfb;padding:10px;margin-top:20px;overflow:hidden}
+.picMain .cp{float:left;margin:0}
+.picMain img{border:solid 1px #cacaca;width:108px;height:108px;font-size:0;line-height:0;overflow:hidden}
+.picT{padding-left:118px}
+.picT p{margin:0}
+.picT cite{color:#3c3c3c}
+.moneyP{margin:20px 0 0;}
+.yuanjia{font-style:normal;margin-right:40px;text-decoration:line-through}
+.moneDiv{margin:5px 0 15px}
+.moneyS{margin:0;display:inline-block;width:49%}
+.indent_zt{overflow:hidden;padding:20px 0 0 22px}
+.indent_zt dl{overflow:hidden}
+.indent_zt dt{float:left;display:inline;margin-right:20px;width:18px;height:18px;border-radius:9px;color:#fff;text-align:center;line-height:18px;font-weight:normal}
+.c_dark_green dt{background:#4ab89f}
+.c_green dt{background:#79d2be}
+.c_orange dt{background:#f39700}
+.c_peach dt{background:#ff6975}
+.c_error dt{background:#ff8d84}
+.c_brown dt{background:#6f4e47}
+.indent_zt dd{float:left;display:inline;overflow:hidden}
+.indent_zt dd cite{margin-bottom:10px;display:block;font-size:16px}
+.indent_zt dd p{color:#707070;margin:0;overflow:hidden}
+.indent_zt dd p span{float:left;display:inline;width:100px;margin-right:10px}
+.indent_zt dd p time{width:610px;float:left;display:inline}
+.appeal_p{overflow:hidden;margin-top:10px;width:700px}
+.indent_zt dd .appeal_p p{color:#ff8d84;}
+.table tbody + tbody{border:none!important}
+
+
+/*
+add by zhaitao
+*/
+.zt_switch_shade{cursor: pointer;height: 30px;position: absolute;right: 0;top: 0;width: 70px;z-index: 50;}
+#d11{height: 33px; line-height: 33px; width: 90px; margin-bottom: 0px;}
+.error span{color:#FF0000;line-height:40px;}
+
+.zt_basic_btn .uploadIcon, .uploadify{background: none !important}
+.zengp {
+    color: #ff8d84;
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+}
+.clickb {
+    background: #79d2be none repeat scroll 0 0;
+    border: 1px solid #6ec4b1;
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    height: 22px;
+    line-height: 20px;
+    margin: 10px 0;
+    min-width: 80px;
+    padding: 0 5px;
+    text-align: center;
+}
+table th, table td{word-wrap:break-word;word-break:break-all;}

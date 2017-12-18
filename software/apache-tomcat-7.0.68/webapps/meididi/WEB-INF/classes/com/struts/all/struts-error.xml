@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+
+		<default-action-ref name="notFound"></default-action-ref>
+		<global-results>
+			<result name="error">/WEB-INF/page/not_found.jsp</result>
+		</global-results>
+
+		<action name="notFound" class="notFoundErrerAction">
+			<result name="success">/WEB-INF/page/log.jsp</result>
+			
+		</action>
+
+	</package>
+
+
+	<package name="api-default" namespace="/" extends="default">
+
+		<global-results>
+			<result name="exception" type="chain">ex</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="exception" />
+		</global-exception-mappings>
+
+		<action name="ex" class="exceptionHandlerAction">
+
+		</action>
+	</package>
+
+</struts>

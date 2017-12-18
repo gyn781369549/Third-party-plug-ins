@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache name="CacheManager">
+	<!-- 
+		maxElementsInMemory:缓存中最大允许创建的对象数
+	 	eternal:缓存中对象是否为永久的，如果是，超时设置将被忽略，对象从不过期 
+		timeToIdleSeconds:缓存数据钝化时间(设置对象在它过期之前的空闲时间) 
+		timeToLiveSeconds:缓存数据的生存时间(设置对象在它过期之前的生存时间) 
+		overflowToDisk:内存不足时，是否启用磁盘缓存 
+		clearOnFlush:内存数量最大时是否清除 -->
+	<diskStore path="java.io.tmpdir" />
+	<!--缓存成员发现工厂，管理cacheManager对象 -->
+	<cacheManagerPeerProviderFactory
+		class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+		properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1, multicastGroupPort=4446, 
+        multicastPacketTimeToLive=32" />
+
+	<!--针对cacheManager事件的监听，这里只介绍properties中的hostName、port属性，这里我忽略了hostName的配置，
+	查看他们的源码发现如果不填写hostName，他们就会通过JDK中的InterAddress.getLocalHost().getHostAddress()获取本机的ip地址，
+	所以在这里我没有填写hostName的配置，
+	方便部署到多台硬件服务器上，但是如果一台已经服务器上有多个网卡，
+	这里一定要指定hostName的IP，原因参考InterAddress源码。
+	post这里我指定的时40001，如果这里不填写port配置，
+	ehcache就会通过ServerSocket的getLocalPort获取一个本机没有被占用的端口 -->
+	<cacheManagerPeerListenerFactory
+		class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
+		properties="port=40001" />
+	<!-- <diskStore path="E:/CacheTmpDir" /> -->
+	<defaultCache maxElementsInMemory="10000" eternal="false"
+		overflowToDisk="true" timeToIdleSeconds="30000" timeToLiveSeconds="60000"
+		diskPersistent="false" diskExpiryThreadIntervalSeconds="120" />
+
+</ehcache>

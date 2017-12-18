@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+
+
+	<!-- 默认的视图主题 -->
+	<constant name="struts.action.extension" value=",action"/>
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.custom.i18n.resources" value="meididi" />
+	<!--浏览器是否缓存,开发时设置为false	-->
+	<constant name="struts.serve.static.browserCache" value="true" />
+	<!--修改struts配置文件时是否需要重新部署,开发时设置为false	-->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.convention.classes.reload" value="false" />
+	<constant name="struts.multipart.maxSize" value="614572800" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+
+
+	<!--是否打印更详细的错误信息-->
+	<constant name="struts.devMode" value="false" />
+	
+
+	
+	<!-- web -->
+	<include file="com/struts/all/struts-console.xml" />
+	<include file="com/struts/all/struts-hospital.xml" />
+	<include file="com/struts/all/struts-error.xml" />
+	<include file="com/struts/all/struts-consult.xml" />
+
+	<include file="com/struts/adv/web/struts-adv-web.xml" />
+	
+	<include file="com/struts/mall/web/struts-mall-commodity-web.xml" />
+	<include file="com/struts/mall/web/struts-mall-orders-web.xml" />
+	<include file="com/struts/mall/web/struts-mall-feng-web.xml" />
+<include file="com/struts/mall/web/struts-mall-sellrecord-web.xml" />
+	<!-- api -->
+	<include file="com/struts/all/struts-api.xml" />
+	
+	<include file="com/struts/adv/api/struts-adv-api.xml" />
+	
+	<include file="com/struts/forum/api/struts-forum-api.xml" />
+	
+	<include file="com/struts/mall/api/struts-mall-address-api.xml" />
+	<include file="com/struts/mall/api/struts-mall-commodity-api.xml" />
+	<include file="com/struts/mall/api/struts-mall-orders-api.xml" />
+	<include file="com/struts/mall/api/struts-mall-sellrecord-api.xml" />
+	<include file="com/struts/mall/api/struts-mall-shoppingcart-api.xml" />
+	<include file="com/struts/mall/api/struts-mall-feng-api.xml" />
+	
+	<!-- /upload/* -->
+	<constant name="struts.action.excludePattern" value="/assets/*"></constant>
+	
+		<package name="up" namespace="/" extends="json-default">
+		<action name="up_*" class="imgAction" method="{1}">
+		</action>
+		<action name="preview" class="imgAction" method="preview">
+			<result name="preview">/WEB-INF/page/preview.jsp</result>
+		</action>
+		<action name="download" class="imgAction" method="download"></action>
+		<!-- <action name="uploadnull" class="imgAction" method="nullImage">
+		</action>
+		<action name="upload" class="imgAction" method="nullImage">
+		</action>
+		 -->
+	</package>
+	
+	
+</struts>

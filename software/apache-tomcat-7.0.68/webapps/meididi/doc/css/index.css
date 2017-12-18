@@ -1,0 +1,233 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #f3f3f3;
+}
+
+.header{
+  position: relative; 
+  min-height: 50px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  vertical-align: middle;
+  z-index: 10;
+  background-color: #fff;
+}
+
+
+.cap{
+	display: block;
+	width: 30px;
+	height: 30px;
+	background-size: cover;
+	background-position: left top;
+	background-repeat: no-repeat;
+	position: relative;
+	
+}
+
+.news{
+	background-image: url(../img/i_05.png);
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	overflow: hidden;
+}
+
+.search{
+	background-image: url(../img/i_03.png);
+	position: absolute;
+	right: 60px;
+	top: 10px;
+	overflow: hidden;
+}
+
+.mynews{
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #CA3C3C;
+	border-radius: 16px;
+	position: absolute;
+	top:2px;
+	right:12px;
+	color: #fff;
+	text-align: center;
+}
+
+.logo{
+	display: block;
+	width: 121px;
+	height: 30px;
+	background: url(../img/s_08.png) no-repeat left top;
+	background-size: cover;
+	position: absolute;
+	left:10px;
+	top:10px;
+}
+
+/*新品上线*/
+.con{
+	position: relative;
+	width: 100%;
+	
+}
+
+.newsales{
+	position: relative;
+	width: 100%;
+	overflow: auto;
+	background-color: #fff;
+	margin-top: 5px;
+}
+.cate {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	z-index: 2;
+	width: 64px;
+	height: 25px;
+}
+
+.newsales .product_img img,.desk .product_img img{
+	width: 100%;
+	height: 180px;
+}
+
+.media{
+	padding-left: 10px;
+	/*margin-bottom: 15px;*/
+	border-bottom: 1px solid #EDEDED;
+}
+.media-heading{
+	color: #555555;
+}
+
+.media-body p{
+	color: #9A999F;
+}
+
+.operate{
+	padding:10px;
+}
+
+.operate span{
+	display: block;
+	width: 33.3333333333%;
+	float: left;
+	text-align: center;
+	color: #848D94;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.operate span font{
+	padding: 0 10px;
+	font-size: 17px;
+}
+/*办公桌*/
+.desk{
+	position: relative;
+	width: 100%;
+	overflow: auto;
+	background-color: #fff;
+	margin-top: 5px;
+	/*margin-bottom: 60px;*/
+}
+
+/*底部导航*/
+.foo{
+	position: relative;
+	width: 100%;
+	height:140px;
+	background-color: #fff;
+}
+
+.foo ul{
+		list-style: none;
+		width: 100%; 
+		position: relative;
+		padding: 0;
+	}
+
+.foo ul li {
+		list-style: none;
+		display: block;
+		width: 20%;
+		text-align: center;
+		float: left;
+		background-position: center;  
+		background-repeat: no-repeat;
+		padding-top: 10px;
+		color: #b9b9b9;
+		background-size: inherit;
+		/*padding: 0 2px;*/
+	}
+.foo ul li span{
+	display: block;
+}
+
+.foo h4{
+	margin: 0;
+    padding: 10px 0 5px 10px;
+    margin-top: 10px;
+    background: url(../img/d_22.png) no-repeat 99% 10.3px;
+    border-bottom: 1px solid #e2e2e2;
+    background-size:10px ;
+}
+
+.foo h4 small{
+	float: right;
+    padding-right: 20px;
+    padding-top: 1px;
+    font-size: 14px; 
+}
+/*.on{
+	background-color: #398439;
+}*/
+
+.media-body .time{
+	color: #DFDFDF;
+}
+
+.my_receive{
+	width: 100%;
+	/*height: 30px;
+	line-height: 30px;*/
+	background: #fff;
+	border-bottom: 1px solid #e2e2e2;
+	overflow: hidden;
+}
+
+.my_receive span{
+	display: block;
+	width: 20%;
+	float: left;
+	padding: 10px;
+	background: #fff;
+}
+
+.my_receive input{
+	width: 80%;
+}
+
+.doc_info{
+	background: #fff;
+	/*padding:  10px 10px 0 10px;*/
+	padding-top: 10px;
+	margin-top: 220px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

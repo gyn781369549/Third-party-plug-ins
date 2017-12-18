@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+	<persistence-unit name="meididi" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<!-- 本地	测试 正式通用 Game over-->
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/meididi?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true"/>
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="root" />
+		
+			<!-- 测试服 		
+			<property name="hibernate.connection.url" value="jdbc:mysql://101.201.82.9:3306/meididi?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true"/>
+			<property name="hibernate.connection.username" value="mddmanager" />
+			<property name="hibernate.connection.password" value="mdd201722245" />
+-->
+		<!-- 正式服	
+			<property name="hibernate.connection.url" value="jdbc:mysql://101.201.40.170:3306/meididi?useUnicode=true&amp;characterEncoding=utf8&amp;autoReconnect=true"/>		
+			<property name="hibernate.connection.username" value="mddmanager" />
+			<property name="hibernate.connection.password" value="mdd201722245" />
+	-->
+			<property name="hibernate.max_fetch_depth" value="3" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.jdbc.fetch_size" value="10" />
+			<property name="hibernate.jdbc.batch_size" value="5" />
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="true" />
+			
+			<!-- 测试解决长连接失效后的bug -->
+			<property name="hibernate.maxIdleTime" value="60"/>
+			<property name="hibernate.testConnectionOnCheckout" value="true" />
+        	<property name="hibernate.idleConnectionTestPeriod" value="60" />
+        	<property name="hibernate.idle_test_period" value="120" />
+		</properties>
+	</persistence-unit>
+</persistence>
+
+

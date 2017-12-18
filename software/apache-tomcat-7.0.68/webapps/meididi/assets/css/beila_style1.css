@@ -1,0 +1,246 @@
+@charset "utf-8";
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+body{font-size:62.5%}
+html{-ms-touch-action:none;overflow-x:hidden;}
+header article section footer nav aside{display:block;}
+body,p,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;border:0;}
+ul, ol{margin:0;padding:0;list-style:none;}
+ul,li{list-style:none;}
+h1, h2, h3, h4, h5, h6{margin-top:0;font-size:100%;line-height: 1.7;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:block;}
+p,i{font-weight:normal;font-style:normal;font-weight:normal;margin:0;padding:0;}
+img{-ms-interpolation-mode:bicubic;}/*windows平台缩放图片时，可能出现图像失真现象。使用IE的专有命令*/
+img{max-width:100%!important;vertical-align: middle !important;}
+.pat1{padding-top:1em}
+.tc{text-align:center!important}
+body, input, button, select, textarea, h1, h2, h3, h4, h5, h6{font-family:/*'Helvetica Neue', 'STHeiti',*/ '微软雅黑', 'Microsoft YaHei', Helvetica,Arial,sans-serif;}
+a{text-decoration:none;}
+a:hover{text-decoration: none;}
+a:focus{outline: none !important;}
+body{color:#fff}
+.fs26{font-size:1.1em!important}
+.f24{font-size:24px}
+.f34{font-size:34px}
+/******************内容****************/
+.contentBox{width:26.67em;margin:auto;background:url(../images/bg1.jpg) no-repeat 0 0,url(../images/bg2.jpg) repeat-y 0 100%;padding:0 .833em .833em;overflow:hidden}
+/*head*/
+.beila_header,.beila_kuang,.intro_box{background:rgba(255,255,255,.1);}
+.beila_header{margin-top:.833em;}
+.beila_intro{background:rgba(0,0,0,.2);min-height:8em;text-align:center;padding:.9em 0 1.25em}
+.ico_head{overflow:hidden;position:relative;width:4.1667em;height:4.1667em;margin:auto}
+.ico_head img{width:4em;height:4em;position:absolute;top:.08333em;left:.08333em;z-index:2}
+.ico_head img.img_dengj{width:4.1667em;height:4.1667em;top:0;left:0;z-index:1}
+.beila_intro a{display:block;color:#fff;font-family:宋体;font-size:1.3em;margin-top:.3em;}
+.levels{background:#f5f5f5;border-radius:.833em;color:#79d2be;font-size:.75em;font-style:normal;text-align:center;width:2.75em;height:1.083em;display:inline-block;line-height:1.083em;margin-left:1em;font-family:Arial}
+.beila_txt{line-height:1.8em;padding:1em}
+.img_grade img{width:6.04167em;height:.833em}
+/*mian*/
+.beila_kuang{margin-top:.4167em;padding:0 0 .8em 1em;overflow:hidden}
+.beila_title{overflow:hidden;line-height:2.67em;font-size:1.25em;font-weight:500;color:#5b2f22}
+.beila_title img{float:right;display:inline;margin-right:.8em;width:2.733em;height:2.733em}
+.beila_kuang blockquote{margin:0;line-height:1.8em;padding-right:.4167em}
+.ym_pic{padding:0 1em;width:93%;height:300px;background-color:#fff;margin:10px auto;text-align:center;line-height:300px;font-size:0}
+.ym_pic img{height:300px}
+
+.plastic_item{margin-left:-.5em;overflow:hidden}
+.plastic_item a{float:left;display:inline-block;border:solid .1em rgba(120,210,190,.5);border-radius:20px;color:#fff;word-spacing:.4em;text-align:center; letter-spacing:.05em;padding:0 1.35em;line-height:1.8em;margin:0 .996em .8em;font-size:.83em}
+
+.zs_team{overflow:hidden;/*margin-left:-1em*/}
+.zs_team li{float:left;margin:0 0 .5em 1em;width:20.5%;text-align:center;}
+.zs_team a{color:#fff;display:block}
+.zs_team img{width:4.3em;height:4.3em;/*background:url(../images/img_tis.png) no-repeat 0 0 /contain;*/border-radius:52px}
+.zs_team a span{line-height:1.667em;display:block}
+
+.intro_box{overflow:hidden;margin-top:.6em;padding-bottom:.6em}
+.jig_jies{font-weight:500;color:#5b2f22;font-size:1.25em;padding-left:.8em;line-height:2.467em;/*border-bottom:solid 2px rgba(245,245,245,.2)*/}
+.beila_jig_pic{padding:0 1em;width:93%;height:300px;background-color:#fff;margin:10px auto;text-align:center;line-height:300px;font-size:0}
+.beila_jig_pic img{height:300px}
+.intro_box blockquote{margin:.5em .5em 0 1em;line-height:1.8em}
+
+.nedic{text-align:center;margin-top:.83em}
+.nedic_img{overflow:hidden;}
+.nedic_img img{width:4.2em;height:4.2em;border-radius:2.1em}
+
+.intro_box .beila_kuang{padding-top:.833em}
+/*收藏项目详情*/
+.box{padding:0 20px 20px;background:url(../images/bg1.jpg) no-repeat 0 0,url(../images/bg2.jpg) repeat-y 0 100%;overflow:hidden}
+.figure_box{overflow:hidden;width:640px;height:350px;margin:20px auto 0;background-color:#fff}
+.f_ifocus_lis{height:350px;/*position:relative;top:0;left:0;z-index:10*/}
+.slides_container{/*width:640px;*/height:350px;/*overflow:hidden;position:relative*/}
+.slides_container img{max-width:640px;height:350px;display:block;margin:auto}
+.pagination{width:100%;position:absolute;left:40%;bottom:60px;z-index:30}
+.pagination li{margin:0 8px;float:left}
+.pagination li a{width:10px;height:10px;background:rgba(255,255,255,.3);border-radius:5px;display:inline-block;overflow:hidden;cursor:pointer;text-indent:-9999px}
+.pagination li.current a{background:rgba(255,255,255,.7)}
+.ftext{color:#fff;height:50px;line-height:50px;padding-left:20px;background-color:rgba(0,0,0,.2);width:100%}
+.shouc_box{overflow:hidden;margin-top:10px;background:rgba(255,255,255,.1);padding:0 20px 20px;}
+.shouc_box cite{margin-top:36px;color:#ff8d84;font-size:30px;font-style:normal;line-height:48px;display:block}
+.shouc_box cite i,.shouc_box cite em{font-style:normal}
+.guanf_text{margin-top:30px;font-size:28px;line-height:48px}
+.shouc_box h3{color:#5b2f22;font-weight:normal;font-size:30px;line-height:48px;margin:20px 0 24px}
+.fuwulc{overflow:hidden;color:#fff;width:145px;float:left;display:inline}
+.fuwulc dt{background:url(../images/fuwu_bg1-1.png) no-repeat 0 0 /cover;height:46px;color:#79d2be;line-height:46px;padding-left:35px}
+.fuwulc:last-child{text-align:center;width:125px;}
+.fuwulc:last-child dt{background:url(../images/fuwu_bg2-1.png) no-repeat 0 0 /cover;}
+.fuwulc:last-child dt,.fuwulc:last-child dd{padding-left:0}
+.fuwulc dd{line-height:40px;padding:10px 0 0 20px}
+.top_t{background:rgba(0,0,0,.2);height:50px;line-height:50px;color:#fff;padding-left:20px;margin:0 -20px}
+.shouc_table{width:100%;overflow:hidden;margin-top:20px;margin-left:-20px}
+.shouc_table th,.shouc_table td{font-size:28px;line-height:52px;padding-bottom:10px}
+.shouc_table th{width:28%;padding-right:10px;color:#5b2f22;font-weight:normal;vertical-align:top}
+.shouc_table td{color:#fff}
+.fx_t{line-height:48px}
+.picBox{overflow:hidden;text-align:center;margin:0 auto 10px;background-color:#fff;width:93%;height:300px;text-align:center;line-height:300px;font-size:0;}
+.picBox img{max-height:300px}
+.swiper-container {
+        width: 100%;
+    }
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.gallerytitle {
+	text-align:left;
+	position: absolute;
+	left:0;
+	bottom:0;
+	right:0;
+	font-weight:normal;
+	/*text-shadow:1px 1px 1px #000;*/
+}
+/*窗口在1024px以上*/
+@media only screen and (min-width: 1024px) {
+	body{font-size:1.5em;}
+
+}
+	
+	
+/*窗口在640px以上、1023px以下*/
+@media screen and (min-width:640px) and (max-width:1023px){
+	body{font-size:1.25em;}
+
+}
+@media screen and (max-width:640px){
+	/*收藏项目详情*/
+	.box{padding:0 10px 10px;}
+	.figure_box{width:100%;height:215px;margin:10px auto 0}
+	.f_ifocus_lis{height:215px;}
+	.slides_container{width:100%;height:215px;}
+	.slides_container img{height:215px;}
+	.pagination{bottom:30px}
+	.pagination li{margin:0 4px}
+	.ftext{height:25px;line-height:25px;padding-left:10px;font-size:12px}
+	.shouc_box{margin-top:5px;padding:0 10px 10px;}
+	.shouc_box cite{margin-top:18px;font-size:15px;line-height:24px;}
+	.shouc_box cite i{font-size:12px}
+	.shouc_box cite em{font-size:17px}
+	.guanf_text{margin-top:15px;font-size:14px;line-height:24px}
+	.shouc_box h3{font-size:15px;line-height:24px;margin:10px 0 12px}
+	.fuwulc{width:72px;font-size:12px}
+	.fuwulc:last-child{width:62px}
+	.fuwulc dt{height:23px;line-height:23px;padding-left:17px}
+	.fuwulc dd{line-height:20px;padding:10px 0 0 10px}
+	.top_t{height:25px;line-height:25px;padding-left:10px;margin:0 -10px;font-size:12px}
+	.shouc_table{margin-top:10px;margin-left:-10px}
+	.shouc_table th, .shouc_table td{font-size:14px;line-height:26px;padding-bottom:5px}
+	.shouc_table th{padding-right:5px}
+	.fx_t{line-height:24px}
+	.picBox,.beila_jig_pic,.ym_pic{height:200px;line-height:200px;}
+	.picBox{margin:0 auto 5px;}
+	.beila_jig_pic{margin:5px auto;}
+	.ym_pic{margin:10px auto;}
+	.picBox img,.beila_jig_pic img,.ym_pic img{max-height:200px}
+}
+@media screen and (min-width:540px) and (max-width:639px){
+	.figure_box,.f_ifocus_lis,.slides_container{height:245px;}
+	.slides_container img{height:245px}
+}
+/*窗口480px以上639px以下*/		
+@media screen and (min-width:480px) and (max-width:539px) {
+	body{font-size:1.125em;}
+	.contentBox{width:100%;}
+	}	
+	
+/*窗口在320px以上、479px以下*/
+@media screen and (min-width:320px) and (max-width:479px) {
+	body{font-size:1em;}
+	.contentBox{width:100%;}
+	.plastic_item a{border-width:1px}
+	.jig_jies{border-width:1px;line-height:2em}
+	.nedic{margin-top:.5em}
+	.zs_team li{width:23.5%}
+	}	
+	
+/*窗口在319px以下*/
+@media only screen and (max-width:319px) {
+	body{font-size:.875em;}
+	.contentBox{width:100%;}
+	.zs_team img{height:3.857em;width:3.857em}
+	.zs_team li{width:25.5%}
+	}	
+
+/* iphone竖屏幕 */
+@media (max-width:414px){
+	.plastic_item{margin-left:-.4em}
+	.plastic_item a{margin:0 .4em .8em}
+	.zs_team li{margin:0 0 .5em 0}
+	.contentBox{padding:0 .8125em .833em}
+	.beila_intro a{font-size:1.035em}
+	.fs26{font-size:1em!important}
+	.beila_title{font-size:1.15em;font-weight:normal}
+}
+/* iphone6竖屏幕 */
+@media (max-width:375px){
+	.contentBox{padding:0 .75em .833em}
+	.beila_intro a{font-size:.9375em}
+	.fs26{font-size:.9em!important}
+	.beila_title{font-size:1.05em;font-weight:normal}
+}
+/* iphone4/5竖屏幕 */
+@media (max-width:320px){
+	.plastic_item a{margin:0 .2em .8em}
+	.plastic_item{margin-left:-.2em}
+	.zs_team img{width:3.375em;height:3.375em}
+	.contentBox{padding:0 .625em .833em}
+	.beila_intro a{font-size:.8em}
+	.fs26{font-size:.78em!important}
+	.beila_title{font-size:.9em;font-weight:normal}
+}
+@media only screen and (max-width:319px) {
+	.figure_box,.f_ifocus_lis,.slides_container{height:165px;}
+	.slides_container img{height:165px}
+	.pagination{left:30%}
+	.shouc_box cite,.guanf_text{margin-top:10px}
+	.guanf_text{font-size:12px;line-height:20px}
+	.shouc_box h3{margin:8px 0}
+	.shouc_table th, .shouc_table td{font-size:9px;line-height:18px}
+	.shouc_table th{width:33%}
+	.fx_t{line-height:18px;padding-top:5px}
+}
+@media (max-width:414px) and (max-height:736px) {
+	.contentBox{min-height:736px}
+}
+@media (max-width:375px) and (max-height:667px) {
+	.contentBox{min-height:667px}
+}
+@media (max-width:320px) and (max-height:568px)  {
+	.contentBox{min-height:568px}
+}
+@media (max-width:320px) and (max-height:480px)  {
+	.contentBox{min-height:480px}
+}
+
+.beila_intro a#icon{font-size:1em;}

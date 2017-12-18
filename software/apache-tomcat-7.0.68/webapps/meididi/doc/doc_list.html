@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><!--禁用缩放功能--> 
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/dianyan.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
+		<script type="text/javascript" src="js/public.js" ></script>
+		<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+		<title>医疗机构</title>
+		<style type="text/css">
+			h4{
+				font-size: 15px;
+			}
+			.media-body{
+				padding-left: 0;
+			}
+			
+			.media{
+				border-bottom: 1px solid #e2e2e2;
+				padding: 10px 0;
+			}
+			.media-heading{
+				margin-bottom:0;
+				height:24px;
+			}
+			.zhengzai{width: 100%;position: fixed;z-index: 999999;background: #333;color: #fff;display: none;text-align:center;width: 20%;height:50px;left: 40%;right: 40%;top: 40%;line-height: 50px;}
+		</style>
+	</head>
+	<body>
+	<div class="zhengzai">
+		加载中
+	</div>
+		<!--<header>
+			<div class="title">
+				<h4><a onclick ="javascript:history.go(-1);">返回</a>医疗机构<span class="sousuo"></span></h4>
+			</div>
+		</header>-->
+		<div class="gundong" style="width: 100%;overflow: hidden;overflow-y: auto;-webkit-overflow-scrolling: touch;">
+
+		<div class="origin_oper">
+			<span class="comment"  id="gr_zone_ids" data-id="130100" style="background-size: 20px;">区域排列</span>
+			<span class="collect" id="collect"  style="background-size: 20px;">评分等级</span>
+		</div>
+		<div class="container0" style="z-index: 9999; display: none;">
+		  <div class="city">  
+		    <div class="city-list" id="city_ajax">
+		      <p data-id="232700">华东地区</p>
+		      <p data-id="140200">华南地区</p>
+		      <p data-id="230600">华北地区</p>
+		      <p data-id="321181">华中地区</p>
+		      <p data-id="210200">西南地区</p>
+		      <p data-id="210600">西北地区</p>
+		      <p data-id="210601">东北地区</p>
+		      <p data-id="210602">其他地区</p>
+		    </div>
+		   </div>   
+		</div>
+		
+		<div class="container1" style="z-index: 9999;display: none; ">
+		  <div class="city">  
+		    <div class="city-list">
+		     <p data-id="5">五星排列</p>
+			 <p data-id="4">四星排列</p>
+			 <p data-id="3">三星排列</p>
+		    </div>
+		   </div>   
+		</div>
+
+
+		<div class="container" >
+
+		</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/zepto.js"></script>
+	<script type="text/javascript">
+	//加载城市、星级事件
+	var city_name = "";
+	var hos_star = " ";
+	var page = 1;
+	var indexs = "";
+	$('body').on('click touchend', '#gr_zone_ids,#collect', function () {
+		var clickName =$(this).attr("id");
+		if(clickName=="gr_zone_ids"){
+
+			if($(".container0").css("display") == "block"){
+				$(".container0").hide();
+				return false;
+			}else{
+				$('.container0').show();
+				$('.container1').hide();
+				return false;
+			}
+			var zid = $(this).attr('id');
+			$('.container0').show();
+			$('.container1').hide();
+			
+		}else if(clickName=="collect"){
+			if($(".container1").css("display") == "block"){
+				$(".container1").hide();
+				return false;
+			}else{
+				$(".container0").hide();
+				$('.container1').show();
+				return false;
+			}
+			$('.container0').hide();
+			$('.container1').show();
+		}
+	});
+	//选择城市 start
+/*	$('body').on('click ', '.container0 .city-list p', function () {
+		$('#gr_zone_ids').html($(this).html()).attr('data-id', $(this).attr('data-id'));
+		$('.container0').hide();
+		city_name = $(this).html();
+		$(".container").html("");
+		getHospital(city_name,hos_star,"1");
+	});*/
+	//选择星级
+	$('body').on('click ', '.container1 .city-list p', function () {
+		$('#collect').html($(this).html()).attr('data-id', $(this).attr('data-id'));
+		$('.container1').hide();
+		hos_star =  $(this).attr('data-id');
+		console.log(hos_star);
+		$('.container').html("");
+		getHospital(city_name,hos_star,"1");
+	});
+	
+	$(".sousuo").click(function(){
+		location.href ="doc_search.html"
+	})
+		function getHospital(value,level,page){
+		$.ajax({
+             type : "post",
+             async:true,
+             url : baseUrl+"Hospital/HospitalList",
+             data:{
+             	area:value,
+             	star:level,
+				 page:page
+             },
+            // data:{page:page},
+             success : function(data){
+					var obj = JSON.parse(data);
+					console.log(obj.result);
+				   console.log(data);
+                	if(obj.code==0){
+	                	var json =obj.result;
+	                	var html ="";
+
+
+
+	                	 for(var i=0; i<json.length; i++)  
+						  {
+//							  var star = "";
+//							  console.log(json[i].hospitalPinjia);
+//						  for(var i = 0; i <json[i].hospitalPinjia;i++ ){
+//							  star+="<img src= 'img/start-r.png' style='width:17px;height:17px;'/>";
+//						  }
+							  /*  var blackstar = "";
+						  for(var i = 0;i <json[i].hospitalPinjia;i++){
+							     star+="<img src= 'img/start-r.png' style='width:17px;height:17px;'/>";
+							  }*/
+//							  for(var i = 0;i <5 -json[i].hospitalPinjia;i++ ){
+//								  blackstar+="<img src= 'img/start-b.png' style='width:17px;height:17px;'/>";
+//							  }
+
+
+						  	if(json[i].isAttestation == 1){
+						  		var s = '<img src="img/v.png" style="margin-top: 10px;width: 12px;margin-left: 5px;">';
+							//<label class='forident'>认证机构</label>
+						  	}else{
+/*
+						  		 <label style='width:100px;height:20px;'></label>";
+*/
+								var s = '<div style="width: 100px;height: 20px;"><div>';
+						  	}
+				
+						  	html +=		    "<a href='doc_detail.html?hospid="+json[i].hospitalId+"'>"
+						  	html +=		"<div class='media'>"
+							html +=		  "<div class='media-left media-middle'>"
+							
+							html +=		      "<img class='media-object' onerror='notfind(this)'  src='"+json[i].hospitalLogo+"' alt='图片' width='70px'>"
+							
+							html +=		  "</div>"
+							html +=		  "<div class='media-body'>"
+							html +=		    "<h4 class='media-heading'>"+"<div style='padding-top:6px;float:left;'>"+json[i].hospitalName.substring(0,12)+"</div>"+s+"</h4>"
+							html +=		    "<span class='pingjia' id='pingjias'>"+stars(json[i].hospitalPinjia,this)+"</span>"
+							html +=		    "<span class='dwei' id='dwei' style='height: 27px;line-height:26px;text-overflow: ellipsis;white-space:nowrap;overflow: hidden;background-size:16px;background-position: left 3px; '>"+json[i].hospitalAddress+"</span>"
+							html +=		  "</div>"
+							html +=		"</div>"
+							html +=		    "</a>"
+//							  $('.pingjia').append(star+blackstar);
+						  }
+						$('.container').append(html);
+						$(".dwei").css("width",parseInt($(window).width())-100 -20 +"px");
+
+//						sessionStorage.setItem('pingjia',star+blackstar);
+
+                	}
+                
+             }
+         });
+       }
+		function notfind(id){
+			$(id).attr("src","http://101.201.40.170/meididi/assets/images/icon.png");
+		}
+		$(function(){
+
+			$(".gundong").css("height",$(window).height());
+			 getHospital(city_name,hos_star,page);
+			$(".gundong").scroll(function() {
+
+				console.log("ht"+$(".gundong").height());
+				console.log("con:"+$(".container").height());
+				console.log("top:"+$(".gundong").scrollTop());
+				if($(".container").height()-$(".gundong").scrollTop() <= $(".gundong").height()){
+					page++;
+//					$(".gundong").css('overflowY','hidden');
+//					$('.zhengzai').show();
+					getHospital(city_name,hos_star,page);
+
+//					var oTimer_num = 0;
+//					setInterval(function (){
+//						oTimer_num++;
+//						if(oTimer_num == 2){
+//							$(".zhengzai").hide();
+//							$(".gundong").css('overflowY','auto');
+//
+//						}
+//					},200)
+
+				}
+//			if($(this).scrollTop() == $(window).height() ){
+//				alert("到底了");
+//			}
+
+//				alert("document" +  $(document).height() );
+//				alert("window"+$(window).height());
+//				alert("scorll" + $(window).scrollTop());
+		/*		if(($(document).height() - $(window).height())== $(window).scrollTop() ){
+					alert("到底了");
+					getHospital(city_name,hos_star,page);
+				$("body").append('<div>sadas</div>');
+				}*/
+			});
+
+		})
+		function stars(is,id){
+			var sy = "";
+			var sh = "";
+			console.log(is);
+			for(var i = 0;i < is;i++){
+				sy+="<img src= 'img/start-r.png' style='width:17px;height:17px;'/>";
+			}
+			for(var i = 0;i < 5-is;i++){
+				sh+="<img src= 'img/start-b.png' style='width:17px;height:17px;'/>";
+			}
+			return sy+sh;
+			sessionStorage.setItem("pingjia","2");
+		}
+
+		$(function (){
+			//加载地区
+			ajaxCity();
+
+		})
+		function ajaxCity (){
+			$.ajax({
+				url:baseUrl+"Hospital/areaList",
+				type:"post",
+				async:"true",
+				dataType:"json",
+				data:{
+
+				},
+				success:function (data){
+					$("#city_ajax").html("");
+					$.each(data.result,function (i,cityvalue){
+						$("#city_ajax").append('<p onclick="city(this)">'+cityvalue+'</p>');
+					})
+				},
+				error:function (error){
+					console.log(error);
+				}
+
+			})
+		}
+
+
+		function city(obj){
+			$("#gr_zone_ids").html($(obj).html());
+			$('.container0').hide();
+			$(".container").html("");
+			city_name = $(obj).html();
+			getHospital(city_name,hos_star,"1");
+
+		}
+
+	</script>
+</html>
+

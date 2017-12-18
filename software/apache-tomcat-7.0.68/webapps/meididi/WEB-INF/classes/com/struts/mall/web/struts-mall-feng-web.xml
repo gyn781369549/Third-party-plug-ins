@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="mallFengActionWeb" namespace="/mall/mallFengAction" extends="default">
+
+		<action name="index" class="mallFengAction" method="index"></action>
+		<action name="list" class="mallFengAction" method="list"></action>	
+		<action name="add" class="mallFengAction" method="add"></action>	
+		<action name="update" class="mallFengAction" method="update"></action>
+		<action name="delete" class="mallFengAction" method="delete"></action>
+		<action name="searchHot" class="mallFengAction" method="searchHot"></action>	
+		<action name="activityType" class="mallFengAction" method="activityType"></action>	
+
+
+
+		<action name="activitySave" class="mallFengAction" method="activitySave">
+			<result name="success">/WEB-INF/page/mall/activity/activity_inf_input.jsp</result>
+		</action>
+		<action name="listView" class="mallFengAction" method="listView">
+			<result name="success">/WEB-INF/page/mall/activity/activity_inf_list.jsp</result>
+			<result name="input">/WEB-INF/page/mall/activity/activity_inf_input.jsp</result>
+		</action>
+		
+		
+		
+	</package>
+</struts>

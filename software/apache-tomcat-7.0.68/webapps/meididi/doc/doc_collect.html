@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/dianyan.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/bootstrap.js" ></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<title>我的收藏</title>
+	</head>
+	<body class="bg">
+		<!--<header>
+			<div class="title">
+				<h4><a onclick ="javascript:history.go(-1);">返回</a>我的收藏<span class="sousuo"></span></h4>
+			</div>
+	</header>-->
+	<!--	<a href = "#">
+			<div class="order_list">
+				<div class="media">
+				  <div class="media-left">
+					<a href="#">
+					  <img class="media-object" src="img/o15.png" alt="图片"  width="100px">
+					</a>
+				  </div>
+				  <div class="media-body media-middle">
+					<h4 class="media-heading">专业隆鼻&nbsp;&nbsp;&nbsp;&nbsp;<small>300人购买</small></h4>
+					<p>项目简介：膨体加隆鼻+鼻尖成型术</p>
+					<p style="color:#ccb98b">￥2555.00</p>
+				  </div>
+				</div>
+			</div>
+		</a>-->
+		<!--<div class="order_list">-->
+			<!--<div class="media">-->
+			  <!--<div class="media-left">-->
+			    <!--<a href="#">-->
+			      <!--<img class="media-object" src="img/o15.png" alt="图片"  width="100px">-->
+			    <!--</a>-->
+			  <!--</div>-->
+			  <!--<div class="media-body media-middle">-->
+			    <!--<h4 class="media-heading">专业隆鼻&nbsp;&nbsp;&nbsp;&nbsp;<small>300人购买</small></h4>-->
+			    <!--<p>项目简介：膨体加隆鼻+鼻尖成型术</p>-->
+			    <!--<p style="color:#ccb98b">￥2555.00</p>-->
+			  <!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!---->
+		<!---->
+		<!--<div class="order_list">-->
+			<!--<div class="media">-->
+			  <!--<div class="media-left">-->
+			    <!--<a href="#">-->
+			      <!--<img class="media-object" src="img/o15.png" alt="图片"  width="100px">-->
+			    <!--</a>-->
+			  <!--</div>-->
+			  <!--<div class="media-body media-middle">-->
+			    <!--<h4 class="media-heading">专业隆鼻&nbsp;&nbsp;&nbsp;&nbsp;<small>300人购买</small></h4>-->
+			    <!--<p>项目简介：膨体加隆鼻+鼻尖成型术</p>-->
+			    <!--<p style="color:#ccb98b">￥2555.00</p>-->
+			  <!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+	</body>
+
+	<script>
+		var token = "";
+		var Request = new Object();
+		Request = GetRequest();
+		$(function (){
+			var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+//			alert('是否是Android：'+isAndroid);
+//			alert('是否是iOS：'+isiOS);
+			if(isAndroid){
+				token = Request["token"];
+			}
+			if(isiOS){
+//				alert("是苹果手机");
+				token = Request["sid"]; //token
+			}
+			$.ajax({
+				url:baseUrl+"user/CollectProjectList",
+				type:"post",
+				async:"true",
+				dataType:"json",
+				data:{
+					sid:token,
+//						sid:"113,AC04D722EEB33D37CE5661E4D20A4A78",
+				},
+				success:function (data) {
+					console.log(data);
+						$.each(data.result, function (i, value) {
+							$("body").append('<a href = '+"project_detail.html?pid="+value.projectId+'>' +
+									'<div class="order_list">' +
+									'<div class="media">' +
+									'<div class="media-left">' +
+									'<img class="media-object" src='+value.projectLogo+' alt="图片"  width="100px">' +
+									'</div>' +
+									'<div class="media-body media-middle">' +
+									'<h4 class="media-heading">' +value.projectTitle+ '<small>' + ' ' + '</small>' + '</h4>' +
+									'<p style="color: #666666;">' + value.projectMeta.substring(0,23) +'...'+'</p>' +
+									'<p style="color:#ccb98b">'+"￥"+value.projectPrice+'</p>' +
+									'</div>' +
+									'</div>' +
+									'</div>' +
+									'</a>')
+						})
+				}
+			})
+		})
+
+
+		function getUrlParam(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+			var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+			if (r != null) return unescape(r[2]); return null; //返回参数值
+		}
+	</script>
+</html>

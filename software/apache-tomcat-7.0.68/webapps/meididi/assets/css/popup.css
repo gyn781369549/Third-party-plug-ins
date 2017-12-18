@@ -1,0 +1,115 @@
+.popup_bg{background:rgba(0,0,0,.5);width:100%;position:fixed;height:100%;z-index:9999}
+.popup_box{position:fixed;min-width:564px;min-height:460px;background:#fff;border-radius:2px;z-index:10000;top:50%;left:50%;margin:-210px 0 0 -282px}
+.popup_box2{position:fixed;min-width:500px;min-height:430px;background:#fff;border-radius:2px;z-index:10000;top:50%;left:50%;margin:-310px 0 0 -282px}
+.popup_t{font-size:18px;color:#fff;background:#79d2be;height:68px;line-height:68px;padding-left:20px;display:block}
+/*
+密码重置
+*/
+.password_box{margin:0 24px 0 45px;overflow:hidden}
+.admin_infor{overflow:hidden;margin-top:40px;}
+.admin_infor img{float:left;display:inline;width:86px;height:86px;}
+.admin_t{margin:15px 0 15px 126px;}
+.admin_t span{width:80px;display:inline-block;}
+.password_cont{margin:20px 0 40px;}
+.password_cont fieldset{margin-bottom:10px;}
+.password_cont input[type="password"]{width:286px;}
+.password_cont span{font-size:12px;color:#ff8d84;display:inline-block;margin-left:10px}
+.password_btn{margin:0 0 72px}
+.password_btn input[type="submit"],.password_btn input[type="button"],.password_btn input[type="reset"]{border-radius:2px;width:204px;height:38px;color:#fff}
+/*
+重要提示
+*/
+.hint_box{margin:50px 0 30px;text-align:center;font-size:14px;line-height:24px;}
+.hint_box h3{font-size:18px;color:#ff8d84;line-height:30px}
+.hint_box p{margin:0}
+/*
+审核
+*/
+.cause_textarea{margin:30px 0}
+.cause_textarea textarea{width:478px;height:218px;overflow-x:hidden;overflow-y:auto;color:#bfbfbf;font-size:13px}
+.cause_textarea textarea:focus{color:#3c3c3c}
+.audit_box{margin:60px 0;text-align:center;}
+.audit_box img{margin-bottom:15px}
+.audit_box p{line-height:30px;font-size:14px;margin:0}
+.audit_box p span{margin-left:15px;color:#79d2be;display:inline-block}
+/*
+查看大图
+*/
+.look_bigpic{margin:30px 0 26px;}
+.imgContainer{width:654px;}
+.detailImg{position:relative;text-align:center;}
+#detailImg-pre,#detailImg-next{background:url(../image/ico_meidd.png) no-repeat;position:absolute;cursor:pointer;text-indent:-9999px;width:31px;height:54px;top:50%;}
+#detailImg-pre{left:0;background-position:0 -93px}
+#detailImg-pre:hover,#detailImg-pre:focus{background-position:0 -202px}
+#detailImg-next{right:0;background-position:0 -147px}
+#detailImg-next:hover,#detailImg-next:focus{background-position:0 -256px}
+.box{width:540px;overflow-x:hidden;overflow-y:auto;margin:auto;height:385px;line-height:385px;border:solid 1px #cacaca}
+#detailImg-box img{max-width:538px;}
+/*
+沟通记录
+*/
+.linkup_log > .admin_infor > .admin_t{margin:5px 0 0 126px;color:#717171}
+.linkup_log_cont{width:640px;height:300px;overflow-x:hidden;overflow-y:auto;border:solid 1px #cacaca;background:#fbfbfb;margin:15px 0 20px}
+.linkup_log_cont ul{padding:0 18px;}
+.linkup_log_cont li{margin-top:10px;overflow:hidden;line-height:24px}
+.linkup_log_cont li:nth-child(odd){text-align:right}
+.linkup_log_date{font-size:14px;color:#717171;font-weight:bold}
+.linkup_log_user{margin:0;line-height:24px;font-size:14px}
+.linkup_log_user name{color:#79d2be;}
+.linkup_log_cont li:nth-child(even) name{color:#ff8d84}
+.linkup_log_time{font-size:12px;font-weight:normal;color:#717171;margin-left:5px}
+.issue_t{margin:0}
+.push_t{color:#000;text-decoration:underline;margin:0}
+/*
+上传头像
+*/
+.upload_pic {background:rgba(255,255,255,.76);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff,endColorstr=#99ffffff);}
+.upload_pic > .popup_t{background:#212021;color:#ff8d84}
+.uploading_cont{margin:40px 0 30px;overflow:hidden}
+.default_pic{text-align:center;}
+.default_pic img{width:129px;height:129px;border-radius:65px}
+.default_pic span{display:block;width:100%;font-size:14px;color:#3c3c3c;margin-top:15px}
+.pic_uploading{margin:0}
+.upload_box{position:relative;display:table;width:114px;margin:auto;}
+.upload_from{margin:0;float:left;}
+.upload_from input[type="text"]{background:#fff;border:solid 1px #c3c3c3;margin:0;border-radius:2px;width:304px;height:34px;line-height:34px;font-size:13px;color:#3c3c3c;float:left;z-index:99;}
+.upload_from input[type="text"]:hover,.upload_from input[type="text"]:focus{border-color:#79d2be;box-shadow:none;}
+.file1{backgroudn:#6ec4b1;width:114px;height:34px;line-height:34px;text-align:center;color:#fff;border:solid 1px #6ec4b1;font-size:12px;margin:0;cursor:pointer;float:left;z-index:1;background:#79d2be;margin-left:10px;}
+.file{position:absolute;left:0;width:430px!important;top:0;height:34px!important;filter:alpha(opacity=0);opacity:0;cursor:pointer}
+.upload_hint{font-size:12px;margin:5px 0 0;color:#ff8d84}
+/*
+修改密码
+*/
+.alter_code{margin:60px 0 35px}
+.alter_code form{margin:0}
+.code_form input[type="password"]{width:410px;height:40px;line-height:40px;border:solid 1px #c3c3c3;font-size:13px;color:#79d2be;margin:0;border-radius:2px}
+.code_form input[type="password"]:hover,.code_form input[type="password"]:focus{border-color:#79d2be;box-shadow:none;color:#4c4c4c;}
+.code_form span{display:inline-block;margin-left:10px;color:#ff8d84;font-size:12px;}
+.code_error_hint{margin:0;color:#ff8d84;font-size:12px}
+
+/*add by zhaitao*/
+.swfupload{left:0;}
+.uploadify-queue{display: none;}
+#iconPreview{border-radius:66px;}
+#uploadIcon {
+    background: rgba(121, 210, 190, 0.6) none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #fff;
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    width: 116px;
+    position: relative;
+}
+.uploadIcon,.uploadify {
+    background: rgba(121, 210, 190, 0.6) none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #fff;
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    text-align: center;
+    width: 116px;
+    position: relative;
+}

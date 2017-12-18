@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<package name="hos" namespace="/" extends="default">
+		<action name="index" class="accountAction" method="index">
+			<result name="index">/WEB-INF/page/log.jsp</result>
+		</action>
+		<action name="login" class="accountAction" method="login">
+		</action>
+		<action name="login_out" class="accountAction" method="out">
+			<result name="out" type="redirectAction">index</result>
+		</action>
+		
+		<action name="account_*" class="accountAction" method="{1}">
+			<result name="login">/WEB-INF/page/log.jsp</result>
+			<result name="reg">/WEB-INF/page/reg.jsp</result>
+			<result name="regInf">/WEB-INF/page/reg2.jsp</result>
+			<result name="regOk">/WEB-INF/page/reg3.jsp</result>
+			<result name="process"></result>
+			<result name="photo"></result>
+		</action>
+		<action name="showMap" class="informationAction" method="showMap">
+			<result name="map" >/WEB-INF/page/getMap.jsp</result>
+		</action>
+	</package>
+	
+	<package name="hospital" namespace="/hospital" extends="json-default">
+		<global-results>
+	        <result name="noSession">/WEB-INF/page/log.jsp</result>
+	    </global-results>
+	    
+		<action name="index" class="accountAction" method="index">
+			<result name="index">/WEB-INF/page/hospital/index.jsp</result>
+		</action>
+		
+		<!-- 医院管理 -->
+		<action name="account_*" class="accountAction" method="{1}">
+			<!-- <result name="login">/WEB-INF/page/log.jsp</result> -->
+			<result name="reset"></result>
+			<result name="up"></result>
+		</action>
+		<!-- 医院信息管理 -->
+		<action name="information_*" class="informationAction" method="{1}">
+			
+			<result name="basicShow">/WEB-INF/page/hospital/information_basic_show.jsp</result>
+			<result name="basicInput">/WEB-INF/page/hospital/information_basic_input.jsp</result>
+			<result name="tipsShow">/WEB-INF/page/hospital/information_tips_show.jsp</result>
+			<result name="tipsInput">/WEB-INF/page/hospital/information_tips_input.jsp</result>
+			<result name="teamsShow">/WEB-INF/page/hospital/information_teams_show.jsp</result>
+			<result name="teamsInput">/WEB-INF/page/hospital/information_teams_input.jsp</result>
+			<result name="hospitalPre">/WEB-INF/page/hospital/hospital_preview.jsp</result>
+			<result name="teamPre">/WEB-INF/page/hospital/team_preview.jsp</result>
+			
+			<result name="check"></result>
+		</action>
+		<!-- 咨询师管理 -->
+		<action name="consultant_*" class="hosConsultantAction" method="{1}">
+		
+			<result name="success">/WEB-INF/page/hospital/consultant_forum_input.jsp</result>
+			<result name="list">/WEB-INF/page/hospital/consultant_list.jsp</result>
+			<result name="input">/WEB-INF/page/hospital/consultant_input.jsp</result>
+			<result name="check"></result>
+		</action>
+		<!-- 项目管理 -->
+		<action name="project_*" class="hosProjectAction" method="{1}">
+			<result name="list">/WEB-INF/page/hospital/project_list.jsp</result>
+			<result name="input">/WEB-INF/page/hospital/project_input.jsp</result>
+			<result name="show">/WEB-INF/page/hospital/project_show.jsp</result>
+			
+			<result name="check"></result>
+		</action>
+		
+		<!-- 订单管理 -->
+		<action name="order_*" class="hosOrderAction" method="{1}">
+			<result name="list">/WEB-INF/page/hospital/order_list.jsp</result>
+			<result name="show">/WEB-INF/page/hospital/order_show.jsp</result>
+			<result name="overList">/WEB-INF/page/hospital/over_list.jsp</result>
+			
+		</action>
+		<action name="overShow" class="hosOrderAction" method="input">
+			<result name="show">/WEB-INF/page/hospital/over_show.jsp</result>
+		</action>
+	</package>
+</struts>

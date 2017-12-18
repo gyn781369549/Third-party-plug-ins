@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/dianyan.css"/>
+    <link rel="stylesheet" href="css/jquery-weui.css">
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/bootstrap.js" ></script>
+    <script type="text/javascript" src="js/public.js"></script>
+    <title>用户评价</title>
+</head>
+<style>
+    .doc_hea{width: 100%;height: 40px;overflow: hidden;}
+    .doc_heas{width: 100%;text-align: center;line-height: 40px;}
+    .doc_hea_le{width: 40%;float: left;line-height: 40px;font-size: 15px;text-indent: 10px;}
+    .doc_hea_ri{width: 60%;float: left;}
+    .doc_hea_ri>img{float: left;margin: 12px 0;width:15px;height: 15px;}
+    .postbutton{width: 90%;margin: 10px 5%;text-align: center;background:#f49a8f ;color: #fff;border: none;}
+    .mengban{width: 100%;height: 500px;position: fixed;left: 0;top: 0;z-index: 1111;display: none;}
+</style>
+<body>
+<div class="mengban">
+
+</div>
+
+<div class="doc_heas">本次服务针对医院评价</div>
+    <div class="doc_hea">
+        <div class="doc_hea_le">医院环境满意度</div>
+        <div  class="doc_hea_ri" id="doc_attitude1">
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+        </div>
+    </div>
+    <div class="doc_hea">
+        <div class="doc_hea_le">项目执行满意度</div>
+        <div  class="doc_hea_ri" id="doc_attitude2">
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+        </div>
+    </div>
+    <div class="doc_hea">
+        <div class="doc_hea_le">医疗团队专业度</div>
+        <div  class="doc_hea_ri" id="doc_attitude3">
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+        </div>
+    </div>
+<div class="doc_heas">本次服务针对咨询师评价</div>
+    <div class="doc_hea">
+        <div class="doc_hea_le">服务整体满意度</div>
+        <div  class="doc_hea_ri" id="doc_attitude4">
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+        </div>
+    </div>
+    <div class="doc_hea">
+        <div class="doc_hea_le">业务领域专业度</div>
+        <div  class="doc_hea_ri" id="doc_attitude5">
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+            <img src="img/start-b.png" >
+        </div>
+    </div>
+<div>
+    <button class="postbutton" id="postbutton" onclick="postEvalute()">提交</button>
+</div>
+
+</body>
+
+
+<script>
+    var environment =3; //环境评分
+    var execute = 3;//执行满意度评分
+    var team = 3;//团队评分
+    var service = 3; //服务评分
+    var specialty = 3;//专业度评分
+    var aclick = 0;
+    var bclick = 0;
+    var cclick = 0;
+    var dclick = 0;
+    var eclick = 0;
+    var Request = new Object();
+    Request = GetRequest();
+    $(function (){
+
+        getEvalute ();
+
+        $("#doc_attitude1 img").click(function (){
+                var doc_leg = parseInt($(this).index());
+            environment = doc_leg;
+            $("#doc_attitude1 img").attr("src","img/start-b.png");
+//            if(doc_leg == 0){
+//                return false;
+//            }
+               for(var  i = 0;i <= doc_leg;i++){
+                   $("#doc_attitude1 img").eq(i).attr("src","img/start-r.png");
+               }
+        })
+
+
+        $("#doc_attitude2 img").click(function (){
+            var doc_leg = parseInt($(this).index());
+            execute = doc_leg;
+            $("#doc_attitude2 img").attr("src","img/start-b.png");
+//            if(doc_leg == 0){
+//                return false;
+//            }
+            for(var  i = 0;i <= doc_leg;i++){
+                $("#doc_attitude2 img").eq(i).attr("src","img/start-r.png");
+            }
+        })
+        $("#doc_attitude3 img").click(function (){
+            var doc_leg = parseInt($(this).index());
+
+            team = doc_leg;
+            $("#doc_attitude3 img").attr("src","img/start-b.png");
+//            if(doc_leg == 0){
+//                return false;
+//            }
+            for(var  i = 0;i <= doc_leg;i++){
+                $("#doc_attitude3 img").eq(i).attr("src","img/start-r.png");
+            }
+        })
+        $("#doc_attitude4 img").click(function (){
+            var doc_leg = parseInt($(this).index());
+            service = doc_leg;
+            $("#doc_attitude4 img").attr("src","img/start-b.png");
+//            if(doc_leg == 0){
+//                return false;
+//            }
+            for(var  i = 0;i <= doc_leg;i++){
+                $("#doc_attitude4 img").eq(i).attr("src","img/start-r.png");
+            }
+        })
+        $("#doc_attitude5 img").click(function (){
+            var doc_leg = parseInt($(this).index());
+            specialty = doc_leg;
+            $("#doc_attitude5 img").attr("src","img/start-b.png");
+//            if(doc_leg == 0){
+//                return false;
+//            }
+            for(var  i = 0;i <= doc_leg;i++){
+                $("#doc_attitude5 img").eq(i).attr("src","img/start-r.png");
+            }
+        })
+
+    })
+    function postEvalute(){
+        environment+=1;
+        execute+=1;
+        team+=1;
+        service+=1;
+        specialty+=1;
+        console.log(environment+","+environment+","+execute+","+team+","+service+","+specialty);
+//        return false;
+        $.ajax({
+            url:baseUrl+"ProjectOrder/EvaluateOrder",
+            type:"post",
+            data:{
+//                sid:"113,8B7D8044B051EBBCDF6E390A21D055E1",
+                sid:sessionStorage.getItem("token"),
+                orderNum:Request['orderNum'],
+                environment:environment, //环境评分
+                execute:execute,//执行满意度评分
+                team:team,//团队评分
+                service:service, //服务评分
+                specialty: specialty//专业度评分
+            },
+            dataType:"json",
+            success:function (data){
+                console.log(data);
+                $(".mengban").show();
+                $("#postbutton").html("已评价");
+                $("#postbutton").attr("onclick","");
+                var Request = new Object();
+                Request = GetRequest();
+                var u = navigator.userAgent, app = navigator.appVersion;
+                var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+                var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+                if (isAndroid) {
+                    window.location.href = "doc_order.html?token="+sessionStorage.getItem("token")+"&checkMoney=3";
+                } else if (isIOS) {
+                    token = Request["sid"]; //token
+                    window.location.href = "doc_order.html?sid="+sessionStorage.getItem("token")+"&checkMoney=3";
+                }
+
+
+
+
+            },
+            error:function (error){
+
+            }
+        })
+    }
+    function getEvalute (){
+        $.ajax({
+            url:baseUrl+"ProjectOrder/ViewEvaluate",
+            type:"post",
+            data:{
+//                sid:"113,8B7D8044B051EBBCDF6E390A21D055E1",
+                sid:sessionStorage.getItem("token"),
+                orderNum:Request['orderNum'],
+            },
+            dataType:"json",
+            success:function (data){
+                console.log(data);
+                if(data.code == 0){
+                    environment = data.result.environment;
+                    execute =  data.result.execute;
+                    team = data.result.team;
+                    service = data.result.service; //服务评分
+                    specialty =  data.result.specialty;//专业度评分
+
+
+                    $("#doc_attitude1 img").attr("src","img/start-b.png");
+                    $("#doc_attitude2 img").attr("src","img/start-b.png");
+                    $("#doc_attitude3 img").attr("src","img/start-b.png");
+                    $("#doc_attitude4 img").attr("src","img/start-b.png");
+                    $("#doc_attitude5 img").attr("src","img/start-b.png");
+                    for(var  i = 0;i <= environment-1;i++){
+                        $("#doc_attitude1 img").eq(i).attr("src","img/start-r.png");
+                    }
+                    for(var  i = 0;i <= execute-1;i++){
+                        $("#doc_attitude2 img").eq(i).attr("src","img/start-r.png");
+                    }
+                    for(var  i = 0;i <= team-1;i++){
+                        $("#doc_attitude3 img").eq(i).attr("src","img/start-r.png");
+                    }
+                    for(var  i = 0;i <= service-1;i++){
+                        $("#doc_attitude4 img").eq(i).attr("src","img/start-r.png");
+                    }
+                    for(var  i = 0;i <= specialty-1;i++){
+                        $("#doc_attitude5 img").eq(i).attr("src","img/start-r.png");
+                    }
+                    $("#postbutton").html("已评价");
+                    $(".mengban").show();
+                    $("#postbutton").attr("onclick","");
+                }else if(data.code == 1){
+                    $(".mengban").hide();
+                    $("#postbutton").html("提交");
+                    $("#postbutton").attr("onclick","postEvalute()");
+                }else{
+                    console.log("code返回错误");
+                }
+
+            },
+            error:function (error){
+
+            }
+        })
+
+
+    }
+
+</script>
+</html>

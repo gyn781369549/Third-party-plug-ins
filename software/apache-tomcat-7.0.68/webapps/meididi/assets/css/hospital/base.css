@@ -1,0 +1,483 @@
+@charset "utf-8";
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+body{font-size:13px!important}
+html{-ms-touch-action:none;overflow-x:hidden;}
+header article section footer nav aside{display:block;}
+body,p,dl,dt,dd,h1,h2,h3,h4,h5,h6{margin:0;padding:0;border:0;}
+ul, ol{margin:0;padding:0;list-style:none;}
+ul,li{list-style:none;}
+h1, h2, h3, h4, h5, h6{margin-top:0;font-size:100%;line-height: 1.7;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:block;}
+p,i{font-weight:normal;font-style:normal;font-weight:normal;margin:0;padding:0;}
+/* img{-ms-interpolation-mode:bicubic;}windows平台缩放图片时，可能出现图像失真现象。使用IE的专有命令
+img{max-width:100%!important;vertical-align: middle !important;} */
+a:hover{text-decoration:none;}
+a:focus{outline:none!important;}
+body{color:#6f4e47!important}
+.tc{text-align:center!important}
+.tt{vertical-align:top;}
+.fl{float:left!important}
+.fr{float:right!important}
+.ib{display:inline-block}
+.lh22{line-height:22px!important}
+.lh124{line-height:124px!important}
+.f20{font-size:20px!important}
+.f18{font-size:18px!important}
+.f16{font-size:16px!important}
+.f14{font-size:14px!important}
+.c_white{color:#fff!important}
+.c_pink{color:#ff8d84!important}
+.c_brown{color:#5e3830!important}
+.c_beige{color:#c0a6a0!important}
+.c_green{color:#79d2be!important}
+.c_e{color:#6f4e47!important}
+.col_smoke{color:#1f0f0e}
+.c_petrol{color:#4ab89f}
+.c_shinku{color:#a40000}
+.c_deeppink{color:#ff6975}
+.c_orange{color:#f39700}
+.w97{width:97px!important}
+.w107{width:107px!important}
+.w112{width:112px!important}
+.w136{width:136px!important;}
+.w148{width:148px!important}
+.w197{width:197px!important}
+.w235{width:235px!important}
+.w240{width:240px!important}
+.w268{width:268px!important}
+.w418{width:418px!important}
+.w650{width:650px!important}
+.w700{width:700px}
+.w_50{width:50%}
+.input_white{background:rgba(255,255,255,.2)!important}
+.input_green{background:rgba(121,210,190,.7)!important}
+.btn_b_green{border:solid 1px #79d2be!important}
+.sent_code{background:rgba(121,210,190,.4)!important}
+.error_code{background:rgba(255,141,132,.4)!important}
+.p0{padding:0!important}
+.pt0{padding-top:0!important}
+.pl10{padding-left:10px!important}
+.pl37{padding-left:37px}
+.pl38{padding-left:38px}
+.pl85{padding-left:85px}
+.m0{margin:0!important}
+.mt6{margin-top:6px}
+.mt10{margin-top:10px}
+.mt15{margin-top:15px!important}
+.mt20{margin-top:20px}
+.mt25{margin-top:25px!important}
+.mt60{margin-top:60px!important}
+.mr20{margin-right:20px!important}
+.ml-20{margin-left:-20px!important}
+.ml10{margin-left:10px!important}
+.ml18{margin-left:18px}
+.ml20{margin-left:20px}
+.ml38{margin-left:38px}
+.ml40{margin-left:40px!important}
+.ml47{margin-left:47px}
+.ml95{margin-left:95px!important}
+.ml85{margin-left:85px}
+.ml100{margin-left:100px!important}
+.icon_vereist{color:#ff8d84;font-size:18px;margin-right:10px;vertical-align:middle;padding-top:3px}
+/*********************************************common*******************************/
+body[role="document"]{background:url(../../images/hospital/meidd_bg.jpg) no-repeat 0 0,url(../../images/hospital/meidd_bg1.jpg) repeat-y 0 0;width:100%;height:100%;margin:0;}
+.bwh_cont{width:1200px;margin:0 auto 40px;position:relative;bottom:40px;top:0;z-index:1;min-height:678px;}
+.left_cont{width:252px;position:absolute;float:none;margin:0;padding:0}
+.meidd_left_box{background:rgba(111,78,71,.6);width:238px;min-height:678px;float:left;display:inline;}
+.btnLeft{background:url(../../images/hospital/btn_meidd_out.png) no-repeat;width:14px;height:178px;position:absolute;top:245px;right:0;}
+.meidd_right_box{position:relative;width:932px;min-height:678px}
+#meiddRight{margin-left:268px;}
+#meiddRight{width:auto;float:none;}
+.bwh_crumbs{height:60px;line-height:60px;text-align:right;font-size:12px;color:#6f4e47}
+.bwh_crumbs h1{font-size:16px;color:#c0a6a0;margin:0;line-height:60px;text-align:left;font-weight:normal;float:left}
+.bwh_crumbs a{color:#6f4e47}
+.bwh_crumbs em{margin:0 5px}
+/*
+注册header
+*/
+.enroll_header{background:#6f4e47;height:83px;width:100%;overflow:hidden;position:fixed;top:0}
+.meidd_logo{overflow:hidden;margin:10px 0 0 30px;float:left}
+.enroll_header a{float:right;color:#fff;font-size:14px;margin-right:30px;margin-top:50px}
+.meidd_logo a{float:left;margin-left:30px;margin:0}
+.meidd_logo img{width:190px;height:64px;float:left;}
+.meidd_t{margin:10px 0 0 76px}
+.meidd_t em{margin:0 5px}
+.meidd_t span{display:block;margin-bottom:5px}
+/*
+footer
+*/
+.footer_box{background:#e68b7f;height:40px;line-height:40px;color:#fff;text-align:center;width:100%;}
+.bwh_footer{width:1200px;margin:auto;}
+/*
+header
+*/
+.bwh_header{width:1200px;height:50px;margin:auto;}
+.bwh_left_box{width:238px;float:left;display:inline;background:rgba(111,78,71,.9);height:50px;padding:5px 0 0 30px;}
+/*.bwh_left_box img{width:40px;height:40px;float:left}*/
+.bwh_left_box p{margin:0 0 0 48px;font-size:12px;color:#fff;}
+.bwh_right_box{width:962px;height:50px;float:left;display:inline;background:rgba(111,78,71,.3);text-align:right;}
+.bwh_right_box cite{float:left;display:inline;font-size:20px;color:#fff;padding-left:20px;line-height:50px}
+.personal_box{display:inline-block;padding:5px 30px 5px 0}
+.bwh_head_pic{display:inline-block;height:40px;line-height:40px}
+.bwh_head_pic img{width:40px;height:40px;border-radius:20px;margin-right:10px;}
+.bwh_head_pic span{font-size:14px;color:#fff;margin-right:5px}
+.person_operate{line-height:28px;display:inline-block;border-left:solid 1px rgba(111,78,71,.3);padding-left:28px;background:url(../../images/hospital/ico_bwh.png) no-repeat;color:#fff;}
+.change_word{background-position:8px 0;}
+.exit{background-position:8px -28px}
+/*
+nav
+*/
+.administrator_menu{margin-top:30px}
+.menus_box{overflow:hidden;}
+.menus_t{background:rgba(255,255,255,.1);height:28px;line-height:28px;margin:0;color:#fff;font-size:14px;padding-left:30px}
+.menus{overflow:hidden;margin:0}
+.menus li{height:40px;line-height:40px;cursor: pointer;border-bottom:solid 1px rgba(111,78,71,.1);}
+.menus li:focus,.menus li.over{background:rgba(121,210,190,.7)}
+.menus li a{color:#fff;display:block;padding-left:85px;text-decoration:none;}
+/*
+tab
+*/
+.tabBox{background:rgba(255,255,255,.4);background-color:rgba(255,255,255,.4); padding-bottom:10px}
+.tabNav{background:#ff8d84;border-radius:2px 2px 0 0;height:34px;margin:0;}
+.tabNav li{float:left;display:inline;background:rgba(111,78,71,.2);margin-right:1px;height:34px;font-size:16px;color:#fff;min-width:120px;padding:0 15px;text-align:center;line-height:34px;cursor:pointer}
+.tabNav li.now{background:rgba(111,78,71,.6);font-weight:700;cursor:default}
+.tabCont{display:none;overflow:hidden;}
+/*
+page
+*/
+.meidd_page_box{overflow:hidden;text-align:center;width:440px;margin:20px auto}
+.meidd_page_box ul{margin:0}
+.meidd_page_box li{float:left;color:#fff;margin-right:10px}
+.meidd_page_box a{color:#fff;}
+.meidd_page_box a:hover,.meidd_page_box a:focus,.meidd_page_box li.on a{color:#79d2be}
+.meidd_page_box li.on a{cursor:default;}
+.next{margin-right:0!important}
+.icon-backward{margin-right:5px}
+.icon-forward{margin-left:5px}
+/*********************************注册**********************************************/
+.enroll_cont{width:100%;min-height:645px;margin:83px 0 40px;}
+.enroll_box{margin:auto;width:887px;}
+.enroll_cont h1{margin:0;font-size:18px;color:#6f4e47;line-height:70px;font-weight:normal}
+.enroll_infor{background:rgba(255,255,255,.6);min-height:575px;}
+.enroll_title{background:url(../../images/hospital/register_step_bg.gif) no-repeat;width:100%;height:34px;line-height:34px;color:#fff;font-size:14px;}
+.enroll_1{background-position:0 0;}
+.enroll_2{background-position:0 -34px;}
+.enroll_3{background-position:0 -68px;}
+.enroll_title span{display:inline-block;float:left;padding-left:20px;}
+.enroll_1_1{width:302px;}
+.enroll_1_2{width:290px;}
+.enroll_form{margin-top:30px}
+.enroll_pbox{margin:0 0 10px 30px;overflow:hidden}
+.enroll_pbox span{float:left;display:block;width:100px;color:#6f4e47}
+.enroll_pbox span em{font-size:18px!important;vertical-align:middle;color:#ff8d84;margin-right:10px;line-height:40px;}
+.enroll_pbox input[type="text"]{height:40px;line-height:40px;width:416px;border-radius:2px;box-shadow:none;border:0;transition:none;color:#c0a6a0;margin:0}
+.enroll_pbox input[type="text"]:hover,.enroll_pbox input[type="text"]:focus,.enroll_pbox input[type="submit"]:hover,.enroll_pbox input[type="submit"]:focus,.enroll_pbox input[type="button"]:hover,.enroll_pbox input[type="button"]:focus{color:#6f4e47;border:0;box-shadow:none;transition:none;}
+.enroll_error_hint{padding-left:100px;color:#ff8d84;height:36px;line-height:36px;margin:0;cursor:default;}
+.enroll_validate{display:inline-block;margin:0}
+.enroll_pbox input[type="submit"],.enroll_pbox input[type="button"]{margin:0 0 0 10px;width:170px;height:40px;line-height:40px;background:rgba(121,210,190,.7);border:0;box-shadow:none;transition:none;color:#fff;border-radius:2px}
+.checkbox{margin-left:130px;color:#6f4e47;font-size:12px}
+.checkbox a{color:#6f4e47;text-decoration:underline}
+.checkbox input[type="checkbox"]{vertical-align:middle}
+.btn_enroll_k{margin:60px 0 0 130px}
+.btn_enroll_k input[type="submit"],.btn_enroll_k input[type="button"],.btn_tab input[type="button"],.btn_tab input[type="submit"]{border-radius:2px;width:165px;height:40px;line-height:40px;color:#fff;border:0;}
+.btn_enroll_k input[type="submit"]:hover,.btn_enroll_k input[type="submit"]:focus,.btn_enroll_k input[type="button"]:hover,.btn_enroll_k input[type="button"]:focus,.btn_tab input[type="button"]:hover,.btn_tab input[type="button"]:focus{background:rgba(121,210,190,.4)!important;color:#fff;}
+.btn_enroll_k input.input_white:hover,.btn_enroll_k input.input_white:focus{background:rgba(255,255,255,.2)!important}
+/*02*/
+.fillin_infor .enroll_validate{float:left;width:170px}
+.enroll_select{margin:0}
+.enroll_select select{border:solid 1px #805146;background:#none;color:#c0a6a0;margin:0}
+.enroll_select select:hover,.enroll_select select:focus{color:#805146;}
+.enroll_pbox span.province{}
+.enroll_pbox span.city{width:116px}
+.datum_t{overflow:hidden;margin-top:7px}
+.datum_t span{float:left;width:50px}
+.datum_t p{margin:0 0 0 50px}
+.upload_box{overflow:hidden;margin-top:20px}
+.upload_box ul{overflow:hidden;margin:0 0 10px 100px}
+.upload_box li{float:left;display:inline;width:119px;margin-right:10px;text-align:center;overflow:hidden;position:relative;}
+.put_bg{background:rgba(255,255,255,.4);color:#c0a6a0;line-height:21px;padding:10px 0;overflow:hidden;border-radius:2px;margin:0;height:90px;}
+.put_bg span{display:block;width:100%}
+.upload_put a{width:120px;height:22px;line-height:22px;background:rgba(121,210,190,.7);display:inline-block;color:#fff;border-radius:2px;margin-top:5px}
+.upload_put a:hover{color:#fff}
+.put_error_hint{color:#ff8d84;font-size:12px;text-align: left;}
+.sample img{border-radius:2px;width:119px;height:90px}
+.sample_shade{background:rgba(111,78,71,.5);position:absolute;z-index:1;top:0;left:0;width:119px!important;height:90px}
+.btn_sample{position:absolute;width:55px!important;height:55px;border:solid 1px #fff;top:17px;left:32px;color:#fff!important;border-radius:28px;z-index:2;line-height:56px;}
+.put_error_bg{background:rgba(255,141,131,.4)}
+.sample_in > .sample_shade{background:rgba(111,78,71,.2);}
+.ico_loading{position:absolute;width:56px!important;height:56px;top:17px;left:32px;z-index:2px;}
+.ico_loading img{width:56px;height:56px}
+.fillin_infor .btn_enroll_k{margin:20px 0 20px 90px}
+/*03*/
+.sub_t{margin:60px 0 55px;color:#6f4e47;font-size:14px;text-align:center}
+/*用户协议*/
+.user_protocol{background:rgba(255,255,255,.6);width:887px;margin:auto;padding-bottom:50px}
+.user_protocol h1{color:#fff;line-height:34px;height:34px;background:#ff8d84;font-size:14px;padding-left:20px;border-radius:2px 2px 0 0}
+.protocol_cont{color:#5e3830;margin:10px 10px 0 20px;line-height:30px}
+.protocol_cont p{margin:0 0 5px}
+.user_protocol h1{color:#fff;line-height:34px;height:34px;background:#ff8d84;font-size:14px;padding-left:20px;border-radius:2px 2px 0 0}
+.protocol_a{display:block;width:166px;height:40px;line-height:40px;color:#fff;text-align:center;font-size:14px;border-radius:2px;}
+/*医院信息-基础信息*/
+.head_pic{margin:20px 20px 0;float:left;}
+.head_pic img{width:116px;height:116px;margin:auto;border-radius:2px;display:block;margin-bottom:20px}
+.load_head{border-radius:2px;width:116px;height:22px;line-height:22px;text-align:center;color:#fff;background:rgba(121,210,190,.7);display:inline-block}
+.load_head:hover,.load_head:focus{color:#fff!important;background:rgba(121,210,190,.4)}
+.basis_cont{margin:0 0 20px 156px;}
+.basis_cont ul{margin:0}
+.basis_cont li{line-height:40px;margin-bottom:10px;overflow:hidden;}
+.basis_name{display:inline-block;width:90px;margin-right:5px;color:#6f4e47;float:left}
+.basis_name em{display:inline-block;width:20px;color:#ff8d84}
+.basis_cont li p{display:inline-block;margin:0;float:left}
+.basis_cont input[type="text"],.cname input[type="text"]{height:40px;color:#6f4e47;border:0;box-shadow:none;transition:none;margin:0 0 10px;float:left;}
+.basis_cont input[type="text"]:hover,.basis_cont input[type="text"]:focus,.basis_cont textarea:hover,.basis_cont textarea:focus,.cname input[type="text"]:hover,.cname input[type="text"]:focus,.cname textarea:hover,.cname textarea:focus{box-shadow:none;border:0;transition:none;background:rgba(255,141,132,.4)}
+.basis_cont li p strong{width:148px;display:inline-block;font-weight:normal;float:left}
+.basis_cont select{border:0}
+.basis_cont textarea,.cname textarea{height:182px;overflow-x:hidden;overfolw-y:auto;border:0;}
+.basis_cont li p mark{background:none;color:#6f4e47;display:block}
+.uploading_img_dl{overflow:hidden;position:relative;left:-74px;margin-bottom:10px}
+.uploading_img_dl dd{float:left;width:120px;display:inline;margin:0 10px 0 0}
+.uploading_img_dl dd img{width:120px;height:90px;}
+.img_loading{width:120px;height:22px;line-height:22px;text-align:center;color:#fff;background:rgba(121,210,190,.7);margin-top:20px;display:inline-block}
+.btn_tab{margin-top:60px}
+/*index*/
+.meidd_index_bg{background:url(../../images/hospital/index_bg.jpg) no-repeat;background-size:cover;width:100%;height:100%;}
+.index_cont{width:1200px;overflow:hidden;margin:auto;padding:20% 0 0 13%}
+.meidd_index_bg > .enroll_header{background:none;padding:0 30px;position:static;}
+.meidd_index_bg > .footer_box{background:rgba(255,141,132,.7);margin-top:15px;}
+.index_text{overflow:hidden}
+.index_text p{font-size:18px;margin:10px 0 30px;}
+.index_text  h1{color:#fff;font-weight:normal;font-size:30px;line-height:40px;margin:0}
+.index_btn{overflow:hidden;}
+.index_btn a{display:inline-block;width:165px;height:40px;line-height:40px;color:#fff!important;font-weight:bold;text-align:center;border-radius:2px;}
+/*标签信息*/
+.label_infor{padding:20px 20px 20px 0;overflow:hidden}
+.label_box{margin:0;min-height:180px}
+.label_box li{float:left;display:inline;margin-left:20px;padding:0 8px;min-width:96px;height:34px;line-height:34px;background:#79d2be;border-radius:2px;text-align:center;position:relative;margin-bottom:10px}
+.ico_label_del{width:18px;height:18px;background:#ff8d84;border-radius:9px;text-align:center;color:#fff;line-height:18px;color:#fff;display:inline-block;position:absolute;right:2px;top:-9px;cursor:pointer;display:none;}
+.label_box li a{color:#fff;font-size:14px;}
+.label_box li:hover em{display:block}
+.label_box li.label_add{background:none;border:dashed 1px #6f4e47;}
+.label_box li.label_add a{color:#6f4e47}
+.label_all{padding:0 20px 0 0;overflow:hidden;}
+.label_all h6{color:#6f4e47;font-size:13px;margin:0 0 10px 20px;font-weight:normal}
+.label_all h6 span{font-size:11px;}
+.label_list{width:700px;min-height:108px;overflow:hidden}
+.label_list li{margin-bottom:20px;background:rgba(255,255,255,.8);}
+.label_list li a{color:#6f4e47}
+.label_list li.now{background:#79d2be}
+.label_list li.now a{color:#fff}
+.label_cut{margin:0 0 0 20px;font-size:14px;line-height:40px;width:680px;}
+.label_cut a{color:#ff8d84;display:inline-block}
+/*医疗团队*/
+.dmat_box{overflow:hidden;margin:0 20px;}
+.dmat_team_intro{padding:20px 0 0;}
+.dmat_team_intro:first-child{border-bottom:solid 1px rgba(111,78,71,.1);}
+.dmat_team_intro h1{margin:0;font-size:14px;line-height:16px;font-weight:normal;color:#6f4e47}
+.intro_box{overflow:hidden;padding:20px 0 10px;text-indent:25px}
+.dmat_team_intro form{margin:0}
+.edit{width:100%;height:223px;overflow-x:hidden;overflow-y:auto;line-height:26px;color:#c0a6a0;border:0;box-shadow:none;transition:none;margin:20px 0 0;}
+.edit:hover,.edit:focus{border:0;box-shadow:none;transition:none;color:#6f4e47}
+.elite_infor{overflow:hidden;margin:0}
+.elite_infor li{width:48%;float:left;display:inline;margin-bottom:20px}
+.elite_infor li:nth-child(odd){margin-right:20px}
+.elite_pic_intro{margin:20px 0;overflow:hidden}
+.elite_pic{margin:0;width:124px;float:left}
+.elite_pic img{width:124px;height:124px;display:inline-block;border-radius:62px;margin-bottom:20px}
+.elite_load_img{display:block;margin-bottom:20px;color:#6f4e47;text-align:center}
+.elite_load_img .load_head{width:124px}
+.elite_zishu{margin:0 0 0 144px;}
+.elite_jianjie,.elite_name input[type="text"],.found_right_cont input[type="text"],.btn_elite_del input[type="button"]{border:0;box-shadow:none;transition:none;color:#c0a6a0}
+.elite_jianjie:hover,.elite_jianjie:focus,.elite_name input[type="text"]:hover,.elite_name input[type="text"]:focus,.found_right_cont input[type="text"]:hover,.found_right_cont input[type="text"]:focus,.btn_elite_del input[type="button"]:hover,.btn_elite_del input[type="button"]:focus{border:0;box-shadow:none;transition:none;color:#6f4e47}
+.elite_jianjie{width:100%;height:172px;overflow-x:hidden;overflow-y:auto;display:inline;color:#6f4e47}
+.elite_name{margin-bottom:20px;}
+.elite_name input[type="text"]{height:34px;width:100%;margin:0}
+.btn_elite_del{margin:0;text-align:center;}
+.btn_elite_del input[type="button"]{width:164px;height:40px;border-radius:2px;color:#fff}
+.btn_elite_del input[type="button"]:hover,.btn_elite_del input[type="button"]:focus{color:#fff;background:rgba(121,210,190,.4)}
+.ico_elite_add{border:dashed 1px #ac958f;height:226px;text-align:center;line-height:226px;}
+.ico_elite_add a{display:block;position:relative;color:#6f4e47}
+.ico_elite_add a img{width:120px;height:120px}
+.ico_elite_add a span{position:absolute;left:166px;bottom:-85px}
+/*创建咨询师*/
+.found_box{overflow:hidden;padding-bottom:20px}
+.found_t{padding-left:20px;height:34px;background:#ff8d84;color:#fff;line-height:34px;font-size:14px;border-radius:2px 2px 0 0;margin:0}
+.found_ctas{overflow:hidden;margin:0}
+.found_ctas li{overflow:hidden;padding:10px 0 0 24px}
+.found_ctas li:first-child{border-bottom:solid 1px rgba(128,81,70,.1);padding:20px 0 20px 24px}
+.found_head_name,.found_head,.found_other{float:left}
+.found_head_name{display:inline-block;width:68px;line-height:40px}
+.found_head{width:124px;display:inline-block}
+.found_head img{width:124px;height:124px}
+.found_other{display:inline;margin:10px 0 0 18px}
+.found_other p{margin-bottom:5px}
+.found_other p em{font-style:normal}
+.pound_state{padding-left:40px}
+.found_other a{margin-top:20px}
+.found_right_cont{overflow:hidden;}
+.found_right_cont input[type="text"]{height:40px;margin:0}
+.found_ctas li form{margin:0}
+.radio-inline{margin:10px 0 0;width:80px}
+.radio-inline input[type="radio"]{vertical-align:top}
+/*咨询师列表*/
+.inquire_box{padding:15px 15px 15px;overflow:hidden;}
+.keyword_box{width:230px;height:34px;background:rgba(255,255,255,.8);border-radius:2px;display:inline-block;margin-right:12px;position:relative;top:-3px}
+.ico_search{background:url(../../images/hospital/ico_bwh.png) no-repeat 0 -68px;width:16px;height:16px;display:inline-block;margin:0;position:relative;top:9px;left:10px}
+.keyword_box input[type="text"]{background:none;border:none;box-shadow:none;height:28px;line-height:28px;border-radius:0;padding:0;font-size:13px;color:#c0a6a0;margin:0;position:relative;top:3px;left:15px}
+.keyword_box input[type="text"]:hover,.keyword_box input[type="text"]:focus{border:none;box-shadow:none;color:#6f4e47}
+.btn_inquire{diaply:inline-block;width:67px!important;height:34px;line-height:34px;text-align:center;color:#fff;font-size:13px;background:rgba(121,210,190,.7);border:0;border-radius:2px;margin:0}
+.btn_inquire:hover,.btn_inquire:focus{background:rgba(121,210,190,.4);}
+.inquire_list{overflow:hidden;}
+.inquire_list th,.inquire_list td{border-bottom:solid 1px rgba(111,78,71,.1);border-top:none!important}
+.inquire_list th{background:rgba(255,141,132,.8);color:#fff;font-weight:400!important}
+.inquire_list td{vertical-align:middle!important;}
+.operation_box{overflow:hidden;position: relative}
+.operation_link{display:inline-block;margin:0 10px 0 0;width:72px;float:left;line-height:22px;background:#805146;border-radius:2px}
+.operation_link a{display:block;width:100%;font-size:12px;color:#fff;cursor:pointer;}
+.operation_link a em{background:url(../../images/hospital/ico_bwh.png) no-repeat;display:inline-block;width:13px;height:12px;vertical-align:middle;margin:0 3px}
+.look_details_ico{background-position:0 -168px!important}
+.operation_link a:hover,.operation_link a:focus{background:#c0a6a0}
+.wrap{display:inline-block;height:22px;position: relative;}
+.wrap label{margin:0}
+.chk_4{display:none;}
+.chk_4 + label {padding:5px 0 5px 10px;border-radius:10px;display:inline-block;position:relative;background:#8b706a;width:60px;height:22px;}
+.chk_4 + label:before{content:' ';position:absolute;background:#ff8d84;top:2px;z-index:0;left:2px;width:18px;color: #FFF;height:18px;border-radius:9px;}
+.chk_4 + label:after{content:'删除';font-size:12px;position:absolute;left:6px;color:#fff;top:2px;border-radius:100px;}
+.chk_4 + label:after{left:25px;}
+.chk_4:checked + label:after{content:'在职';left:10px;color:#fff}
+.chk_4:checked + label:before{content:' ';position:absolute;z-index:0;left:40px;background:#79d2be}
+.chk_4 + label:after,.chk_4 + label:before{-webkit-transition:all 0.1s ease-in;transition:all 0.1s ease-in;}
+.inquire_list .table tbody tr{border-left:solid 2px #fff;}
+.inquire_list .table tbody tr:hover,.inquire_list .table tbody tr:focus{background:rgba(255,255,255,.8)}
+/*咨询师列表*/
+.poc_name{color:#6f4e47;font-size:16px;height:34px;line-height:34px;padding-left:8px;margin:0}
+.look_details{background:url(../../images/hospital/ico_meidd.png) no-repeat 5px -309px;display:inline-block;width:78px;height:20px;line-height:20px;text-align:center;color:#79d2be;font-size:12px;border:solid 1px #79d2be;border-radius:2px;padding-left:15px}
+.poc_name span{margin-right:25px;}
+.poc_name span:last-child{margin-right:0}
+.poc_right_form{float:right;margin:0 40px 0 0;}
+.poc_right_form > .meidd_select{height:24px;border:solid 1px #fff;margin:-2px 20px 0 0}
+.poc_right_form > .btn_inquire{width:94px!important;height:24px;;line-height:24px;margin:-2px 0 0}
+.exclusive_ueer{position:relative;}
+.user_infor,.uesr_all{margin:0;}
+.user_infor{display:block;width:74%;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow:hidden;float:left}
+.user_infor a{display:inline-block;color:#3c3c3c;margin-right:10px;}
+.user_infor a:hover{color:#79d2be;text-decoration:none;}
+.look_more{display:inline-block;font-size:12px;cursor:pointer;font-style:normal;position:absolute;right:0;top:2px]}
+.uesr_all{display:none;position:absolute;border:solid 1px #f1f1f1;background:#fff;top:-9px;left:-5px;z-index:999}
+.uesr_all a{color:#3c3c3c;display:inline-block;line-height:20px;padding:8px 5px;border-bottom:dotted 1px #f3f3f3}
+.user_all a:hover{color:#79d2be}
+.meidd_select,.test-style{display:inline-block;width:92px;height:32px!important;border:solid 1px #b6b6b6!important;border-radius:2px!important;line-height:32px!important;margin:0;padding:0;font-size:13px!important;color:#6f4e47!important}
+.meidd_select{margin:0 12px 0 0!important;width:100px;}
+/*add by zhaitao*/
+.swfupload{left:0px;}
+.uploadify-queue{display: none;}
+#iconPreview{border-radius:56px;}
+
+/*项目列表15-11-6*/
+.time_box{display:inline-block;margin:0}
+.time_box input[type="text"]{box-shadow:none;transition:none;margin:0 12px 0 0}
+.time_box input[type="text"]:hover,.time_box input[type="text"]:focus{box-shadow:none;transition:none;background:#fff}
+.test-style,.time-text{display:inline-block;vertical-align:middle}
+.time-text{margin:0 12px 0 0}
+.chk_3 + label:after{content:'下线';}
+.chk_3:checked + label:after{content:'在线';}
+/*咨询师列表15-11-17*/
+.iss_box{display:inline-block}
+.iss_box img{margin-top:-5px}
+/*项目详情15-11-17*/
+.proxx_box,.replenish_infor{overflow:hidden;margin:20px 10px 10px}
+.xxMain th,.xxMain td{padding:0 10px;height:34px;line-height:34px;}
+.xxMain th{text-align:right;width:105px;font-weight:normal;vertical-align:top}
+.xxMain th em{font-style:normal;display:inline-block;margin-right:5px;color:#ff8d84}
+.cover_pic,.cname,.cimg,.repForm,.start_box{overflow:hidden}
+.cp{margin:0;float:left}
+.cp img{border-radius:2px;width: 108px;height:108px;}
+.cover_pic img{width:108px;height:108px;display:block;margin-bottom:20px;overflow:hidden;font-size:0;line-height:0}
+.cpt{padding:25px 0 0 126px;font-size:12px;line-height:20px}
+.cpt p{margin:0}
+.xxMain .label_list{min-height:34px}
+.xxMain .label_box li{margin:0 10px 10px 0;cursor: pointer;}
+.cname p{line-height:22px;margin:0}
+.cimg li{float:left;display:inline;width:224px;margin:10px 10px 0 0;}
+.cimg li img{width:224px;height:120px;font-size:0;line-height:0;overflow:hidden;}
+.cimg li .tc{padding:0 7px;margin-top: 10px;}
+.cimg li .load_head{width:100px;margin-top:10px}
+/*补充信息15-11-18*/
+.repForm{margin:0}
+.repForm span{float:left;display:inline;cursor:pointer;margin:10px 5px 10px 0;line-height:16px;width:135px;background:url(../../images/hospital/ico_bwh.png) no-repeat 0 -146px;padding-left:24px}
+.repForm span.checked{background:url(../../images/hospital/ico_bwh.png) no-repeat 0 -130px;}
+.repForm span label{display:inline-block;margin:0;font-size:13px;line-height:20px}
+.cname span{display:inline-block;margin-right:15px}
+.replenish_infor  .cname textarea{height:100px}
+.tabCont{display:none}
+/*订单详情15-11-19*/
+.item_line{overflow:hidden;border-bottom:solid 1px rgba(128,81,70,.1);padding:0 0 20px 20px}
+.item_line:last-child{border:none}
+.item_line ul,.item_line ol{overflow:hidden;margin:0}
+.item_line li{float:left;display:inline;margin:10px 20px 0 0;width:40%;overflow:hidden}
+.item_line li cite{padding-right:5px;width:90px;float:left;display:inline}
+.item_line li span{width:75%;float:left;display:inline;word-break:break-all;word-wrap:break-word}
+.picMain{background:rgba(255,255,255,.6);padding:10px;margin-top:20px;overflow:hidden}
+.picT{padding-left:118px}
+.picT p{margin:0}
+.moneyP{margin:20px 0 0;}
+.yuanjia{font-style:normal;margin-right:40px;text-decoration:line-through}
+.moneyS{display:inline-block;width:49%;margin:20px 0 0}
+.moneyS em{font-style:normal}
+.item_line ol li{width:100%}
+.beizhu{float:left;display:inline;}
+.beizhu p{margin:0}
+/*订单状态15-11-19*/
+.petrolH,.greenH,.orangeH,.shinkuH,.deeppinkH,.pinkH,.eH{font-weight:normal;font-size:16px}
+.petrolH cite,.greenH cite,.orangeH cite,.shinkuH cite,.deeppinkH cite,.pinkH cite,.eH cite{display:inline-block;background:#4ab89f;width:18px;height:18px;border-radius:9px;color:#fff;font-size:13px;line-height:18px;text-align:center;margin-right:20px}
+.greenH cite{background:#79d2be}
+.orangeH cite{background:#f39700}
+.shinkuH cite{background:#a40000}
+.deeppinkH cite{background:#ff6975}
+.pinkH cite{background:#ff8d84}
+.eH cite{background:#6f4e47}
+.zhuangT  em{font-style:normal;padding-right:10px}
+.zhuangT ol li{margin:5px 0 0}
+.zhuangT textarea{height:100px;margin-bottom:20px} 
+.unsolicited{color:#fff}
+.unsolicited cite{background:rgba(255,255,255,.6)}
+.zhuangT i{font-style:normal;font-size:12px}
+.appealOl{color:#ff8d84}
+.appealOl li:nth-child(1),.appealOl li:nth-child(2),.appealOl li:nth-child(3),.appealOl li:nth-child(4){color:#6f4e47}
+.item_line h5{font-size:13px;font-weight:normal;margin:15px 0 0}
+.fwpj{overflow:hidden;margin-bottom:10px}
+.item_line .fwpj cite{width:110px;}
+.item_line .fwpj li{margin-top:10px}
+/*结算15-11-19*/
+.jies_hints{overflow:hidden;margin-top:20px}
+.jies_hints span{padding-right:20px}
+
+/*add by zhaitao*/
+.tabNav li a {
+    color: #fff;
+}
+.load_head, .uploadify-button {
+    background: rgba(121, 210, 190, 0.7) none repeat scroll 0 0;
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    height: 22px !important;
+    line-height: 22px !important;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 116px !important;
+}
+.error span {
+    color: #ff0000;
+    line-height: 40px;
+}
+.zt_switch_shade {
+    cursor: pointer;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+    z-index: 0;
+}
+table th, table td{word-wrap:break-word;word-break:break-all;}

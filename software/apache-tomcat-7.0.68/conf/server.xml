@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+ <!-- Server 属性说明    
+      port:指定一个端口，这个端口负责监听关闭Tomcat的请求    
+      shutdown:向以上端口发送的关闭服务器的命令字符串    
+  -->  
+ <Server port="10005" shutdown="SHUTDOWN">
+   <!--定义多个监听-->
+   <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+   <Listener className="org.apache.catalina.core.JasperListener" />
+   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+   <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+   <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+    <!--定义共用资源-->
+   <GlobalNamingResources>
+     <Resource name="UserDatabase" auth="Container"
+               type="org.apache.catalina.UserDatabase"
+               description="User database that can be updated and saved"
+               factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+               pathname="conf/tomcat-users.xml" />
+   </GlobalNamingResources>
+   <!--<Service>元素由org.apache.catalina.Service接口定义,它包含一个<Engine>元素,
+    以及一个或多个<Connector>,这些Connector元素共享用同一个Engine元素-->
+   <Service name="Catalina">
+     <!--<Connector>元素代表与客户程序交换信息,它可以接收客户的请求,并向客户返回响应结果-->
+     <!--定义HTTP协议的处理方式，处理接口默认为8080
+           由于此接口经常被其他应用程序调用，建议修改接口-->
+     <Connector port="8080" protocol="HTTP/1.1"
+                connectionTimeout="20000"
+                redirectPort="8443" />
+     <!--定义AJP/1.3协议的处理方式，此为整合 Tomcat+Apache 的核心协议，请慎重处理 -->
+     <Connector port="20001" protocol="AJP/1.3" redirectPort="8443" />
+     <!--每个<Service>元素只能包括一个<Engine>元素. 
+         <Engine>元素处理在同一个<Service>中所有<Connector>元素接收到的客户请求-->
+     <Engine name="Catalina" defaultHost="localhost"  jvmRoute="jvm2">
+       <!-- Realm是一个存储用户名,密码以及和用户名相联系的角色的”数据库”
+            用户名,密码可以用来验证用户对一个或多个web应用程序的有效性。-->
+       <Realm className="org.apache.catalina.realm.LockOutRealm">
+         <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+                resourceName="UserDatabase"/>
+       </Realm>
+        <!--<Host>元素定义了一个虚拟主机,它可以包含一个或多个Web应用-->
+       <Host name="localhost"  appBase="webapps"
+             unpackWARs="true" autoDeploy="true">
+         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+                prefix="localhost_access_log." suffix=".txt"
+                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+				  <Context docBase="meididi" path="/" reloadable="true" crossContext="true"/>
+       </Host>
+     </Engine>
+   </Service>
+ </Server>

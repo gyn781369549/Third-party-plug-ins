@@ -1,0 +1,109 @@
+
+@charset "utf-8";
+body, div, ol, ul, h1, h2, h3, h4, h5, h6, p, th, td, dl, dd, form, iframe, input, textarea, select, label, article, aside, footer, header, menu, nav, section, time, audio, video {
+    margin: 0;
+    padding: 0
+}
+@media screen and (min-width: 320px) {
+    html {
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    html {
+        font-size: 56px;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    html {
+        font-size: 63px;
+    }
+}
+
+@media screen and (min-width: 440px) {
+    html {
+        font-size: 69px;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    html {
+        font-size: 75px;
+    }
+}
+@media screen and (min-width: 640px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+body {
+
+    font-family: 'microsoft yahei', Verdana, Arial, Helvetica, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    max-width: 640px;
+    margin: 0 auto;
+    width: 100%;
+    font-family:Helvetica;
+    font-size:.24rem;
+}
+textarea {
+    resize: none
+}
+img {
+    border: 0;
+    max-width: 100%;
+    margin: 0 auto;
+}
+ul, ol {
+    list-style: none
+}
+input, select, textarea {
+    -webkit-user-modify: read-write-plaintext-only;
+    font-family: inherit;
+    background-image: none;
+    outline:0;
+}
+input[type='text'], input[type='password'], input[type='button'] {
+    -webkit-appearance: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+input[type='radio'] + label {
+    vertical-align: 2px;
+}
+em {
+    font-style: normal
+}
+a {
+    text-decoration: none
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse
+}
+.pl25{padding-left: .25rem;box-sizing: border-box;}
+.pr25{padding-right: .25rem;box-sizing: border-box;}
+em{ border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #999;
+    display: inline-block;
+    height: 0;
+    margin-left: 3px;
+    vertical-align: middle;
+    width: 0;}
+.clear{zoom:1;}
+.f32{font-size: 16px;}
+.f28{font-size: 14px;}
+.f40{font-size: 20px;}
+.f50{font-size: 25px;}
+.f24{font-size: 12px;}
+.clear:after{content: "";display:block;clear: both;}
+.vm{vertical-align: middle;}
+

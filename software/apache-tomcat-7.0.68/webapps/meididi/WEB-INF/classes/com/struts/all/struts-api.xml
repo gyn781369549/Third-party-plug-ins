@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 通用的,不用拦截 -->
+	<package name="baseApi" namespace="/api" extends="api-default">
+		<action name="phonecode" class="userApiAction" method="regCode" />
+		<action name="checkPhone" class="userApiAction" method="checkPhone"></action>
+		<action name="tPuserSetPhone" class="userApiAction" method="tPuserSetPhone"></action>
+		
+		<action name="upPhoto" class="imgAction" method="img"></action>
+		
+		<action name="login" class="userApiAction" method="login" />
+		<action name="conLogin" class="consultantApiAction" method="login"></action>
+		
+		<!-- <action name="reg" class="userApiAction" method="reg" />
+		<action name="conReg" class="consultantApiAction" method="reg"></action>
+		 -->
+		<!-- 获取标签 -->
+        <action name="gettags" class="projectApiAction" method="getTips"></action>
+        
+      
+        
+        <!-- 获取标签-jsp <result name="preview">/manage/upload/upload.jsp</result>-->
+        <action name="getTipsView" class="projectApiAction" method="getTipsView">
+        	<result name="preview">/manage/upload/kindeditor/jsp/save_WenTi.jsp</result>
+        	
+        </action>
+        <!-- 获取咨询师 -->
+        <action name="getConsultantToJson" class="projectApiAction" method="getConsultantToJson">
+        	
+        </action>
+
+     
+        
+        <!-- 获取版本号 -->
+        <action name="getVersion" class="projectApiAction" method="getVersion"></action>
+       
+       <!-- 获取广告 -->
+        <action name="getAd" class="projectApiAction" method="getAdInfo"></action>
+        <!-- 医师 -->
+        <action name="teamList" class="teamApiAction" method="list"></action>
+        <action name="teamShow" class="teamApiAction" method="show"></action>
+        <action name="getAllTeams" class="teamApiAction" method="getAllTeams"></action>
+        <action name="customizeSql" class="teamApiAction" method="customizeSql"></action>
+        <action name="getTeamTips" class="teamApiAction" method="getTeamTips"></action>
+        <action name="teamList" class="teamApiAction" method="teamList"></action>
+        
+        <!-- 咨询师 -->
+        <action name="conList" class="consultantApiAction" method="list"></action>
+        <action name="conShow" class="consultantApiAction" method="conShow"></action>
+        <action name="uploadActivity" class="consultantApiAction" method="uploadActivity" />
+        <action name="showp" class="consultantApiAction" method="preview">
+        	<result name="preview">/WEB-INF/page/api/consult_preview.jsp</result>
+        	<result name="error">/WEB-INF/page/blank.jsp</result>
+        </action>
+        <action name="doctor" class="teamApiAction" method="preview">
+        	<result name="preview">/WEB-INF/page/api/doctor_preview.jsp</result>
+        	<result name="error">/WEB-INF/page/blank.jsp</result>
+        	
+        </action>
+        <action name="projectInfo" class="projectApiAction" method="projectInfo"></action>
+        <action name="changeinfo" class="userApiAction" method="userSet"></action>
+        <action name="upImage" class="userApiAction" method="upImageSend"></action>
+        <action name="getThemeDetail" class="userApiAction" method="getThemeDetail"></action>
+        <action name="getThemeList" class="userApiAction" method="getThemeList"></action>
+        <action name="getThemeHtml" class="userApiAction" method="getThemeHtml"></action>
+        
+          <action name="getThemeListHt" class="userApiAction" method="getThemeListHt">
+                 
+       		<result name="preview">/WEB-INF/page/console/theme_inf_list.jsp</result>
+          </action>
+           <action name="getThemeListHtId" class="userApiAction" method="getThemeListHtId">
+                 <result name="preview">/manage/upload/kindeditor/jsp/update_WenTi.jsp</result>
+       
+          </action>
+          
+        <action name="weChatCode" class="userApiAction" method="weChatCode"></action>  
+          
+          
+        <action name="clickGood" class="userApiAction" method="goods"></action>
+        <action name="seeCount" class="userApiAction" method="see"></action>
+        <!-- 微信统一订单 -->
+        <action name="weChatUnifiedOrder" class="userApiAction" method="weChatUnifiedOrder"></action>
+          <!-- 微信回调 -->
+        <action name="weChatCallback" class="userApiAction" method="weChatCallback"></action>
+        
+	</package>
+	<!-- 用户相关 -->
+	<package name="userApi" namespace="/api/user" extends="api-default">
+		<action name="index" class="userApiAction" method="index"></action>
+		
+		<!-- <action name="reg" class="userApiAction" method="reg"></action>
+		
+		<action name="resetPwd" class="userApiAction" method="resetPwd"></action>-->
+		
+		 
+		<action name="myinformation" class="userApiAction" method="myCenter" />
+		
+		
+		<action name="changerelation" class="consultantApiAction" method="attentionCon" />
+		<action name="getMyConsultants" class="consultantApiAction" method="getAttentions" />
+		<action name="searchconsult" class="consultantApiAction" method="getConsultant" />
+		<action name="ZxsInfo" class="consultantApiAction" method="getConsultant" />
+		<action name="myconsultlist" class="consultantApiAction" method="consultantList" />
+		
+		
+		<!-- <action name="myHos" class="hospitalApiAction" method="collectionHos" />
+		<action name="delMyHos" class="hospitalApiAction" method="delCollection" />
+		<action name="getMyHos" class="hospitalApiAction" method="getCollections" />
+		 -->
+		 
+		<action name="CollectProject" class="projectApiAction" method="collection" />
+		<!-- <action name="delMyProject" class="projectApiAction" method="delCollection" /> -->
+		<action name="CollectProjectList" class="projectApiAction" method="getCollection" />
+		<action name="IsCollect" class="projectApiAction" method="isCollectProject" />
+		
+		<action name="isevaluate" class="userApiAction" method="getEvaluation" />
+		<action name="pingjia" class="userApiAction" method="evaluation" />
+		
+		<action name="getronginfo" class="userApiAction" method="getRyInf" />
+		
+		<action name="line" class="userApiAction" method="getLineTime" />
+		
+		<action name="CreateH" class="userApiAction" method="createOrder" />
+		<action name="ViewStausH" class="userApiAction" method="orderState" />
+		<action name="CancelOrderH" class="userApiAction" method="cancelOrder" />
+		<action name="ConfirmOrderH" class="userApiAction" method="ConfirmOrder" />
+		
+		 
+	</package>
+	
+	 <!-- 咨询师 -->
+	<package name="conApi" namespace="/api/consult" extends="api-default">
+        <action name="index" class="consultantApiAction" method="index"></action>
+        
+        <action name="apply" class="consultantApiAction" method="reg"></action>
+       
+        <action name="conSet" class="consultantApiAction" method="consultantSet"></action>
+        <action name="conCenter" class="consultantApiAction" method="myCenter"></action>   
+		<action name="mycustomerlist" class="consultantApiAction" method="getAttentionUser"></action>
+		<action name="getteam" class="consultantApiAction" method="getTeams"></action>
+		
+		<action name="GetProject" class="projectApiAction" method="list"></action>
+		<action name="personalinfo" class="consultantApiAction" method="myCenter" />
+		<action name="getcustomerinfo" class="consultantApiAction" method="getUserByRyId" />
+		
+		<action name="getronginfo" class="consultantApiAction" method="getRongToken" />
+		<action name="Validation" class="consultantApiAction" method="getStates" />
+		<action name="line" class="consultantApiAction" method="getLineTime" />
+		
+		<action name="ApplyT" class="consultantApiAction" method="apply" />
+		
+		<action name="BindBank" class="consultantApiAction" method="bindBank" />
+		<action name="BankList" class="consultantApiAction" method="getBankList" />
+		<action name="GetBankList" class="consultantApiAction" method="allBanks" />
+		
+		<action name="roborder" class="consultantApiAction" method="robOrder" />
+		<action name="MyOrders" class="consultantApiAction" method="getOrders" />
+		<action name="ShowStatus" class="consultantApiAction" method="getOrders" />
+		
+		
+		<action name="Trecord" class="consultantApiAction" method="getMoneyRecord" />
+		<action name="RewardList" class="consultantApiAction" method="getRecordList" />
+		<action name="ExtractList" class="consultantApiAction" method="getExtractList" />
+		<action name="setLocation" class="consultantApiAction" method="setLocation" />
+		
+	</package>
+	
+	
+	<!-- 医院 -->
+	<package name="hosApi" namespace="/api/Hospital" extends="api-default">
+        <action name="HospitalList" class="hospitalApiAction" method="list"></action>
+        
+         <action name="hospDetails" class="hospitalApiAction" method="hospDetails"></action>
+        
+        <action name="HospitalInfoZxs" class="hospitalApiAction" method="preview">
+        	<result name="preview">/WEB-INF/page/api/hospital_preview.jsp</result>
+        	<result name="error">/WEB-INF/page/blank.jsp</result>
+        </action>
+        <action name="HospitalInfo" class="hospitalApiAction" method="show"></action>
+        <action name="areaList" class="hospitalApiAction" method="getArea"></action>
+        <!-- 添加问题 -->
+        <action name="themeUpload" class="hospitalApiAction" method="themeUpload">
+      
+        </action>
+	</package>
+
+	<!-- 项目 -->
+	<package name="proApi" namespace="/api/project" extends="api-default">
+        <action name="projectList" class="projectApiAction" method="list"></action>
+        <action name="ProjectInfo" class="projectApiAction" method="projectInfo"></action>
+		 <action name="sendInfo" class="projectApiAction" method="sendInfo"></action>
+		 <action name="commitComment" class="projectApiAction" method="commitComment"></action>
+		 <action name="dianZan" class="projectApiAction" method="zan"></action>
+		 <action name="testupdate" class="projectApiAction" method="update"></action>
+		 <action name="getCommunityList" class="projectApiAction" method="getCommunity"></action>
+		 <action name="getAssortmentList" class="userApiAction" method="getAssortmentList"></action>
+         <action name="getActivityInfo" class="projectApiAction" method="fengInfo"></action>
+         <action name="getActivityList" class="projectApiAction" method="fengList"></action>
+         <action name="getProjectList" class="projectApiAction" method="getProjectList"></action>
+          
+         
+         <action name="getConsultantActivityList" class="projectApiAction" method="fengListWithConsultant"></action>
+	</package>
+	
+	<!-- 订单 -->
+	<package name="orderApi" namespace="/api/ProjectOrder" extends="api-default">
+        <action name="ProjectOrderList" class="orderApiAction" method="getOrderList"></action>
+        <action name="ViewOrder" class="orderApiAction" method="orderShow"></action>
+        <action name="ConfirmOrder" class="orderApiAction" method="confirmOrder"></action>
+        <action name="CreateProjectOrder" class="orderApiAction" method="createOrder"></action>
+        <action name="EvaluateOrder" class="orderApiAction" method="evaluate" ></action>
+        <action name="SearchOrder" class="orderApiAction" method="findOrderByPhone" ></action>
+        <action name="StartService" class="orderApiAction" method="startService" ></action>
+        <action name="ViewEvaluate" class="orderApiAction" method="getEvaluate" ></action>
+        <!-- 确认订单 -->
+        <action name="Sign" class="orderApiAction" method="orderSign" ></action>
+        <action name="CannelOrder" class="orderApiAction" method="cancelOrder" ></action>
+        <action name="complainOrder" class="orderApiAction" method="complain" ></action>
+        
+        
+        <action name="ApplyRefund" class="orderApiAction" method="refundOrder" ></action>
+        <action name="endSure" class="orderApiAction" method="endSure" ></action>
+        
+        
+        <!-- 支付后回调 -->
+        <action name="checkPay" class="orderApiAction" method="Pay" ></action>
+        <action name="check" class="orderApiAction" method="checkPay" ></action>
+        <!-- 微信支付后回调 -->
+        <action name="weChatCallback" class="orderApiAction" method="weChatCallback" ></action>
+	</package>
+	
+	
+</struts>
